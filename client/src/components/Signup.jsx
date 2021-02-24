@@ -17,7 +17,7 @@ const Signup = ({history}) => {
         }, [history])
 
     return (
-        <>
+        <div>
             <h1>Sign up</h1>
             <form onSubmit={handleSignUp}>
                 <label>
@@ -30,7 +30,7 @@ const Signup = ({history}) => {
                 </label>
                 <button type='submit'>Sign Up</button>
             </form>
-        </>
+        </div>
     )
 }
 
