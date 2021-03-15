@@ -2,6 +2,8 @@ import React, { useContext, useCallback } from "react"
 import { withRouter, Redirect } from "react-router"
 import app from "../firebase"
 import { AuthContext } from "../Auth"
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const Login = ({history}) => {
     const handleLogin = useCallback(async event => {
@@ -16,6 +18,11 @@ const Login = ({history}) => {
                 alert (error)
             }
         }, [history])
+
+    const handleGoogleLogin = () =>{
+       const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+       app.auth().signInWithPopup(googleAuthProvider);
+    };
 
     const { currentUser } = useContext(AuthContext)
 
@@ -36,6 +43,7 @@ const Login = ({history}) => {
                     <input name='password' type='password' placeholder='Password' />
                 </label>
                 <button type='submit'>Log in</button>
+                <button onClick={handleGoogleLogin}>Sign in with google</button>
             </form>
         </div>
     )
