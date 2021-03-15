@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute"
 import MyNavbar from './components/Navbar'
 import MyFooter from './components/MyFooter'; 
 
+//adding in a test. 
+
 function App() {
   return (
     <AuthProvider>
