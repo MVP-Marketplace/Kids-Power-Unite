@@ -7,6 +7,8 @@ import Signup from "./components/Signup"
 import { AuthProvider } from "./Auth.js"
 import PrivateRoute from "./PrivateRoute"
 
+//adding in a test. 
+
 function App() {
   return (
     <AuthProvider>
