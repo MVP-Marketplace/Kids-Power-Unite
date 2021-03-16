@@ -24,6 +24,11 @@ const Login = ({history}) => {
        app.auth().signInWithPopup(googleAuthProvider);
     };
 
+    const handleFacebookLogin = () =>{
+        const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+        app.auth().signInWithPopup(facebookAuthProvider);
+    };
+
     const { currentUser } = useContext(AuthContext)
 
     if (currentUser) {
@@ -43,6 +48,7 @@ const Login = ({history}) => {
                     <input name='password' type='password' placeholder='Password' />
                 </label>
                 <button type='submit'>Log in</button>
+                <button onClick={handleFacebookLogin}>Sign in with Facebook</button>
                 <button onClick={handleGoogleLogin}>Sign in with google</button>
             </form>
         </div>
