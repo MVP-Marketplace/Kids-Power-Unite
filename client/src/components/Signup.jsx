@@ -21,7 +21,6 @@ const Signup = ({ history }) => {
         zip,
       } = event.target.elements;
       try {
-        
         await app
           .auth()
           .createUserWithEmailAndPassword(email.value, password.value)
@@ -37,7 +36,7 @@ const Signup = ({ history }) => {
                   last: last.value,
                 },
                 occupation: occupation.value,
-                emplyer: employer.value,
+                employer: employer.value,
                 address: {
                   street: street.value,
                   suite: suite.value,
@@ -114,4 +113,3 @@ const Signup = ({ history }) => {
 };
 
 export default withRouter(Signup);
-
