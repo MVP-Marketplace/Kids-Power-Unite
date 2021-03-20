@@ -10,6 +10,7 @@ import { AuthProvider } from "./Auth.js"
 import PrivateRoute from "./PrivateRoute"
 import MyNavbar from './components/Navbar'
 import MyFooter from './components/MyFooter'; 
+import Home from './components/Home'
 
 //adding in a test. 
 
@@ -19,7 +20,7 @@ function App() {
       <Route>
         <div>
           <MyNavbar />
-          <PrivateRoute exact path="/" component={Dashboard} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/professionalsform" component={ProfessionalsForm} />
