@@ -20,7 +20,8 @@ function App() {
       <Route>
         <div>
           <MyNavbar />
-          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route

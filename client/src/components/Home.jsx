@@ -60,35 +60,38 @@ const Home = () => {
       </section>
       <section className="home-banner">
         <h1>GET INVOLVED</h1>
-      </section>
-      <section style={{ backgroundImage: `#` }}>
-        <h3>Donate a Gift Experience the power of giving</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-          deserunt distinctio nam commodi, nobis voluptatem culpa autem.
-        </p>
-        <button>Give</button>
-      </section>
-      <section style={{ backgroundImage: `#` }}>
-        <h3>Refer a Child to get their wish fulfilled</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-          deserunt distinctio nam commodi, nobis voluptatem culpa autem.
-        </p>
-        <button>Get Started</button>
-      </section>
-      <section>
-        <h2>FEATURED FINDS</h2>
-        {/* to do: discuss how to display and handle featured finds section */}
-        <button>Find More</button>
-      </section>
-      <section>
-        <h3>Sign Up For Our Newsletter</h3>
-        <label htmlFor="email">
-          <input type="text" name="email" placeholder="enter email" />
-          Email Address
-        </label>
-        <button>Sign Up</button>
+
+        <div style={{ backgroundImage: `#` }}>
+          <h3>Donate a Gift Experience the power of giving</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+            deserunt distinctio nam commodi, nobis voluptatem culpa autem.
+          </p>
+          <button>Give</button>
+        </div>
+        <div style={{ backgroundImage: `#` }}>
+          <h3>Refer a Child to get their wish fulfilled</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+            deserunt distinctio nam commodi, nobis voluptatem culpa autem.
+          </p>
+          <button>Get Started</button>
+        </div>
+        <div>
+          <h2>FEATURED FINDS</h2>
+          {/* to do: discuss how to display and handle featured finds section */}
+          <button>Find More</button>
+        </div>
+        <div>
+          <h3>Sign Up For Our Newsletter</h3>
+          <form action="">
+            <label htmlFor="email">
+              <input type="text" name="email" placeholder="enter email" />
+              Email Address
+            </label>
+            <button>Sign Up</button>
+          </form>
+        </div>
       </section>
     </>
   );
