@@ -96,18 +96,20 @@ const Home = () => {
         </div>
         <div>
           <h2>FEATURED FINDS</h2>
+          <p>COMING SOON!!!!</p>
           {/* to do: discuss how to display and handle featured finds section */}
-          <button>Find More</button>
+          {/* <button>Find More</button> */}
         </div>
         <div>
           <h3>Sign Up For Our Newsletter</h3>
-          <form action="">
+          <p>COMING SOON!!!!!</p>
+          {/* <form action="">
             <label htmlFor="email">
               <input type="text" name="email" placeholder="enter email" />
               Email Address
             </label>
             <button>Sign Up</button>
-          </form>
+          </form> */}
         </div>
       </section>
     </>
