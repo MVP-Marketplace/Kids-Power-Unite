@@ -1,5 +1,6 @@
 import React, { useContext, useCallback } from "react";
 import { withRouter, Redirect } from "react-router";
+import { Link } from "react-router-dom";
 import app from "../firebase";
 
 const Home = () => {
@@ -75,7 +76,23 @@ const Home = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
             deserunt distinctio nam commodi, nobis voluptatem culpa autem.
           </p>
-          <button>Get Started</button>
+          <Link
+            to="/signup"
+            className="btn"
+            style={{
+              font: " 16px Arial",
+              textDecoration: "none",
+              backgroundColor: "#EEEEEE",
+              color: "#333333",
+              padding: "2px 6px 2px 6px",
+              borderTop: "1px solid #CCCCCC",
+              borderRight: "1px solid #333333",
+              borderBottom: "1px solid #333333",
+              borderLeft: "1px solid #CCCCCC",
+            }}
+          >
+            Get Started
+          </Link>
         </div>
         <div>
           <h2>FEATURED FINDS</h2>
