@@ -36,3 +36,98 @@
     transform: rotate(360deg);
   }
 }
+
+/* @media screen and (min-width: 700px) {
+  .refer-child-container {
+   
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+.refer-child-container {
+  font-family: "Dosis", sans-serif;
+}
+
+.refer-child-header {
+  display: flex;
+  justify-content: center;
+}
+
+.refer-child-header-text {
+  text-align: center;
+  font-size: 12pt;
+  width: 48%;
+  margin: 85px 60px;
+}
+
+.kpu-difference-container {
+  padding: 40px 53px;
+  background: rgb(239, 239, 239);
+}
+
+.kpu-difference {
+  text-align: center;
+  font-size: 13pt;
+}
+
+.eligible-container {
+  padding-top: 40px;
+}
+
+.who-is-eligible {
+  text-align: center;
+  font-size: 13pt;
+}
+
+.eligible-children {
+  text-align: center;
+  font-size: 11pt;
+}
+
+.eligible-requirements-list {
+  list-style-type: none;
+  padding-left: 65px;
+  padding-bottom: 20px;
+  font-size: 12pt;
+}
+
+.eligible-image {
+  width: 375px;
+  height: 200px;
+  background-color: rgb(0, 199, 249);
+}
+
+.referrals-from-container {
+  margin: 40px;
+}
+
+.accept-referrals-from {
+  text-align: center;
+  font-size: 13pt;
+}
+
+.referrals-list {
+  padding: 0;
+  margin-left: 60px;
+  list-style-type: none;
+  font-size: 12pt;
+}
+
+.referrals-list-item {
+  background: url("Images/pow-bullet.png") no-repeat left top;
+  background-size: 35px;
+  padding-left: 40px;
+  margin: 10px 0;
+}
+
+.refer-child-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.honor-code-container {
+  padding: 52px;
+  background: rgb(239, 239, 239);
+}
