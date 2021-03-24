@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
 import { Button } from "react-bootstrap";
-import PowBullet from "../Images/pow-bullet.png";
 import SuperHeroKids from "../Images/superhero-kids.png";
 
 const ReferChild = () => {
@@ -9,7 +8,7 @@ const ReferChild = () => {
     <div className="refer-child-container">
       <div className="refer-child-header">
         <p className="refer-child-header-text">
-          Calling on kids ready to bring cheer....select a peer in need to give
+          Calling on kids ready to bring cheer... select a peer in need to give
           a gift to!
         </p>
       </div>
@@ -22,7 +21,7 @@ const ReferChild = () => {
           more incredible to feel the power to grant an item from start to
           finish!
         </p>
-        <p className="kpu-difference-text-two">
+        <p className="kpu-difference-text">
           KPU is a platform to sponsor a gift in completion, teaching kids the
           power of giving along the way.
         </p>
@@ -42,19 +41,21 @@ const ReferChild = () => {
             </li>
           </ul>
         </div>
-        <div className="eligible-image-container">
-          <img className="eligible-image" src={SuperHeroKids} alt="image"></img>
-        </div>
+        <img className="eligible-image" src={SuperHeroKids} alt="image"></img>
       </div>
       <div className="referrals-from-container">
         <p className="accept-referrals-from">
           <b>We Accept Referrals From:</b>
         </p>
         <ul className="referrals-list">
-          <li className="referrals-list-item">Medical Professionals</li>
-          <li className="referrals-list-item">Therapists</li>
-          <li className="referrals-list-item">Social Workers</li>
-          <li className="referrals-list-item">Case Managers</li>
+          <div className="referrals-list-one">
+            <li className="referrals-list-item">Medical Professionals</li>
+            <li className="referrals-list-item">Therapists</li>
+          </div>
+          <div className="referrals-list-two">
+            <li className="referrals-list-item">Social Workers</li>
+            <li className="referrals-list-item">Case Managers</li>
+          </div>
         </ul>
         <div className="refer-child-button-container">
           <Button className="refer-child-button" variant="secondary">
