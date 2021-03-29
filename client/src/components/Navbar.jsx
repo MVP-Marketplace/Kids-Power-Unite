@@ -4,12 +4,12 @@ import { Container, Button, Nav, Navbar } from "react-bootstrap";
 function MyNavbar() {
   return (
     <>
-      <Container fluid>
+      <Container fluid className="bg-light">
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/">KidPower Unites</Navbar.Brand>
+          <Navbar.Brand href="#home">KidPower Unites</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
               <Nav.Link href="/">About</Nav.Link>
               <Nav.Link href="#link">Get Involved</Nav.Link>
               <Nav.Link href="#link">Success Stories</Nav.Link>
