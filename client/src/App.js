@@ -3,7 +3,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import ProfessionalsForm from "./components/ProfessionalsForm";
@@ -11,6 +10,7 @@ import { AuthProvider } from "./Auth.js";
 import PrivateRoute from "./PrivateRoute";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
+import ReferChild from "./components/ReferChild";
 
 //adding in a test.
 
@@ -29,6 +29,7 @@ function App() {
             path="/professionalsform"
             component={ProfessionalsForm}
           />
+          <Route exact path="/referchild" component={ReferChild} />
           <MyFooter />
         </div>
       </Route>
