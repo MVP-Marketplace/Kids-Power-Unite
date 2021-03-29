@@ -37,7 +37,7 @@ const Signup = ({ history }) => {
                   last: last.value,
                 },
                 occupation: occupation.value,
-                emplyer: employer.value,
+                employer: employer.value,
                 address: {
                   street: street.value,
                   suite: suite.value,
