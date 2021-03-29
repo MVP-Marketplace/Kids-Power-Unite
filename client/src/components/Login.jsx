@@ -33,10 +33,6 @@ const Login = ({ history }) => {
     const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
     app.auth().signInWithPopup(facebookAuthProvider);
   };
-    const handleFacebookLogin = () =>{
-        const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-        app.auth().signInWithPopup(facebookAuthProvider);
-    };
 
   const { currentUser } = useContext(AuthContext);
 
