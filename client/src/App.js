@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
+import Home from "./components/Home"
 
 //adding in a test.
 
