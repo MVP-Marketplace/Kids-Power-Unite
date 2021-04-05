@@ -5,9 +5,15 @@ p {
 
 Button {
     font-family: 'Paytone One', sans-serif;
+    border-radius:px;
 }
 
+/* FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 
+/* hero section */
 .home-hero {
     display: flex;
     flex-direction: column;
@@ -15,8 +21,7 @@ Button {
     align-items: center;
     color: white;
     font-family: 'Paytone One', sans-serif;
-    width: 100%;
-    height: 19rem;
+    height: 16rem;
     background-image: url('./Images/home-hero.jpeg');
     max-width: 100%;
     background-repeat: no-repeat;
@@ -31,19 +36,14 @@ Button {
     flex-direction: row;
     align-items: flex-start;
     border: none;
-    margin: 2rem;
+    margin: 1.5rem;
 }
 
 .home-hero h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 2rem;
+    text-align: center;
 }
-
-/* FONT IMPORTS */
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
-
 
 .home-mission {
     display: flex;
@@ -53,19 +53,29 @@ Button {
 }
 
 .home-logo {
-    max-width: 100%;
-    padding: 20px 90px;
+    max-width: 50%;
+    margin-top: 15px;
     transform: matrix(1, 0.08, -0.07, 1, 0, 0);
 }
 
+/* mission section */
 .home-mission h1 {
     font-family: 'Dosis', sans-serif;
     font-weight: 600;
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
 }
 .home-mission p {
-    margin: 30px 60px;
-
+    margin-top: 15px;
+    width: 70%;
+    font-size: .9rem;
+    padding: 0;
 }
 
+.home-mission Button {
+    margin: 10px 0;
+    width: 35%;
+}
+
+/* How does it work section */
