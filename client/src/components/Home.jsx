@@ -1,14 +1,27 @@
 import React, { useContext, useCallback } from "react";
 import { withRouter, Redirect } from "react-router";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap"
 import app from "../firebase";
+import "../Home.css"
+import logo from '../Images/kpu-logo.png'
 
 const Home = () => {
   return (
     <>
       <section className="home-hero">
-        <h1>Where the power to ask meets the power to give</h1>
-        <button>Donate</button>
+        <h1 className="hero-text">Where the power to ask <br/>meets the power to give</h1>
+        <Button className="hero-button">Donate</Button>
+      </section>
+      <section className="home-mission">
+        <img className="home-logo" src={logo} alt="KPU kapow logo"/>
+        <h1>Our Mission</h1>
+        <p>
+          We're a unique platform built to connect kids in need of a gift with
+          kids looking to offer a helping hand. <br /><br/>
+          What's more beautiful than kids helping kids?
+        </p>
+        <Button>Learn More</Button>
       </section>
       <section className="home-howto">
         <h1>How does it work?</h1>
@@ -38,16 +51,7 @@ const Home = () => {
           <br />
           We can't wait for your wish to be granted!
         </p>
-        <button>Learn More</button>
-      </section>
-      <section className="home-mission">
-        <h1>Our Mission</h1>
-        <p>
-          We're a unique platform built to connect kids in need of a gift with
-          kids lookingt o offer a helping hand. <br />
-          What's more beautiful than kids helping kids?
-        </p>
-        <button>Learn More</button>
+        <Button>Learn More</Button>
       </section>
       <section className="home-success">
         <h1>Featured Success Story</h1>
@@ -57,7 +61,7 @@ const Home = () => {
           "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna ali."
         </p>
-        <button>Learn More</button>
+        <Button>Learn More</Button>
       </section>
       <section className="home-banner">
         <h1>GET INVOLVED</h1>
@@ -68,7 +72,7 @@ const Home = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
             deserunt distinctio nam commodi, nobis voluptatem culpa autem.
           </p>
-          <button>Give</button>
+          <Button>Give</Button>
         </div>
         <div style={{ backgroundImage: `#` }}>
           <h3>Refer a Child to get their wish fulfilled</h3>
@@ -98,7 +102,7 @@ const Home = () => {
           <h2>FEATURED FINDS</h2>
           <p>COMING SOON!!!!</p>
           {/* to do: discuss how to display and handle featured finds section */}
-          {/* <button>Find More</button> */}
+          {/* <Button>Find More</Button> */}
         </div>
         <div>
           <h3>Sign Up For Our Newsletter</h3>
@@ -108,7 +112,7 @@ const Home = () => {
               <input type="text" name="email" placeholder="enter email" />
               Email Address
             </label>
-            <button>Sign Up</button>
+            <Button>Sign Up</Button>
           </form> */}
         </div>
       </section>

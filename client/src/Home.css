@@ -1,0 +1,71 @@
+/* UNIVERSAL STYLING */
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+Button {
+    font-family: 'Paytone One', sans-serif;
+}
+
+
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Paytone One', sans-serif;
+    width: 100%;
+    height: 19rem;
+    background-image: url('./Images/home-hero.jpeg');
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.hero-button {
+    background-color: #FCA40E;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: none;
+    margin: 2rem;
+}
+
+.home-hero h1{
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+/* FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+
+.home-mission {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-logo {
+    max-width: 100%;
+    padding: 20px 90px;
+    transform: matrix(1, 0.08, -0.07, 1, 0, 0);
+}
+
+.home-mission h1 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.home-mission p {
+    margin: 30px 60px;
+
+}
+
