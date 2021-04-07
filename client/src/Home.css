@@ -73,9 +73,36 @@ Button {
     padding: 0;
 }
 
-.home-mission Button {
+.learn-more-button {
     margin: 10px 0;
     width: 35%;
+    background-color: orange;
+    border: none;
+    font-size: 1.2rem;
 }
 
 /* How does it work section */
+.howto-expandable {
+    position: relative;
+    background-color: #437CE6;
+    height: 3.8rem;
+}
+.home-howto h1 {
+    color: white;
+    font-family: Dosis, sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+    height: 3.8rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expandable-arrow {
+    position: absolute;
+    right: 85px;
+    top: 1.5rem;
+    width: 1.5rem;
+}

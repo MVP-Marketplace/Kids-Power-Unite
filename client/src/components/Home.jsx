@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap"
 import app from "../firebase";
 import "../Home.css"
 import logo from '../Images/kpu-logo.png'
+import Vector from '../Images/Vector.png'
 
 const Home = () => {
   return (
@@ -21,37 +22,29 @@ const Home = () => {
           kids looking to offer a helping hand. <br /><br/>
           What's more beautiful than kids helping kids?
         </p>
-        <Button>Learn More</Button>
+        <Button className='learn-more-button'>Learn More</Button>
       </section>
       <section className="home-howto">
-        <h1>How does it work?</h1>
-        <p>
-          Children age 18 and under in a disadvantaged situation can apply for a
-          wishlist item with the guidance of a supervising professional, such as
-          a case manager. <br />
-          They ensure that the wishlist gift is need-based and that parental
-          approval was granted. Supervising proffessionals are asked to complete
-          a grant application form on behalf of a child applicant.
-        </p>
-        <p>
-          The application includes a recipient avatar and nicname for privacy, a
-          brief bio and selecting an item on Amazon for their wish. <br />
-          Upon application review, KPU generates a profile and wishlist link for
-          each gift request.
-        </p>
-        <p>
-          The donor searches our wishlist page, learns more about the recipient
-          and why the item is important to them. <br />
-          The donor selects a wish to fulfill and purchases the gift with parent
-          supervision.
-        </p>
-        <p>
-          Gifts are sent via Amazon to the supervising professional's verified
-          address for distribution to ensure privacy.
-          <br />
-          We can't wait for your wish to be granted!
-        </p>
-        <Button>Learn More</Button>
+        <div className='howto-expandable'>
+          <h1>How does it work?</h1>
+          <img className='expandable-arrow' src={Vector} alt='arrow vector'/>
+        </div>
+        <div className='howto-step1'>
+          <p>01</p>
+          <p>Search the wishlist.</p>
+          <p>Find a gift for a kid just like you!</p>
+        </div>
+        <div className='howto-step2'>
+          <p>02</p>
+          <p>Grab your parent.</p>
+          <p>Follow the link to purchase the gift on Amazon</p>
+        </div>
+        <div className='howto-step3'>
+          <p>03</p>
+          <p>Experience the power of giving!</p>
+          <p>Thanks to you, your peer will have the gift they need.</p>
+        </div>
+        <Button>Find a Gift</Button>
       </section>
       <section className="home-success">
         <h1>Featured Success Story</h1>
