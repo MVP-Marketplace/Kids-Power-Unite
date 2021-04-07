@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import ProfessionalsForm from "./components/ProfessionalsForm";
 import { AuthProvider } from "./Auth.js";
 import PrivateRoute from "./PrivateRoute";
+import Home from "./components/Home";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
@@ -21,7 +22,7 @@ function App() {
         <div>
           <MyNavbar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/Dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/Dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route
