@@ -22,31 +22,37 @@ const Home = () => {
           kids looking to offer a helping hand. <br /><br/>
           What's more beautiful than kids helping kids?
         </p>
-        <Button className='learn-more-button'>Learn More</Button>
+        <Button className='green-button'>Learn More</Button>
       </section>
       <section className="home-howto">
         <div className='howto-expandable'>
           <h1>How does it work?</h1>
           <img className='expandable-arrow' src={Vector} alt='arrow vector'/>
         </div>
-        <div className='howto-step1'>
-          <p>01</p>
-          <p>Search the wishlist.</p>
-          <p>Find a gift for a kid just like you!</p>
+        <div className='howto-step'>
+          <p className='stepNo'>01</p>
+          <section className='howto-text'>
+            <p>Search the wishlist.</p>
+            <p>Find a gift for a kid just like you!</p>
+          </section>
         </div>
-        <div className='howto-step2'>
-          <p>02</p>
-          <p>Grab your parent.</p>
-          <p>Follow the link to purchase the gift on Amazon</p>
+        <div className='howto-step'>
+          <p className='stepNo'>02</p>
+          <section className='howto-text'>
+            <p>Grab your parent.</p>
+            <p>Follow the link to purchase the gift on Amazon</p>
+          </section>
         </div>
-        <div className='howto-step3'>
-          <p>03</p>
-          <p>Experience the power of giving!</p>
-          <p>Thanks to you, your peer will have the gift they need.</p>
+        <div className='howto-step'>
+          <p className='stepNo'>03</p>
+          <section className='howto-text'>
+            <p>Experience the power of giving!</p>
+            <p>Thanks to you, your peer will have the gift they need.</p>
+          </section>
         </div>
-        <Button>Find a Gift</Button>
+        <Button className='orange-button'>Find a Gift</Button>
       </section>
-      <section className="home-success">
+      {/* <section className="home-success">
         <h1>Featured Success Story</h1>
         <img src="#" alt="recipient child with their gift" />
         <h2>"successful recipient's name goes here" -- "recipient's city"</h2>
@@ -55,42 +61,32 @@ const Home = () => {
           eiusmod tempor incididunt ut labore et dolore magna ali."
         </p>
         <Button>Learn More</Button>
+      </section> */}
+      <section className="home-donate">
+        <h3>Donate a Gift<br/>Experience the power of giving</h3>
+        <Button>Give</Button>
       </section>
-      <section className="home-banner">
-        <h1>GET INVOLVED</h1>
+      <section className='home-refer'>
+        <h3>Refer a Child to get their wish fulfilled</h3>
+        <Link
+          to="/signup"
+          className="btn"
+           style={{
+            font: " 16px Arial",
+            textDecoration: "none",
+            backgroundColor: "#EEEEEE",
+            color: "#333333",
+            padding: "2px 6px 2px 6px",
+            borderTop: "1px solid #CCCCCC",
+            borderRight: "1px solid #333333",
+            borderBottom: "1px solid #333333",
+            borderLeft: "1px solid #CCCCCC",
+          }}
+        >
+          Get Started
+        </Link>
+      </section>
 
-        <div style={{ backgroundImage: `#` }}>
-          <h3>Donate a Gift Experience the power of giving</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-            deserunt distinctio nam commodi, nobis voluptatem culpa autem.
-          </p>
-          <Button>Give</Button>
-        </div>
-        <div style={{ backgroundImage: `#` }}>
-          <h3>Refer a Child to get their wish fulfilled</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-            deserunt distinctio nam commodi, nobis voluptatem culpa autem.
-          </p>
-          <Link
-            to="/signup"
-            className="btn"
-            style={{
-              font: " 16px Arial",
-              textDecoration: "none",
-              backgroundColor: "#EEEEEE",
-              color: "#333333",
-              padding: "2px 6px 2px 6px",
-              borderTop: "1px solid #CCCCCC",
-              borderRight: "1px solid #333333",
-              borderBottom: "1px solid #333333",
-              borderLeft: "1px solid #CCCCCC",
-            }}
-          >
-            Get Started
-          </Link>
-        </div>
         <div>
           <h2>FEATURED FINDS</h2>
           <p>COMING SOON!!!!</p>
@@ -108,7 +104,7 @@ const Home = () => {
             <Button>Sign Up</Button>
           </form> */}
         </div>
-      </section>
+      
     </>
   );
 };
