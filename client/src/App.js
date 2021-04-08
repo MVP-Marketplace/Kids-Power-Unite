@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
+import Home from "../src/components/Home";
+import referChildForm from "./components/ReferChildForm";
 
 //adding in a test.
 
@@ -30,6 +32,7 @@ function App() {
             component={ProfessionalsForm}
           />
           <Route exact path="/referchild" component={ReferChild} />
+          <Route exact path="/referchildform" component={referChildForm} />
           <MyFooter />
         </div>
       </Route>
