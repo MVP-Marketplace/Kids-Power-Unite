@@ -1,39 +1,84 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Auth";
 import "../App.css";
+import app from "../firebase";
 
 const ReferChildForm = () => {
+  const { currentUser } = useContext(AuthContext);
+  const [sponsorId, setSponsorId] = useState("");
   const [submit, setSubmit] = useState(false);
-  const [value, setValue] = useState({
+  const [values, setValues] = useState({
     nickname: "",
-    link: "",
-    reason: "",
+    amazonLink: "",
+    giftReason: "",
     giftExplanation: "",
     relationship: "",
     age: "",
     gender: "",
-    date: Date,
+    month: "",
+    day: "",
+    year: "",
+    parentalConsent: false,
   });
   const [valid, setValid] = useState(false);
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
+  useEffect(() => {
+    if (currentUser) {
+      setSponsorId(currentUser.uid);
+    }
+  }, [currentUser]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (
-      value.nickname &&
-      value.link &&
-      value.reason &&
-      value.giftExplanation &&
-      value.relationship &&
-      value.age &&
-      value.gender &&
-      value.date
+      values.nickname &&
+      values.amazonLink &&
+      values.giftReason &&
+      values.giftExplanation &&
+      values.relationship &&
+      values.age &&
+      values.gender &&
+      values.month &&
+      values.day &&
+      values.year &&
+      values.parentalConsent
     ) {
       setValid(true);
+
+      try {
+        await app
+          .firestore()
+          .collection("recipient")
+          .doc(`${values.nickname}`)
+          .set({ values, sponsorId });
+      } catch (error) {
+        //set state of the modal to hidden true/false, where we insert modal
+        alert(error);
+      }
     }
     setSubmit(true);
+    setValues({
+      nickname: "",
+      amazonLink: "",
+      giftReason: "",
+      giftExplanation: "",
+      relationship: "",
+      age: "",
+      gender: "",
+      month: "",
+      day: "",
+      year: "",
+      parentalConsent: false,
+    });
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
   };
 
   return (
@@ -52,44 +97,46 @@ const ReferChildForm = () => {
           <input
             type="text"
             name="nickname"
-            value={value.nickname}
+            value={values.nickname}
             onChange={handleChange}
             placeholder="Mighty Mouse"
           ></input>
-          {submit && !value.nickname ? (
+          {submit && !values.nickname ? (
             <span className="error-message">Please enter a nickname</span>
           ) : null}
-          <label className="recipient-field">Link To Amazon Gift</label>
+          <label className="recipient-field">amazonLink To Amazon Gift</label>
           <input
             type="text"
             name="amazonLink"
-            value={value.link}
+            value={values.amazonLink}
             onChange={handleChange}
             placeholder="Ex. Marvel Backpack"
           ></input>
-          {submit && !value.link ? (
-            <span className="error-message">Please enter an Amazon link</span>
+          {submit && !values.amazonLink ? (
+            <span className="error-message">
+              Please enter an Amazon amazonLink
+            </span>
           ) : null}
           <label className="recipient-field">Reason For Gift</label>
           <input
             type="text"
             name="giftReason"
-            value={value.reason}
+            value={values.giftReason}
             onChange={handleChange}
             placeholder="Birthday"
           ></input>
-          {submit && !value.reason ? (
+          {submit && !values.reason ? (
             <span className="error-message">Please enter a reason</span>
           ) : null}
           <label className="recipient-field">Why This Gift Is Important</label>
           <input
             type="text"
             name="giftExplanation"
-            value={value.giftExplanation}
+            value={values.giftExplanation}
             onChange={handleChange}
             placeholder="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore"
           ></input>
-          {submit && !value.giftExplanation ? (
+          {submit && !values.giftExplanation ? (
             <span className="error-message">
               Please enter a gift explanation
             </span>
@@ -100,11 +147,11 @@ const ReferChildForm = () => {
           <input
             type="text"
             name="relationship"
-            value={value.relationship}
+            value={values.relationship}
             onChange={handleChange}
             placeholder="Psychologist"
           ></input>
-          {submit && !value.relationship ? (
+          {submit && !values.relationship ? (
             <span className="error-message">Please enter a relationship</span>
           ) : null}
           <div className="child-age">
@@ -112,11 +159,11 @@ const ReferChildForm = () => {
             <input
               type="text"
               name="age"
-              value={value.age}
+              value={values.age}
               onChange={handleChange}
               placeholder="8"
             ></input>
-            {submit && !value.age ? (
+            {submit && !values.age ? (
               <span className="error-message">Please enter an age</span>
             ) : null}
           </div>
@@ -125,11 +172,11 @@ const ReferChildForm = () => {
             <input
               type="text"
               name="gender"
-              value={value.gender}
+              value={values.gender}
               onChange={handleChange}
               placeholder="Optional"
             ></input>
-            {submit && !value.gender ? (
+            {submit && !values.gender ? (
               <span className="error-message">Please enter a gender</span>
             ) : null}
           </div>
@@ -138,32 +185,32 @@ const ReferChildForm = () => {
             <div className="date-fillers">
               <input
                 type="text"
-                name="date"
-                value={value.date}
+                name="month"
+                value={values.month}
                 onChange={handleChange}
                 placeholder="MO"
               ></input>
-              {submit && !value.date ? (
+              {submit && !values.month ? (
                 <span className="error-message">Please enter a month</span>
               ) : null}
               <input
                 type="text"
-                name="date"
-                value={value.date}
+                name="day"
+                value={values.day}
                 onChange={handleChange}
                 placeholder="DAY"
               ></input>
-              {submit && !value.date ? (
+              {submit && !values.day ? (
                 <span className="error-message">Please enter a day</span>
               ) : null}
               <input
                 type="text"
-                name="date"
-                value={value.date}
+                name="year"
+                value={values.year}
                 onChange={handleChange}
                 placeholder="YEAR"
               ></input>
-              {submit && !value.date ? (
+              {submit && !values.year ? (
                 <span className="error-message">Please enter a year</span>
               ) : null}
             </div>
@@ -172,9 +219,17 @@ const ReferChildForm = () => {
             <label className="recipient-field">
               Does Family Approve Referral
             </label>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="parentalConsent"
+              value={values.parentalConsent}
+              onChange={handleChange}
+            />
             <span>Yes</span>
           </div>
+          {submit && !values.parentalConsent ? (
+            <span className="error-message">Please check yes</span>
+          ) : null}
           <button className="submit-child-form-button" type="submit">
             Submit
           </button>
