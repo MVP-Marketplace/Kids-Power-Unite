@@ -183,18 +183,21 @@ Button {
     align-items: center;
 }
 
-.give-btn {
-    position: absolute;
+.donate-btn {
+    position: relative;
     left: 40px;
-    bottom: -245px;
+    bottom: 70px;
     width: 20%;
     background: #4F5CF0;
     border: none;
+    color: white;
+    font-family: Paytone One, sans-serif;
 }
 
 .home-donate img, .home-refer img {
     width: 100%;
 }
+
 /* REFER A CHILD SECTION - quick link to sign up page */
 .home-refer h3 {
     background: #FCA40E;
@@ -211,10 +214,51 @@ Button {
 }
 
 .refer-btn {
-    position: absolute;
-    right: 40px;
-    bottom: -645px;
+    position: relative;
+    left: 240px;
+    bottom: 70px;
     background: #4F5CF0;
     border: none;
     width: 30%;
+    color: white;
+    font-family: Paytone One, sans-serif;
+}
+
+/* FEATURED FINDS - coming soon */
+.home-featured h2{
+    background: #437CE6;
+    color: white;
+    font-family: Dosis, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-featured p, .home-newsletter p {
+    font-family: Dosis, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.home-featured {
+    margin-bottom: 40px;
+}
+
+/* NEWSLETTER - coming soon */
+.home-newsletter {
+    background: #FFF5E1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-newsletter h3 {
+    font-family: Dosis, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
 }

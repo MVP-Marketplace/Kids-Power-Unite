@@ -76,22 +76,23 @@ const Home = () => {
       </section> */}
       <section className="home-donate">
         <h3>Donate a Gift<br/>Experience the power of giving</h3>
-        <img className='donate-img' src={Donate} alt='two people laughing at a phone screen' />
-        <Link to="/donate"><Button className='give-btn'>Give</Button></Link>
+        <div className='donate-content'>
+          <img className='donate-img' src={Donate} alt='two people laughing at a phone screen' />
+          <Link className='btn donate-btn' to="/donate">Give</Link>
+        </div>
       </section>
       <section className='home-refer'>
         <h3>Refer a Child to get their wish fulfilled</h3>
         <img src={Legos} alt='top view of legos in multiple colors'/>
-        <Link to="/signup"><Button className='refer-btn'>Sponsor</Button></Link>
+        <Link className='btn refer-btn' to="/signup">Sponsor</Link>
       </section>
-
-        <div>
+      <section className='home-featured'>
           <h2>FEATURED FINDS</h2>
           <p>COMING SOON!!!!</p>
           {/* to do: discuss how to display and handle featured finds section */}
           {/* <Button>Find More</Button> */}
-        </div>
-        <div>
+      </section>
+      <section className='home-newsletter'>
           <h3>Sign Up For Our Newsletter</h3>
           <p>COMING SOON!!!!!</p>
           {/* <form action="">
@@ -101,8 +102,7 @@ const Home = () => {
             </label>
             <Button>Sign Up</Button>
           </form> */}
-        </div>
-      
+      </section>
     </>
   );
 };
