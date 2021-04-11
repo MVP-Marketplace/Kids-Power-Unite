@@ -123,6 +123,10 @@ Button {
     border: none;
 }
 
+.collapse {
+    margin-bottom: 40px;
+}
+
 .card-header {
     background-color: #437CE6;
     color: white;
@@ -163,4 +167,20 @@ Button {
     top: 20px;
     right: 75px;
     width: 25px;
+}
+
+/* DONATE A GIFT SECTION - quick link to wishlists page */
+.home-donate h3 {
+    background: #F32E2E;
+    font-family: Paytone One, sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.give-btn {
+    position: relative;
+    left: 40px;
+    bottom: 80px;
 }

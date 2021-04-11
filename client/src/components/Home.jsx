@@ -6,6 +6,7 @@ import app from "../firebase";
 import "../Home.css"
 import logo from '../Images/kpu-logo.png'
 import Vector from '../Images/Vector.png'
+import Donate from '../Images/donatehero.png'
 
 const Home = () => {
 
@@ -56,11 +57,11 @@ const Home = () => {
                     <p>Thanks to you, your peer will have the gift they need.</p>
                   </section>
                 </div>
+                <Button className='orange-button'>Find a Gift</Button>
               </Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>
-        <Button className='orange-button'>Find a Gift</Button>
       </section>
       {/* <section className="home-success">
         <h1>Featured Success Story</h1>
@@ -74,7 +75,8 @@ const Home = () => {
       </section> */}
       <section className="home-donate">
         <h3>Donate a Gift<br/>Experience the power of giving</h3>
-        <Button>Give</Button>
+        <img className='donate-img' src={Donate} alt='two people laughing at a phone screen' />
+        <Link to="/donate"><Button className='give-btn'>Give</Button></Link>
       </section>
       <section className='home-refer'>
         <h3>Refer a Child to get their wish fulfilled</h3>
