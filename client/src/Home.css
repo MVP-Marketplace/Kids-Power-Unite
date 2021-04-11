@@ -8,6 +8,21 @@ Button {
     border-radius:px;
 }
 
+.orange-button {
+    margin: 10px 0;
+    width: 35%;
+    background-color: #EA6F39;
+    border: none;
+    font-size: 1rem;
+}
+
+.green-button {
+    background-color: #4DAC79;
+    border: none;
+    font-size: 1rem;
+    width: 35%;
+}
+
 /* FONT IMPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -32,9 +47,6 @@ Button {
 .hero-button {
     background-color: #FCA40E;
     color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
     border: none;
     margin: 1.5rem;
 }
@@ -72,11 +84,6 @@ Button {
     padding: 0;
 }
 
-.green-button {
-    background-color: #4DAC79;
-    border: none;
-}
-
 /* How does it work section */
 .howto-expandable {
     position: relative;
@@ -98,27 +105,30 @@ Button {
     width: 100%;
 }
 
-.expandable-arrow {
-    position: absolute;
-    right: 85px;
-    top: 1.5rem;
-    width: 1.5rem;
-}
-
-.orange-button {
-    margin: 10px 0;
-    width: 35%;
-    background-color: #EA6F39;
-    border: none;
-    font-size: 1rem;
-}
-
 .home-howto {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
     align-items: center;
+    width: 100%;
+}
+
+.accordion {
+    width: 100%;
+    text-align: center;
+}
+
+.card {
+    border: none;
+}
+
+.card-header {
+    background-color: #437CE6;
+    color: white;
+    font-family: Dosis, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .howto-step {
@@ -148,3 +158,9 @@ Button {
     margin: 0 0 5px 0;
 }
 
+.howto-arrow {
+    position: absolute;
+    top: 20px;
+    right: 75px;
+    width: 25px;
+}

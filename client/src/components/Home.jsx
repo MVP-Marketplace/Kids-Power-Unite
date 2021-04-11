@@ -1,13 +1,15 @@
 import React, { useContext, useCallback } from "react";
 import { withRouter, Redirect } from "react-router";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap"
+import { Button, Accordion, Card } from "react-bootstrap"
 import app from "../firebase";
 import "../Home.css"
 import logo from '../Images/kpu-logo.png'
 import Vector from '../Images/Vector.png'
 
 const Home = () => {
+
+
   return (
     <>
       <section className="home-hero">
@@ -25,31 +27,39 @@ const Home = () => {
         <Button className='green-button'>Learn More</Button>
       </section>
       <section className="home-howto">
-        <div className='howto-expandable'>
-          <h1>How does it work?</h1>
-          <img className='expandable-arrow' src={Vector} alt='arrow vector'/>
-        </div>
-        <div className='howto-step'>
-          <p className='stepNo'>01</p>
-          <section className='howto-text'>
-            <p>Search the wishlist.</p>
-            <p>Find a gift for a kid just like you!</p>
-          </section>
-        </div>
-        <div className='howto-step'>
-          <p className='stepNo'>02</p>
-          <section className='howto-text'>
-            <p>Grab your parent.</p>
-            <p>Follow the link to purchase the gift on Amazon</p>
-          </section>
-        </div>
-        <div className='howto-step'>
-          <p className='stepNo'>03</p>
-          <section className='howto-text'>
-            <p>Experience the power of giving!</p>
-            <p>Thanks to you, your peer will have the gift they need.</p>
-          </section>
-        </div>
+        <Accordion>
+          <Card>
+            <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
+              How does it work?
+              <img className='howto-arrow' src={Vector} alt='expand-arrow' />
+            </Accordion.Toggle>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+                <div className='howto-step'>
+                <p className='stepNo'>01</p>
+                <section className='howto-text'>
+                  <p>Search the wishlist.</p>
+                  <p>Find a gift for a kid just like you!</p>
+                </section>
+                </div>
+                <div className='howto-step'>
+                  <p className='stepNo'>02</p>
+                  <section className='howto-text'>
+                    <p>Grab your parent.</p>
+                    <p>Follow the link to purchase the gift on Amazon</p>
+                  </section>
+                </div>
+                <div className='howto-step'>
+                  <p className='stepNo'>03</p>
+                  <section className='howto-text'>
+                    <p>Experience the power of giving!</p>
+                    <p>Thanks to you, your peer will have the gift they need.</p>
+                  </section>
+                </div>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
         <Button className='orange-button'>Find a Gift</Button>
       </section>
       {/* <section className="home-success">
