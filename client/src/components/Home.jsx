@@ -7,6 +7,7 @@ import "../Home.css"
 import logo from '../Images/kpu-logo.png'
 import Vector from '../Images/Vector.png'
 import Donate from '../Images/donatehero.png'
+import Legos from '../Images/legos.png'
 
 const Home = () => {
 
@@ -80,23 +81,8 @@ const Home = () => {
       </section>
       <section className='home-refer'>
         <h3>Refer a Child to get their wish fulfilled</h3>
-        <Link
-          to="/signup"
-          className="btn"
-           style={{
-            font: " 16px Arial",
-            textDecoration: "none",
-            backgroundColor: "#EEEEEE",
-            color: "#333333",
-            padding: "2px 6px 2px 6px",
-            borderTop: "1px solid #CCCCCC",
-            borderRight: "1px solid #333333",
-            borderBottom: "1px solid #333333",
-            borderLeft: "1px solid #CCCCCC",
-          }}
-        >
-          Get Started
-        </Link>
+        <img src={Legos} alt='top view of legos in multiple colors'/>
+        <Link to="/signup"><Button className='refer-btn'>Sponsor</Button></Link>
       </section>
 
         <div>

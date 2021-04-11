@@ -177,10 +177,44 @@ Button {
     text-align: center;
     padding: 15px 0;
     margin: 0;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .give-btn {
-    position: relative;
+    position: absolute;
     left: 40px;
-    bottom: 80px;
+    bottom: -245px;
+    width: 20%;
+    background: #4F5CF0;
+    border: none;
+}
+
+.home-donate img, .home-refer img {
+    width: 100%;
+}
+/* REFER A CHILD SECTION - quick link to sign up page */
+.home-refer h3 {
+    background: #FCA40E;
+    font-family: Paytone One, sans-serif;
+    font-size: 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.refer-btn {
+    position: absolute;
+    right: 40px;
+    bottom: -645px;
+    background: #4F5CF0;
+    border: none;
+    width: 30%;
 }
