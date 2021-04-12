@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Auth";
 import "../App.css";
 import app from "../firebase";
+import PlusSign from "../Images/plus-sign.png";
 
 const ReferChildForm = () => {
   const { currentUser } = useContext(AuthContext);
@@ -84,17 +85,24 @@ const ReferChildForm = () => {
   return (
     <div className="refer-child-form-container">
       <form onSubmit={handleSubmit}>
-        <h3 className="child-recipient-form">Child Recipient Form</h3>
-        <p className="recipient-info-subheader">Recipient Information</p>
-        <hr></hr>
+        <p className="referral-form">Referral</p>
+        <p className="recipient-info">Recipient Information</p>
+        <hr className="child-form-line-break"></hr>
         <div className="avatar-container">
-          <img></img>
-          <button>+</button>
-          <p>Select Avatar</p>
+          <button className="avatar-container-items">
+            <img></img>
+            <img
+              className="add-avatar-sign"
+              src={PlusSign}
+              alt="add-avatar"
+            ></img>
+          </button>
+          <p className="select-avatar">Select Avatar</p>
         </div>
         <div className="recipient-info">
           <label className="recipient-field">Child's Nickname</label>
           <input
+            className="child-form-fields"
             type="text"
             name="nickname"
             value={values.nickname}
@@ -106,6 +114,7 @@ const ReferChildForm = () => {
           ) : null}
           <label className="recipient-field">amazonLink To Amazon Gift</label>
           <input
+            className="child-form-fields"
             type="text"
             name="amazonLink"
             value={values.amazonLink}
@@ -119,6 +128,7 @@ const ReferChildForm = () => {
           ) : null}
           <label className="recipient-field">Reason For Gift</label>
           <input
+            className="child-form-fields"
             type="text"
             name="giftReason"
             value={values.giftReason}
@@ -130,6 +140,7 @@ const ReferChildForm = () => {
           ) : null}
           <label className="recipient-field">Why This Gift Is Important</label>
           <input
+            className="child-form-fields"
             type="text"
             name="giftExplanation"
             value={values.giftExplanation}
@@ -145,6 +156,7 @@ const ReferChildForm = () => {
             Your Relationship With Child
           </label>
           <input
+            className="child-form-fields"
             type="text"
             name="relationship"
             value={values.relationship}
@@ -157,6 +169,7 @@ const ReferChildForm = () => {
           <div className="child-age">
             <label className="recipient-field">Age Of Child</label>
             <input
+              className="child-form-fields"
               type="text"
               name="age"
               value={values.age}
@@ -170,6 +183,7 @@ const ReferChildForm = () => {
           <div className="child-gender">
             <label className="recipient-field">Gender</label>
             <input
+              className="child-form-fields"
               type="text"
               name="gender"
               value={values.gender}
@@ -184,6 +198,7 @@ const ReferChildForm = () => {
             <label className="recipient-field">Date Gift Desired</label>
             <div className="date-fillers">
               <input
+                className="child-form-fields"
                 type="text"
                 name="month"
                 value={values.month}
@@ -194,6 +209,7 @@ const ReferChildForm = () => {
                 <span className="error-message">Please enter a month</span>
               ) : null}
               <input
+                className="child-form-fields"
                 type="text"
                 name="day"
                 value={values.day}
@@ -204,6 +220,7 @@ const ReferChildForm = () => {
                 <span className="error-message">Please enter a day</span>
               ) : null}
               <input
+                className="child-form-fields"
                 type="text"
                 name="year"
                 value={values.year}
@@ -220,6 +237,7 @@ const ReferChildForm = () => {
               Does Family Approve Referral
             </label>
             <input
+              className="child-form-fields"
               type="checkbox"
               name="parentalConsent"
               value={values.parentalConsent}
