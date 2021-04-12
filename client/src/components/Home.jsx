@@ -10,8 +10,6 @@ import Donate from '../Images/donatehero.png'
 import Legos from '../Images/legos.png'
 
 const Home = () => {
-
-
   return (
     <>
       <section className="home-hero">
@@ -20,12 +18,17 @@ const Home = () => {
       </section>
       <section className="home-mission">
         <img className="home-logo" src={logo} alt="KPU kapow logo"/>
-        <h1>Our Mission</h1>
-        <p>
-          We're a unique platform built to connect kids in need of a gift with
-          kids looking to offer a helping hand. <br /><br/>
-          What's more beautiful than kids helping kids?
-        </p>
+        <div className="mission-text">
+          <p id='bold'>
+            We're creating opportunities for kids<br/>to offer each other a helping hand.
+          </p>
+          <p>
+            Sometimes in life we need to ask for help, and other times we have an abundance so we can give. Learning to do both takes courage.
+          </p>
+          <p>
+            On the Kid Power Unites platform, find opportunities to give to another kid who needs something.
+          </p>
+        </div>
         <Button className='green-button'>Learn More</Button>
       </section>
       <section className="home-howto">
@@ -37,27 +40,29 @@ const Home = () => {
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
-                <div className='howto-step'>
-                <p className='stepNo'>01</p>
-                <section className='howto-text'>
-                  <p>Search the wishlist.</p>
-                  <p>Find a gift for a kid just like you!</p>
+                <section className='how-tos'>
+                 <div className='howto-step'>
+                  <p className='stepNo'>01</p>
+                  <section className='howto-text'>
+                    <p>Search the wishlist.</p>
+                    <p>Find a gift for a kid just like you!</p>
+                  </section>
+                  </div>
+                  <div className='howto-step'>
+                    <p className='stepNo'>02</p>
+                    <section className='howto-text'>
+                      <p>Grab your parent.</p>
+                      <p>Follow the link to purchase the gift on Amazon</p>
+                    </section>
+                  </div>
+                  <div className='howto-step'>
+                    <p className='stepNo'>03</p>
+                    <section className='howto-text'>
+                      <p>Experience the power of giving!</p>
+                      <p>Thanks to you, your peer will have the gift they need.</p>
+                    </section>
+                  </div> 
                 </section>
-                </div>
-                <div className='howto-step'>
-                  <p className='stepNo'>02</p>
-                  <section className='howto-text'>
-                    <p>Grab your parent.</p>
-                    <p>Follow the link to purchase the gift on Amazon</p>
-                  </section>
-                </div>
-                <div className='howto-step'>
-                  <p className='stepNo'>03</p>
-                  <section className='howto-text'>
-                    <p>Experience the power of giving!</p>
-                    <p>Thanks to you, your peer will have the gift they need.</p>
-                  </section>
-                </div>
                 <Button className='orange-button'>Find a Gift</Button>
               </Card.Body>
             </Accordion.Collapse>
@@ -74,18 +79,20 @@ const Home = () => {
         </p>
         <Button>Learn More</Button>
       </section> */}
-      <section className="home-donate">
-        <h3>Donate a Gift<br/>Experience the power of giving</h3>
-        <div className='donate-content'>
-          <img className='donate-img' src={Donate} alt='two people laughing at a phone screen' />
-          <Link className='btn donate-btn' to="/donate">Give</Link>
-        </div>
-      </section>
-      <section className='home-refer'>
-        <h3>Refer a Child to get their wish fulfilled</h3>
-        <img src={Legos} alt='top view of legos in multiple colors'/>
-        <Link className='btn refer-btn' to="/signup">Sponsor</Link>
-      </section>
+      <div className='home-quicklinks'>
+        <section className="home-donate">
+          <h3>Donate a Gift<br/>Experience the power of giving</h3>
+          <div className='donate-content'>
+            <img className='donate-img' src={Donate} alt='two people laughing at a phone screen' />
+            <Link className='btn donate-btn' to="/donate">Give</Link>
+          </div>
+        </section>
+        <section className='home-refer'>
+          <h3>Refer a Child to get their wish fulfilled</h3>
+          <img src={Legos} alt='top view of legos in multiple colors'/>
+          <Link className='btn refer-btn' to="/signup">Sponsor</Link>
+        </section> 
+      </div>
       <section className='home-featured'>
           <h2>FEATURED FINDS</h2>
           <p>COMING SOON!!!!</p>
