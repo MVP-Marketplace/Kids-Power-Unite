@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
-import "./App.css";
+import "./components/style.scss"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
