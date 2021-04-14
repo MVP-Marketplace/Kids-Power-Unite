@@ -1,3 +1,12 @@
+html,
+body {
+  height: 100%;
+}
+
+#dashboard-container {
+  padding-bottom: 70%;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +14,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+#footer-container {
+  position: relative;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,6 +48,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#dashboard-container {
+  overflow: auto;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");

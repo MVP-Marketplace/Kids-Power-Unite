@@ -8,6 +8,7 @@ const ReferChildForm = () => {
   const { currentUser } = useContext(AuthContext);
   const [sponsorId, setSponsorId] = useState("");
   const [submit, setSubmit] = useState(false);
+  const [addModal, setAddModal] = useState(false);
   const [values, setValues] = useState({
     nickname: "",
     amazonLink: "",
@@ -21,7 +22,6 @@ const ReferChildForm = () => {
     year: "",
     parentalConsent: false,
   });
-  const [valid, setValid] = useState(false);
 
   useEffect(() => {
     if (currentUser) {
@@ -45,8 +45,6 @@ const ReferChildForm = () => {
       values.year &&
       values.parentalConsent
     ) {
-      setValid(true);
-
       try {
         await app
           .firestore()
@@ -54,11 +52,11 @@ const ReferChildForm = () => {
           .doc(`${values.nickname}`)
           .set({ values, sponsorId });
       } catch (error) {
-        //set state of the modal to hidden true/false, where we insert modal
         alert(error);
       }
     }
     setSubmit(true);
+    setAddModal(true);
     setValues({
       nickname: "",
       amazonLink: "",
@@ -83,7 +81,7 @@ const ReferChildForm = () => {
   };
 
   return (
-    <div className="refer-child-form-container">
+    <div className="child-form-container">
       <form onSubmit={handleSubmit}>
         <p className="referral-form">Referral</p>
         <p className="recipient-info">Recipient Information</p>
@@ -253,12 +251,38 @@ const ReferChildForm = () => {
           </button>
         </div>
       </form>
-      {submit && valid ? (
-        <div className="form-success">
-          <h1 className="success-heading">CONGRATS!</h1>
-          <p className="success-message">
-            Your child has been added to the database
-          </p>
+      {addModal ? (
+        <div className="modal" tabIndex="-1" role="dialog">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Modal title</h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <p>Modal body text goes here.</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-primary">
+                  Save changes
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       ) : null}
     </div>

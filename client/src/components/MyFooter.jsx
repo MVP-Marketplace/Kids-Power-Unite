@@ -10,7 +10,7 @@ const handleNewsletterSignup = () => {
 function MyFooter() {
   return (
     <>
-      <Container fluid>
+      <Container fluid id="footer-container">
         <Row className="align-items-end bg-warning pt-5 pb-5">
           <Col sm={4} className="newsletter-signup text-right">
             <div>Sign up for our newsletter</div>
