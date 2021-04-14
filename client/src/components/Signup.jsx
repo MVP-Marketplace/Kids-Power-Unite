@@ -21,7 +21,6 @@ const Signup = ({ history }) => {
         zip,
       } = event.target.elements;
       try {
-        
         await app
           .auth()
           .createUserWithEmailAndPassword(email.value, password.value)
@@ -47,7 +46,7 @@ const Signup = ({ history }) => {
                 },
               });
           });
-        history.push("/");
+        history.push("/dashboard");
       } catch (error) {
         alert(error);
       }
@@ -114,4 +113,3 @@ const Signup = ({ history }) => {
 };
 
 export default withRouter(Signup);
-

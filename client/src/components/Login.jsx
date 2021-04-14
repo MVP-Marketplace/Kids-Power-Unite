@@ -1,13 +1,15 @@
 import React, { useContext, useCallback } from "react";
+import app from "../firebase";
 import { Google, Facebook } from "react-bootstrap-icons";
 import { withRouter, Redirect } from "react-router";
-import app from "../firebase";
 import { AuthContext } from "../Auth";
 import firebase from "firebase/app";
 import "firebase/auth";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import Signup from "./Signup";
+import { Form, Button, Container, Row, Col, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const Login = ({ history }) => {
+const Login = ({ history, show, handleClose }) => {
   const handleLogin = useCallback(
     async (event) => {
       event.preventDefault();
@@ -16,7 +18,7 @@ const Login = ({ history }) => {
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
+        history.push("/dashboard");
       } catch (error) {
         alert(error);
       }
@@ -42,57 +44,76 @@ const Login = ({ history }) => {
 
   return (
     <div>
-      <div style={{ height: "100px" }}></div>
-      <Container fluid>
-        <Row className="justify-content-center">
-          <Col sm={4}>
-            <h1>Log in</h1>
-            <Form onSubmit={handleLogin}>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  name="email"
-                  type="email"
-                  placeholder="Enter email"
-                />
-              </Form.Group>
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                />
-              </Form.Group>
-              <Row className="justify-content-center">
-                <Col sm={6}>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Container fluid>
+            <Row className="justify-content-center">
+              <Col sm={4}>
+                <Form onSubmit={handleLogin}>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                      name="email"
+                      type="email"
+                      placeholder="Enter email"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                    />
+                  </Form.Group>
                   <Row className="justify-content-center">
-                    <Button variant="primary" type="submit" className="w-100">
-                      Login
-                    </Button>
+                    <Col sm={6}>
+                      <Row className="justify-content-center">
+                        <Button
+                          variant="primary"
+                          type="submit"
+                          className="w-100"
+                        >
+                          Login
+                        </Button>
+                      </Row>
+                      <br></br>
+                      <Row className="align-items-center">
+                        <Button
+                          onClick={handleFacebookLogin}
+                          className="w-100 align-items-center"
+                        >
+                          <Facebook></Facebook> Continue with Facebook
+                        </Button>
+                      </Row>
+                      <br></br>
+                      <Row className="justify-content-center">
+                        <Button onClick={handleGoogleLogin} className="w-100">
+                          <Google></Google> Sign in with Google
+                        </Button>
+                      </Row>
+                      <br />
+                      <Row>
+                        <Link to="/signup" onClick={handleClose}>
+                          Create Account
+                        </Link>
+                      </Row>
+                    </Col>
                   </Row>
-                  <br></br>
-                  <Row className="align-items-center">
-                    <Button
-                      onClick={handleFacebookLogin}
-                      className="w-100 align-items-center"
-                    >
-                      <Facebook></Facebook> Continue with Facebook
-                    </Button>
-                  </Row>
-                  <br></br>
-                  <Row className="justify-content-center">
-                    <Button onClick={handleGoogleLogin} className="w-100">
-                      <Google></Google> Sign in with Google
-                    </Button>
-                  </Row>
-                </Col>
-              </Row>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-      <div style={{ height: "100px" }}></div>
+                </Form>
+              </Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
