@@ -1,0 +1,362 @@
+/* UNIVERSAL STYLING */
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+Button {
+    font-family: 'Paytone One', sans-serif;
+    border-radius:px;
+}
+
+.orange-button {
+    margin: 10px 0;
+    width: 35%;
+    background-color: #EA6F39;
+    border: none;
+    font-size: 1rem;
+}
+
+.green-button {
+    background-color: #4DAC79;
+    border: none;
+    font-size: 1rem;
+    width: 35%;
+}
+
+/* FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+/* hero section */
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Paytone One', sans-serif;
+    height: 16rem;
+    background-image: url('./Images/home-hero.jpeg');
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.hero-button {
+    background-color: #FCA40E;
+    color: black;
+    border: none;
+    margin: 1.5rem;
+}
+
+.home-hero h1{
+    font-size: 1.5rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+/* mission section */
+.home-mission, .mission-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-logo {
+    max-width: 50%;
+    margin-top: 15px;
+    transform: matrix(1, 0.08, -0.07, 1, 0, 0);
+}
+
+.home-mission p {
+    font-family: 'Dosis', sans-serif;
+    margin-top: 10px;
+    width: 75%;
+    font-size: .9rem;
+    padding: 0;
+}
+
+#bold {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* How does it work section */
+.howto-expandable {
+    position: relative;
+    background-color: #437CE6;
+    height: 4rem;
+    width: 100%;
+}
+.home-howto h1 {
+    color: white;
+    font-family: Dosis, sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+    height: 4rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.home-howto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.accordion {
+    width: 100%;
+    text-align: center;
+}
+
+.card {
+    border: none;
+}
+
+.collapse {
+    margin-bottom: 40px;
+}
+
+.card-header {
+    background-color: #437CE6;
+    color: white;
+    font-family: Dosis, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.howto-step {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-start;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.howto-text {
+    width: 70%;
+    font-size: 1rem;
+}
+
+.stepNo {
+    font-family: Dosis, sans-serif;
+    font-weight: 600;
+    color: #4DAC79;
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+.howto-text p:first-child {
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.howto-arrow {
+    position: absolute;
+    top: 20px;
+    right: 75px;
+    width: 25px;
+}
+
+/* DONATE A GIFT SECTION - quick link to wishlists page */
+.home-donate h3 {
+    background: #F32E2E;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donate-btn {
+    position: relative;
+    left: 40px;
+    bottom: 70px;
+    width: 20%;
+    background: #4F5CF0;
+    border: none;
+    color: white;
+    font-family: "Paytone One", sans-serif;
+}
+
+.home-donate img, .home-refer img {
+    width: 100%;
+}
+
+/* REFER A CHILD SECTION - quick link to sign up page */
+.home-refer h3 {
+    background: #FCA40E;
+    font-family: "Paytone One", sans-serif;
+    font-size: 1.2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.refer-btn {
+    position: relative;
+    left: 240px;
+    bottom: 70px;
+    background: #4F5CF0;
+    border: none;
+    width: 30%;
+    color: white;
+    font-family: "Paytone One", sans-serif;
+}
+
+/* FEATURED FINDS - coming soon */
+.home-featured h2{
+    background: #437CE6;
+    color: white;
+    font-family: Dosis, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-featured p, .home-newsletter p {
+    font-family: Dosis, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.home-featured {
+    margin-bottom: 40px;
+}
+
+/* NEWSLETTER - coming soon */
+.home-newsletter {
+    background: #FFF5E1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-newsletter h3 {
+    font-family: Dosis, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 600px) {
+    /* HERO SECTION */
+    .home-hero {
+        background-position: 0;
+        height: 43rem;
+    }
+
+    .home-hero h1 {
+        font-weight: 400;
+        font-size: 3.5rem;
+    }
+    
+    .hero-button {
+        position: relative;
+        bottom: 60px;
+        width: 10%;
+    }
+
+    /* MISSION SECTION */
+
+    .home-mission {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 50px 60px;
+    }
+
+    .home-logo {
+        width: 40%;
+    }
+
+    .mission-text {
+        width: 60%;
+    }
+
+    #bold {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .mission-text p {
+        font-size: 19px;
+        margin: 5px;
+    }
+
+    .home-mission Button {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    /* HOW TO SECTION */
+
+    .howto-arrow {
+        right: 330px;
+    }
+
+    .how-tos {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .howto-step {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-howto .orange-button {
+        width: 15%;
+        margin-top: 30px;
+    }
+
+    .howto-text p {
+        font-size:.8rem;
+    }
+
+    .howto-text p:first-child {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .home-quicklinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 60px;
+        margin-bottom: 50px;
+    }
+
+    .home-donate, .home-refer {
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.42);
+    }
+
+    
+  }
