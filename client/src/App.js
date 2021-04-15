@@ -12,8 +12,8 @@ import Home from "./components/Home";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
-import Home from "../src/components/Home";
-import referChildForm from "./components/ReferChildForm";
+import DonatePage from "./components/DonatePage";
+
 
 //adding in a test.
 
@@ -33,7 +33,7 @@ function App() {
             component={ProfessionalsForm}
           />
           <Route exact path="/referchild" component={ReferChild} />
-          <Route exact path="/referchildform" component={referChildForm} />
+          <Route exact path="/donate" component={DonatePage}/>
           <MyFooter />
         </div>
       </Route>
