@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from "react";
+import React, { useContext, useCallback, useState } from "react";
 import app from "../firebase";
 import { Google, Facebook } from "react-bootstrap-icons";
 import { withRouter, Redirect } from "react-router";
@@ -7,9 +7,15 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import Signup from "./Signup";
 import { Form, Button, Container, Row, Col, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 const Login = ({ history, show, handleClose }) => {
+  const [showSignup, setShowSignup] = useState(false);
+  
+  const handleCloseSignup = () => setShowSignup(false);
+  const handleShowSignup = () => setShowSignup(true);
+
+  
+
   const handleLogin = useCallback(
     async (event) => {
       event.preventDefault();
@@ -97,9 +103,10 @@ const Login = ({ history, show, handleClose }) => {
                       </Row>
                       <br />
                       <Row>
-                        <Link to="/signup" onClick={handleClose}>
+                        <Button onClick={handleShowSignup}>Create Account</Button>
+                        <Signup showSignup={showSignup} handleCloseSignup={handleCloseSignup}>
                           Create Account
-                        </Link>
+                        </Signup>
                       </Row>
                     </Col>
                   </Row>

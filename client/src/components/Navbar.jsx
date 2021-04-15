@@ -39,7 +39,10 @@ function MyNavbar() {
                   <Button onClick={() => app.auth().signOut()}>Sign out</Button>
                 </>
               )}
-              <Nav.Link className="header-text text-white pr-4" href="#link">
+              <Nav.Link
+                className="header-text text-white pr-4"
+                href="/referchild"
+              >
                 Refer a Child
               </Nav.Link>
               <Button variant="primary">Donate</Button>
