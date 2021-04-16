@@ -1,20 +1,17 @@
-import React, { useContext, useCallback, useState } from "react";
-import app from "../firebase";
-import { Google, Facebook } from "react-bootstrap-icons";
+import React, { useCallback, useContext, useState } from "react";
 import { withRouter, Redirect } from "react-router";
+import { Google, Facebook } from "react-bootstrap-icons";
+import { Form, Button, Container, Row, Col, Modal } from "react-bootstrap";
 import { AuthContext } from "../Auth";
-import firebase from "firebase/app";
+import app from "../firebase";
 import "firebase/auth";
 import Signup from "./Signup";
-import { Form, Button, Container, Row, Col, Modal } from "react-bootstrap";
 
-const Login = ({ history, show, handleClose }) => {
+const Login = ({ history, showLogin, handleClose }) => {
   const [showSignup, setShowSignup] = useState(false);
-  
+
   const handleCloseSignup = () => setShowSignup(false);
   const handleShowSignup = () => setShowSignup(true);
-
-  
 
   const handleLogin = useCallback(
     async (event) => {
@@ -33,31 +30,33 @@ const Login = ({ history, show, handleClose }) => {
   );
 
   const handleGoogleLogin = () => {
-    const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+    const googleAuthProvider = new app.auth.GoogleAuthProvider();
     app.auth().signInWithPopup(googleAuthProvider);
+    history.push("/dashboard");
   };
 
   const handleFacebookLogin = () => {
-    const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+    const facebookAuthProvider = new app.auth.FacebookAuthProvider();
     app.auth().signInWithPopup(facebookAuthProvider);
+    history.push("/dashboard");
   };
 
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/Dashboard" />;
+    return <Redirect to="/dashboard" />;
   }
 
   return (
     <div>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showLogin} onHide={handleClose} backdrop="static">
         <Modal.Header>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Container fluid>
             <Row className="justify-content-center">
-              <Col sm={4}>
+              <Col sm={6}>
                 <Form onSubmit={handleLogin}>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -76,7 +75,7 @@ const Login = ({ history, show, handleClose }) => {
                     />
                   </Form.Group>
                   <Row className="justify-content-center">
-                    <Col sm={6}>
+                    <Col>
                       <Row className="justify-content-center">
                         <Button
                           variant="primary"
@@ -102,11 +101,14 @@ const Login = ({ history, show, handleClose }) => {
                         </Button>
                       </Row>
                       <br />
-                      <Row>
-                        <Button onClick={handleShowSignup}>Create Account</Button>
-                        <Signup showSignup={showSignup} handleCloseSignup={handleCloseSignup}>
+                      <Row className="align-items-center">
+                        <Button onClick={handleShowSignup}>
                           Create Account
-                        </Signup>
+                        </Button>
+                        <Signup
+                          showSignup={showSignup}
+                          handleCloseSignup={handleCloseSignup}
+                        ></Signup>
                       </Row>
                     </Col>
                   </Row>

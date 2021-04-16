@@ -7,11 +7,11 @@ import app from "../firebase";
 import SimpleLogo from "../Images/simplelogo.png";
 
 function MyNavbar() {
-  const [show, setShow] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShowLogin(false);
+  const handleShow = () => setShowLogin(true);
 
   return (
     <>
@@ -29,22 +29,18 @@ function MyNavbar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
+              <Button href="/about">About</Button>
               {!currentUser ? (
                 <>
                   <Button onClick={handleShow}>Login</Button>
-                  <Login show={show} handleClose={handleClose} />
+                  <Login showLogin={showLogin} handleClose={handleClose} />
                 </>
               ) : (
                 <>
-                  <Button onClick={() => app.auth().signOut()}>Sign out</Button>
+                  <Button onClick={() => app.auth().signOut()}>Logout</Button>
                 </>
               )}
-              <Nav.Link
-                className="header-text text-white pr-4"
-                href="/referchild"
-              >
-                Refer a Child
-              </Nav.Link>
+              <Button href="/referchild">Refer a Child</Button>
               <Button variant="primary">Donate</Button>
             </Nav>
           </Navbar.Collapse>

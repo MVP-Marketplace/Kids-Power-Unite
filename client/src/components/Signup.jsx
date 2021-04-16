@@ -1,63 +1,59 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { withRouter } from "react-router";
-import app from "../firebase";
 import { Button, Modal } from "react-bootstrap";
+import app from "../firebase";
 
-const Signup = ({ history, showSignup, handleCloseSignup }) => {
-  const handleSignUp = useCallback(
-    async (event) => {
-      event.preventDefault();
-      const {
-        email,
-        password,
-        credentials,
-        first,
-        last,
-        occupation,
-        employer,
-        street,
-        suite,
-        city,
-        state,
-        zip,
-      } = event.target.elements;
-      try {
-        await app
-          .auth()
-          .createUserWithEmailAndPassword(email.value, password.value)
-          .then(() => {
-            app
-              .firestore()
-              .collection("professional")
-              .doc(app.auth().currentUser.uid)
-              .set({
-                name: {
-                  credentials: credentials.value,
-                  first: first.value,
-                  last: last.value,
-                },
-                occupation: occupation.value,
-                employer: employer.value,
-                address: {
-                  street: street.value,
-                  suite: suite.value,
-                  city: city.value,
-                  state: state.value,
-                  zip: zip.value,
-                },
-              });
-          });
-        handleCloseSignup();
-      } catch (error) {
-        alert(error);
-      }
-    },
-    [history]
-  );
+const Signup = ({ showSignup, handleCloseSignup }) => {
+  const handleSignUp = useCallback(async (event) => {
+    event.preventDefault();
+    const {
+      email,
+      password,
+      credentials,
+      first,
+      last,
+      occupation,
+      employer,
+      street,
+      suite,
+      city,
+      state,
+      zip,
+    } = event.target.elements;
+    try {
+      await app
+        .auth()
+        .createUserWithEmailAndPassword(email.value, password.value)
+        .then(() => {
+          app
+            .firestore()
+            .collection("professional")
+            .doc(app.auth().currentUser.uid)
+            .set({
+              name: {
+                credentials: credentials.value,
+                first: first.value,
+                last: last.value,
+              },
+              occupation: occupation.value,
+              employer: employer.value,
+              address: {
+                street: street.value,
+                suite: suite.value,
+                city: city.value,
+                state: state.value,
+                zip: zip.value,
+              },
+            });
+        });
+    } catch (error) {
+      alert(error);
+    }
+  }, []);
 
   return (
     <div>
-      <Modal show={showSignup} onHide={handleCloseSignup}>
+      <Modal show={showSignup} onHide={handleCloseSignup} backdrop="static">
         <Modal.Header>
           <Modal.Title>Create Account</Modal.Title>
         </Modal.Header>
