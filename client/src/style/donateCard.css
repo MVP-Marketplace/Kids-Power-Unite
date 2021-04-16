@@ -5,7 +5,7 @@
 }
 
 .paytoneone-normal-white-24px {
-  color: var(--white);
+  color: var(--black);
   font-family: var(--font-family-paytone_one);
   font-size: var(--font-size-xl);
   font-style: normal;
@@ -46,6 +46,8 @@
   overflow: hidden;
   position: relative;
   width: 369px;
+  border-radius: 20px;
+  margin:2.5%
 }
 
 .overlap-group1 {
@@ -243,57 +245,55 @@
   font-weight: 400;
 }
 
-.button-blue {
+.button-yellow {
   align-items: center;
-  background-color: var(--royal-blue);
   display: flex;
   height: 64px;
   justify-content: flex-end;
   min-width: 369px;
   padding: 0 56px;
+  background: #FCA40E;
+  border-radius: 0px 0px 20px 20px;
 }
 
-.line-41 {
+.line-49{
   height: 1px;
   left: 1px;
   position: absolute;
   top: 330px;
   width: 370px;
 }
-.line-42 {
+
+.line-50 {
   height: 1px;
   left: 1px;
   position: absolute;
   top: 464px;
   width: 369px;
 }
-.line-43 {
+
+.line-52 {
   height: 1px;
   left: 1px;
   position: absolute;
   top: 632px;
   width: 369px;
 }
-.line-45 {
+
+.line-53 {
   height: 242px;
   left: 185px;
   position: absolute;
   top: 464px;
   width: 1px;
 }
-.line-46 {
+
+.line-51 {
   height: 1px;
   left: 1px;
   position: absolute;
   top: 526px;
   width: 184px;
-}
-.line-47 {
-  height: 1px;
-  left: 0px;
-  position: absolute;
-  top: 88px;
-  width: 370px;
 }
 
 :root {

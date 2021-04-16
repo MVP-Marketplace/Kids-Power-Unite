@@ -1,12 +1,12 @@
 import React from "react";
 import "../style/donateCard.css";
 
-const BlueButton = () =>{
+const YellowButton = () =>{
   return(
-    <div className="button-blue">
-      <div className="paytoneone-normal-white-24px">Purchase on Amazon</div>
+    <div className="button-yellow">
+      <div className=" text-i16912736483 paytoneone-normal-white-24px">Purchase on Amazon</div>
     </div>
   );
 };
 
-export default BlueButton
+export default YellowButton

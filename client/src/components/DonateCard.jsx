@@ -1,30 +1,32 @@
 import React from "react";
 import "../style/donateCard.css";
 import BlueButton from "./BlueButton";
-import line41 from "../Images/Line41.png";
-import line42 from "../Images/Line42.png";
-import line43 from "../Images/Line43.png";
-import line45 from "../Images/Line45.png";
-import line46 from "../Images/Line46.png";
+import line49 from "../Images/Line49.png";
+import line50 from "../Images/Line50.png";
+import line52 from "../Images/Line52.png";
+import line53 from "../Images/Line53.png";
+import line51 from "../Images/Line51.png";
 
 
-const DonateCard = () =>{
+
+const DonateCard = (props) =>{
+  console.log(props)
   return (
-    <div className="wishlist-item-story-desktop">
+    <div className="box wishlist-item-story-desktop">
       <div className="overlap-group1">
       <div className="rectangle-1763"></div>
         <div className="rectangle-67"></div>
 
         <img className="ellipse-1" alt=" Child avatar"/>
 
-        <h1 className="text-1 dosis-semi-bold-royal-blue-32px">Child Name</h1>        
+        <h1 className="text-1 dosis-semi-bold-royal-blue-32px">{props.nickname}</h1>        
         <p className="text-2 opensans-normal-black-16px">This will contain a quick description of the childs story</p>
 
-        <p className="text-3 opensans-normal-black-16px">This will contain a quick story about why the item is important/needed</p>
+        <p className="text-3 opensans-normal-black-16px">{props.giftReason}</p>
         <div className="price valign-text-middle1 opensans-normal-black-18px">$12.99</div>
         <div className="text-4 valign-text-middle opensans-semi-bold-black-14px">Item Name</div>
 
-        <div className="date valign-text-middle opensans-normal-black-18px">11/11/11</div> 
+        <div className="date valign-text-middle opensans-normal-black-18px">{`${props.month}/${props.day}/${props.year}`}</div> 
         <div className="text-6 valign-text-middle opensans-normal-fuscous-gray-14px">Date</div>
 
     
@@ -35,11 +37,12 @@ const DonateCard = () =>{
         <div className="text-9 valign-text-middle opensans-normal-fuscous-gray-14px">Ocassion</div>
         <div className="text-10 valign-text-middle opensans-normal-fuscous-gray-14px">Price</div>
 
-        <img className="line-41" src={line41} />
-        <img className="line-42" src={line42}/>
-        <img className="line-43" src={line43}/>
-        <img className="line-46" src={line46}/>
-        <img className="line-45" src={line45}/>
+        <img className="line-49" src={line49} alt="line" />
+        <img className="line-50" src={line50} alt="line" />
+        <img className="line-52" src={line52} alt="line" />
+        <img className="line-53" src={line53} alt="line" />
+        <img className="line-51" src={line51} alt="line" />
+        
         
       </div>
       <BlueButton/>
