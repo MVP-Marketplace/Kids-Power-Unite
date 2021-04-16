@@ -1,6 +1,6 @@
 import React from "react";
 import "../style/donateCard.css";
-import BlueButton from "./BlueButton";
+import YellowButton from "./YellowButton";
 import line49 from "../Images/Line49.png";
 import line50 from "../Images/Line50.png";
 import line52 from "../Images/Line52.png";
@@ -45,7 +45,7 @@ const DonateCard = (props) =>{
         
         
       </div>
-      <BlueButton/>
+      <YellowButton/>
     </div>
   );
 };
