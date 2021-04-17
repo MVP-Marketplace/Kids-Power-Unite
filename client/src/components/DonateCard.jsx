@@ -10,7 +10,6 @@ import line51 from "../Images/Line51.png";
 
 
 const DonateCard = (props) =>{
-  console.log(props)
   return (
     <div className="box wishlist-item-story-desktop">
       <div className="modal-overlap-group">
@@ -45,7 +44,7 @@ const DonateCard = (props) =>{
         
         
       </div>
-      <YellowButton/>
+      <YellowButton open={props.open}/>
     </div>
   );
 };

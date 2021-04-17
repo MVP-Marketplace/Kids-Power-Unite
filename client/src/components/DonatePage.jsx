@@ -8,14 +8,16 @@ import app from "../firebase"
 
 
 const DonatePage = () => {
+  let modalData
   const [children, setChildren] = useState();
   const [modalInfo, setModalInfo] = useState({
     isOpen:false,
-    modalId: -1
+    data: {}
   })
 
-  const openModal = () =>{
-    setModalInfo({isOpen:true})
+  const openModal = (id) =>{
+    modalData = children[id]
+    setModalInfo({isOpen:true,data:modalData})
   }
   const closeModal = () => {
     setModalInfo({isOpen:false})
@@ -38,16 +40,15 @@ const DonatePage = () => {
 
   return (
     <div>
-
       <div className="group-67">
         <div className="overlap-group"></div>
       </div>
       <div style={{display: 'flex', flexDirection: 'row', flexWrap: "wrap", margin:"-2.5%"}}>
       {children ? children.map((child,i)=>{
-        return <DonateCard key={i} {...child}/>
+        return <DonateCard open={()=>{openModal(i)}} key={i}  {...child}/>
       }): null}
       </div>
-      {modalInfo.isOpen ? <PurchaseModal/> :null}
+      {modalInfo.isOpen ? <PurchaseModal close={closeModal} {...modalInfo.data}/> :null}
     </div>
   );
 };

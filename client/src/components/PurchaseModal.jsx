@@ -1,9 +1,11 @@
 import React from "react";
+import vector from "../Images/vector1.png"
 import "../style/purchaseModal.css"
 
 
 
 const PurchaseModal = (props) =>{
+  console.log(props)
   return (
     <div className="purchase-modal">
       <div className="modal-overlap-group">
@@ -14,11 +16,11 @@ const PurchaseModal = (props) =>{
             <div className="group-79">
               <div className="overlap-group2">
                 <div className="rectangle-1764 border-1px-royal-blue"></div>
-                <div className="modal-price valign-text-middle2 opensans-regular-normal-black-18px">price</div>
+                <div className="modal-price valign-text-middle2 opensans-regular-normal-black-18px">12.99</div>
                 {/* <img className="line-46" src={line46} />
                 <img className="line-43" src={line43} /> */}
-                <div className="marvel-backpack valign-text-middle2 opensans-semi-bold-black-14px">item name</div>
-                <div className="modal-date valign-text-middle2 opensans-regular-normal-black-18px">date</div>
+                <div className="marvel-backpack valign-text-middle2 opensans-semi-bold-black-14px">Marvel Backpack</div>
+                <div className="modal-date valign-text-middle2 opensans-regular-normal-black-18px">{`${props.month}/${props.day}/${props.year}`}</div>
                 <div className="birthday valign-text-middle2 opensans-semi-bold-black-10px">ocassion type</div>
                 <div className="date-added valign-text-middle2 opensans-regular-normal-fuscous-gray-14px">
                   dateAdded
@@ -45,11 +47,13 @@ const PurchaseModal = (props) =>{
               {/* <div className="overlap-group3" style={{ backgroundImage: `url(${overlapGroup3})` }}>
                 <img className="mask-group" src={maskGroup} />
               </div> */}
-              <div className="steven-age-7 dosis-semi-bold-royal-blue-26-1px">steven, Age7 </div>
+              <div className="steven-age-7 dosis-semi-bold-royal-blue-26-1px">{props.nickname}</div>
             </div>
           </div>
         </div>
-        {/* <ClaritycaretLine src={claritycaretLineProps.src} /> */}
+        <div className="claritycaret-line">
+          <img onClick={props.close} alt="close button" className="vector-1" src={vector} />
+        </div>
       </div>
       <p className="modal-text-2 opensans-regular-normal-white-16px">
         <span className="span">Click on </span>
