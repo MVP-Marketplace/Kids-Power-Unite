@@ -13,7 +13,7 @@ const DonateCard = (props) =>{
   console.log(props)
   return (
     <div className="box wishlist-item-story-desktop">
-      <div className="overlap-group1">
+      <div className="modal-overlap-group">
       <div className="rectangle-1763"></div>
         <div className="rectangle-67"></div>
 
