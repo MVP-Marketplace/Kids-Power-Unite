@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Container, Modal } from "react-bootstrap";
 import app from "../firebase";
 
 const Signup = ({ showSignup, handleCloseSignup }) => {
@@ -45,6 +45,9 @@ const Signup = ({ showSignup, handleCloseSignup }) => {
                 zip: zip.value,
               },
             });
+        })
+        .then(() => {
+          handleCloseSignup();
         });
     } catch (error) {
       alert(error);
@@ -58,57 +61,59 @@ const Signup = ({ showSignup, handleCloseSignup }) => {
           <Modal.Title>Create Account</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={handleSignUp}>
-            <label>
-              Email
-              <input name="email" type="email" placeholder="Email" />
-            </label>
-            <label>
-              Password
-              <input name="password" type="password" placeholder="Password" />
-            </label>
-            <label>
-              Credentials
-              <input name="credentials" type="text" placeholder="MD" />
-            </label>
-            <label>
-              First Name
-              <input name="first" type="text" placeholder="John" />
-            </label>
-            <label>
-              Last Name
-              <input name="last" type="text" placeholder="Smith" />
-            </label>
-            <label>
-              Occupation
-              <input name="occupation" type="text" placeholder="Occupation" />
-            </label>
-            <label>
-              Employer
-              <input name="employer" type="text" placeholder="Employer" />
-            </label>
-            <label>
-              Street address
-              <input name="street" type="text" placeholder="Street address" />
-            </label>
-            <label>
-              Suite #
-              <input name="suite" type="text" placeholder="Suite #" />
-            </label>
-            <label>
-              City
-              <input name="city" type="text" placeholder="City" />
-            </label>
-            <label>
-              State
-              <input name="state" type="text" placeholder="State" />
-            </label>
-            <label>
-              ZIP code
-              <input name="zip" type="text" placeholder="ZIP code" />
-            </label>
-            <button type="submit">Sign Up</button>
-          </form>
+          <Container fluid>
+            <form onSubmit={handleSignUp}>
+              <label>
+                Email
+                <input name="email" type="email" placeholder="Email" />
+              </label>
+              <label>
+                Password
+                <input name="password" type="password" placeholder="Password" />
+              </label>
+              <label>
+                Credentials
+                <input name="credentials" type="text" placeholder="MD" />
+              </label>
+              <label>
+                First Name
+                <input name="first" type="text" placeholder="John" />
+              </label>
+              <label>
+                Last Name
+                <input name="last" type="text" placeholder="Smith" />
+              </label>
+              <label>
+                Occupation
+                <input name="occupation" type="text" placeholder="Occupation" />
+              </label>
+              <label>
+                Employer
+                <input name="employer" type="text" placeholder="Employer" />
+              </label>
+              <label>
+                Street address
+                <input name="street" type="text" placeholder="Street address" />
+              </label>
+              <label>
+                Suite #
+                <input name="suite" type="text" placeholder="Suite #" />
+              </label>
+              <label>
+                City
+                <input name="city" type="text" placeholder="City" />
+              </label>
+              <label>
+                State
+                <input name="state" type="text" placeholder="State" />
+              </label>
+              <label>
+                ZIP code
+                <input name="zip" type="text" placeholder="ZIP code" />
+              </label>
+              <button type="submit">Sign Up</button>
+            </form>
+          </Container>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseSignup}>

@@ -1,17 +1,24 @@
 import React, { useContext, useState } from "react";
 import { Container, Button, Nav, Navbar } from "react-bootstrap";
 import Login from "./Login";
+import Signup from "./Signup";
 import { AuthContext } from "../Auth";
 import app from "../firebase";
 
 import SimpleLogo from "../Images/simplelogo.png";
 
 function MyNavbar() {
+  // usestates
   const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+  // context referencees
   const { currentUser } = useContext(AuthContext);
-
-  const handleClose = () => setShowLogin(false);
-  const handleShow = () => setShowLogin(true);
+  // Signup modal show and close functions 
+  const handleCloseSignup = () => setShowSignup(false);
+  const handleShowSignup = () => setShowSignup(true);
+  // Login modal show and close functions
+  const handleCloseLogin = () => setShowLogin(false);
+  const handleShowLogin = () => setShowLogin(true);
 
   return (
     <>
@@ -32,14 +39,24 @@ function MyNavbar() {
               <Button href="/about">About</Button>
               {!currentUser ? (
                 <>
-                  <Button onClick={handleShow}>Login</Button>
-                  <Login showLogin={showLogin} handleClose={handleClose} />
+                  <Button onClick={handleShowLogin}>Login</Button>
+                  <Login
+                    showLogin={showLogin}
+                    handleShowSignup={handleShowSignup}
+                    handleCloseLogin={handleCloseLogin}
+                  />
                 </>
               ) : (
                 <>
                   <Button onClick={() => app.auth().signOut()}>Logout</Button>
                 </>
               )}
+              {showSignup ? (
+                <Signup
+                  showSignup={showSignup}
+                  handleCloseSignup={handleCloseSignup}
+                />
+              ) : null}
               <Button href="/referchild">Refer a Child</Button>
               <Button variant="primary">Donate</Button>
             </Nav>

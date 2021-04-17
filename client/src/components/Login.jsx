@@ -1,18 +1,12 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import { Google, Facebook } from "react-bootstrap-icons";
 import { Form, Button, Container, Row, Col, Modal } from "react-bootstrap";
 import { AuthContext } from "../Auth";
 import app from "../firebase";
 import "firebase/auth";
-import Signup from "./Signup";
 
-const Login = ({ history, showLogin, handleClose }) => {
-  const [showSignup, setShowSignup] = useState(false);
-
-  const handleCloseSignup = () => setShowSignup(false);
-  const handleShowSignup = () => setShowSignup(true);
-
+const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
   const handleLogin = useCallback(
     async (event) => {
       event.preventDefault();
@@ -49,7 +43,7 @@ const Login = ({ history, showLogin, handleClose }) => {
 
   return (
     <div>
-      <Modal show={showLogin} onHide={handleClose} backdrop="static">
+      <Modal show={showLogin} onHide={handleCloseLogin} backdrop="static">
         <Modal.Header>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
@@ -102,13 +96,14 @@ const Login = ({ history, showLogin, handleClose }) => {
                       </Row>
                       <br />
                       <Row className="align-items-center">
-                        <Button onClick={handleShowSignup}>
+                        <Button
+                          onClick={() => {
+                            handleShowSignup();
+                            handleCloseLogin();
+                          }}
+                        >
                           Create Account
                         </Button>
-                        <Signup
-                          showSignup={showSignup}
-                          handleCloseSignup={handleCloseSignup}
-                        ></Signup>
                       </Row>
                     </Col>
                   </Row>
@@ -118,7 +113,7 @@ const Login = ({ history, showLogin, handleClose }) => {
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleCloseLogin}>
             Close
           </Button>
         </Modal.Footer>
