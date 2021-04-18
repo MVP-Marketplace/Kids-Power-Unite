@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import { Google, Facebook } from "react-bootstrap-icons";
-import { Form, Button, Container, Row, Col, Modal } from "react-bootstrap";
+import { Form, Button, Container, Col, Modal } from "react-bootstrap";
 import { AuthContext } from "../Auth";
 import app from "../firebase";
 import "firebase/auth";
@@ -49,9 +49,9 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
         </Modal.Header>
         <Modal.Body>
           <Container fluid>
-            <Row className="justify-content-center">
-              <Col sm={6}>
-                <Form onSubmit={handleLogin}>
+            <Form onSubmit={handleLogin}>
+              <Form.Row className="justify-content-center">
+                <Col sm={6}>
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
@@ -68,9 +68,9 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
                       placeholder="Password"
                     />
                   </Form.Group>
-                  <Row className="justify-content-center">
+                  <Form.Row className="justify-content-center">
                     <Col>
-                      <Row className="justify-content-center">
+                      <Form.Row className="justify-content-center">
                         <Button
                           variant="primary"
                           type="submit"
@@ -78,24 +78,24 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
                         >
                           Login
                         </Button>
-                      </Row>
+                      </Form.Row>
                       <br></br>
-                      <Row className="align-items-center">
+                      <Form.Row className="align-items-center">
                         <Button
                           onClick={handleFacebookLogin}
                           className="w-100 align-items-center"
                         >
                           <Facebook></Facebook> Continue with Facebook
                         </Button>
-                      </Row>
+                      </Form.Row>
                       <br></br>
-                      <Row className="justify-content-center">
+                      <Form.Row className="justify-content-center">
                         <Button onClick={handleGoogleLogin} className="w-100">
                           <Google></Google> Sign in with Google
                         </Button>
-                      </Row>
+                      </Form.Row>
                       <br />
-                      <Row className="align-items-center">
+                      <Form.Row className="align-items-center">
                         <Button
                           onClick={() => {
                             handleShowSignup();
@@ -104,12 +104,12 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
                         >
                           Create Account
                         </Button>
-                      </Row>
+                      </Form.Row>
                     </Col>
-                  </Row>
-                </Form>
-              </Col>
-            </Row>
+                  </Form.Row>
+                </Col>
+              </Form.Row>
+            </Form>
           </Container>
         </Modal.Body>
         <Modal.Footer>
