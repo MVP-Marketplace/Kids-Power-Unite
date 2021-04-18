@@ -1,11 +1,16 @@
 import React from "react";
 import vector from "../Images/vector1.png"
+import OrangePurchaseButton from "../components/OrangePurchaseButton"
+
+import purchaseLine43 from "../Images/purchaseLine43.png"
+import purchaseLine46 from "../Images/purchaseLine46.png"
+import purchaseLine47 from "../Images/purchaseLine47.png"
+import purchaseLine45 from "../Images/purchaseLine45.png"
 import "../style/purchaseModal.css"
 
 
 
 const PurchaseModal = (props) =>{
-  console.log(props)
   return (
     <div className="purchase-modal">
       <div className="modal-overlap-group">
@@ -17,8 +22,8 @@ const PurchaseModal = (props) =>{
               <div className="overlap-group2">
                 <div className="rectangle-1764 border-1px-royal-blue"></div>
                 <div className="modal-price valign-text-middle2 opensans-regular-normal-black-18px">12.99</div>
-                {/* <img className="line-46" src={line46} />
-                <img className="line-43" src={line43} /> */}
+                <img className="purchaseLine-46" src={purchaseLine46} />
+                <img className="purchaseLine-43" src={purchaseLine43} />
                 <div className="marvel-backpack valign-text-middle2 opensans-semi-bold-black-14px">Marvel Backpack</div>
                 <div className="modal-date valign-text-middle2 opensans-regular-normal-black-18px">{`${props.month}/${props.day}/${props.year}`}</div>
                 <div className="birthday valign-text-middle2 opensans-semi-bold-black-10px">ocassion type</div>
@@ -38,9 +43,9 @@ const PurchaseModal = (props) =>{
                 </div>
                 <div className="occasion valign-text-middle opensans-regular-normal-fuscous-gray-14px">occasion</div>
                 <div className="cost valign-text-middle opensans-regular-normal-fuscous-gray-14px">cost</div>
-                {/* <img className="line-45" src={line45} />
-                <img className="modal-line-47" src={line47} />
-                <img className="modal-image-5" src={image5} /> */}
+                <img className="line-45" src={purchaseLine45} />
+                <img className="modal-line-47" src={purchaseLine47} />
+                {/* <img className="modal-image-5" src={image5} /> */}
               </div>
             </div>
             <div className="group-80">
@@ -62,7 +67,7 @@ const PurchaseModal = (props) =>{
         <span className="span3">I’ve Purchased This Item</span>
         <span className="span"> so we can keep track of everything.</span>
       </p>
-      {/* <ButtonOrangeDesktop2>{buttonOrangeDesktop2Props.children}</ButtonOrangeDesktop2> */}
+      <OrangePurchaseButton link={props.amazonLink}/>
     </div>
   );
 }

@@ -96,7 +96,7 @@
   top: 0px;
   width: 186px;
 }
-.line-43 {
+.purchaseLine-43 {
   height: 1px;
   left: 188px;
   position: absolute;
@@ -110,7 +110,7 @@
   top: 0px;
   width: 1px;
 }
-.line-46 {
+.purchaseLine-46 {
   height: 1px;
   left: 188px;
   position: absolute;
@@ -279,7 +279,7 @@
   display: flex;
   height: 51px;
   justify-content: flex-end;
-  margin-top: 44px;
+  margin-top: 20px;
   min-width: 147px;
   padding: 0 27.4px;
 }
