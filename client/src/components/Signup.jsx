@@ -56,7 +56,7 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
   }, []);
 
   return (
-    <div>
+    <>
       <Modal show={showSignup} onHide={handleCloseSignup} backdrop="static">
         <Modal.Header>
           <Modal.Title>Create Account</Modal.Title>
@@ -137,7 +137,7 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </>
   );
 };
 

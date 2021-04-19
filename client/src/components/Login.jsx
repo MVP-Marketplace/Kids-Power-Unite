@@ -42,7 +42,7 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
   }
 
   return (
-    <div>
+    <>
       <Modal show={showLogin} onHide={handleCloseLogin} backdrop="static">
         <Modal.Header>
           <Modal.Title>Login</Modal.Title>
@@ -118,7 +118,7 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </>
   );
 };
 
