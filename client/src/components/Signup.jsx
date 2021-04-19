@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { withRouter } from "react-router";
 import { Button, Col, Container, Form, Modal } from "react-bootstrap";
 import app from "../firebase";
+import MultiStepForm from "./MultiStepForm";
 
 const Signup = ({ showSignup, handleCloseSignup, history }) => {
   const handleSignUp = useCallback(async (event) => {
@@ -10,8 +11,8 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
       email,
       password,
       credentials,
-      first,
-      last,
+      firstName,
+      lastName,
       occupation,
       employer,
       street,
@@ -32,11 +33,13 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
             .set({
               name: {
                 credentials: credentials.value,
-                first: first.value,
-                last: last.value,
+                firstName: firstName.value,
+                lastName: lastName.value,
               },
-              occupation: occupation.value,
-              employer: employer.value,
+              Job: {
+                occupation: occupation.value,
+                employer: employer.value,
+              },
               address: {
                 street: street.value,
                 suite: suite.value,
@@ -66,7 +69,8 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
             <Form onSubmit={handleSignUp}>
               <Form.Row className="justify-content-center">
                 <Col sm={6}>
-                  <Form.Group controlId="email">
+                  <MultiStepForm/>
+                  {/* <Form.Group controlId="email">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
                       name="email"
@@ -81,20 +85,20 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
                       type="password"
                       placeholder="Password"
                     />
-                  </Form.Group>
-                  <Form.Group controlId="credentials">
+                  </Form.Group> */}
+                  {/* <Form.Group controlId="credentials">
                     <Form.Label>Credentials</Form.Label>
                     <Form.Control name="credentials" placeholder="MD" />
                   </Form.Group>
-                  <Form.Group controlId="first">
+                  <Form.Group controlId="firstName">
                     <Form.Label>First Name</Form.Label>
-                    <Form.Control name="first" placeholder="John" />
+                    <Form.Control name="firstName" placeholder="John" />
                   </Form.Group>
-                  <Form.Group controlId="last">
+                  <Form.Group controlId="lastName">
                     <Form.Label>Last Name</Form.Label>
-                    <Form.Control name="last" placeholder="Smith" />
-                  </Form.Group>
-                  <Form.Group controlId="occupation">
+                    <Form.Control name="lastName" placeholder="Smith" />
+                  </Form.Group> */}
+                  {/* <Form.Group controlId="occupation">
                     <Form.Label>Occupation</Form.Label>
                     <Form.Control name="occupation" placeholder="Occupation" />
                   </Form.Group>
@@ -104,8 +108,8 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
                       name="employer"
                       placeholder="Enter employer"
                     />
-                  </Form.Group>
-                  <Form.Group controlId="street">
+                  </Form.Group> */}
+                  {/* <Form.Group controlId="street">
                     <Form.Label>Street Address</Form.Label>
                     <Form.Control name="street" placeholder="123 Fake st" />
                   </Form.Group>
@@ -125,7 +129,7 @@ const Signup = ({ showSignup, handleCloseSignup, history }) => {
                     <Form.Label>Zip code</Form.Label>
                     <Form.Control name="zip" placeholder="123456" />
                   </Form.Group>
-                  <Button type="submit">Sign Up</Button>
+                  <Button type="submit">Sign Up</Button> */}
                 </Col>
               </Form.Row>
             </Form>
