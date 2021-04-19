@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
-import { Button, Container, Modal } from "react-bootstrap";
+import { Button, Col, Container, Form, Modal } from "react-bootstrap";
 import app from "../firebase";
 
-const Signup = ({ showSignup, handleCloseSignup }) => {
+const Signup = ({ showSignup, handleCloseSignup, history }) => {
   const handleSignUp = useCallback(async (event) => {
     event.preventDefault();
     const {
@@ -48,6 +48,7 @@ const Signup = ({ showSignup, handleCloseSignup }) => {
         })
         .then(() => {
           handleCloseSignup();
+          history.push("/dashboard");
         });
     } catch (error) {
       alert(error);
@@ -62,57 +63,72 @@ const Signup = ({ showSignup, handleCloseSignup }) => {
         </Modal.Header>
         <Modal.Body>
           <Container fluid>
-            <form onSubmit={handleSignUp}>
-              <label>
-                Email
-                <input name="email" type="email" placeholder="Email" />
-              </label>
-              <label>
-                Password
-                <input name="password" type="password" placeholder="Password" />
-              </label>
-              <label>
-                Credentials
-                <input name="credentials" type="text" placeholder="MD" />
-              </label>
-              <label>
-                First Name
-                <input name="first" type="text" placeholder="John" />
-              </label>
-              <label>
-                Last Name
-                <input name="last" type="text" placeholder="Smith" />
-              </label>
-              <label>
-                Occupation
-                <input name="occupation" type="text" placeholder="Occupation" />
-              </label>
-              <label>
-                Employer
-                <input name="employer" type="text" placeholder="Employer" />
-              </label>
-              <label>
-                Street address
-                <input name="street" type="text" placeholder="Street address" />
-              </label>
-              <label>
-                Suite #
-                <input name="suite" type="text" placeholder="Suite #" />
-              </label>
-              <label>
-                City
-                <input name="city" type="text" placeholder="City" />
-              </label>
-              <label>
-                State
-                <input name="state" type="text" placeholder="State" />
-              </label>
-              <label>
-                ZIP code
-                <input name="zip" type="text" placeholder="ZIP code" />
-              </label>
-              <button type="submit">Sign Up</button>
-            </form>
+            <Form onSubmit={handleSignUp}>
+              <Form.Row className="justify-content-center">
+                <Col sm={6}>
+                  <Form.Group controlId="email">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                      name="email"
+                      type="email"
+                      placeholder="Enter email"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="credentials">
+                    <Form.Label>Credentials</Form.Label>
+                    <Form.Control name="credentials" placeholder="MD" />
+                  </Form.Group>
+                  <Form.Group controlId="first">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control name="first" placeholder="John" />
+                  </Form.Group>
+                  <Form.Group controlId="last">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control name="last" placeholder="Smith" />
+                  </Form.Group>
+                  <Form.Group controlId="occupation">
+                    <Form.Label>Occupation</Form.Label>
+                    <Form.Control name="occupation" placeholder="Occupation" />
+                  </Form.Group>
+                  <Form.Group controlId="employer">
+                    <Form.Label>Employer</Form.Label>
+                    <Form.Control
+                      name="employer"
+                      placeholder="Enter employer"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="street">
+                    <Form.Label>Street Address</Form.Label>
+                    <Form.Control name="street" placeholder="123 Fake st" />
+                  </Form.Group>
+                  <Form.Group controlId="suite">
+                    <Form.Label>Suite #</Form.Label>
+                    <Form.Control name="suite" placeholder="Suite" />
+                  </Form.Group>
+                  <Form.Group controlId="city">
+                    <Form.Label>City</Form.Label>
+                    <Form.Control name="city" placeholder="Enter City" />
+                  </Form.Group>
+                  <Form.Group controlId="state">
+                    <Form.Label>State</Form.Label>
+                    <Form.Control name="state" placeholder="Enter State" />
+                  </Form.Group>
+                  <Form.Group controlId="zip">
+                    <Form.Label>Zip code</Form.Label>
+                    <Form.Control name="zip" placeholder="123456" />
+                  </Form.Group>
+                  <Button type="submit">Sign Up</Button>
+                </Col>
+              </Form.Row>
+            </Form>
           </Container>
         </Modal.Body>
         <Modal.Footer>
