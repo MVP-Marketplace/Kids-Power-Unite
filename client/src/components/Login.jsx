@@ -1,12 +1,14 @@
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
+import { Link } from "react-router-dom";
 import { Google, Facebook } from "react-bootstrap-icons";
-import { Form, Button, Container, Col, Modal } from "react-bootstrap";
+import { Form, Button, Container, Col, Card, Row } from "react-bootstrap";
 import { AuthContext } from "../Auth";
+import KpuLogo from "../Images/kpu-logo.png";
 import app from "../firebase";
 import "firebase/auth";
 
-const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
+const Login = ({ history }) => {
   const handleLogin = useCallback(
     async (event) => {
       event.preventDefault();
@@ -43,16 +45,26 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
 
   return (
     <>
-      <Modal show={showLogin} onHide={handleCloseLogin} backdrop="static">
-        <Modal.Header>
-          <Modal.Title>Login</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Container fluid>
+      <Container fluid style={{ marginTop: "80px" }}>
+        <Card className="text-center">
+          <Row className="justify-content-center">
+            <Card.Img
+              src={KpuLogo}
+              style={{ height: "200px", width: "250px" }}
+              className="justify-self-center"
+            />
+          </Row>
+          <Card.Body>
+            <Card.Title><h1>Sign In</h1></Card.Title>
+            <p>
+              Don't Have An Account? <Link to="/signup">Create Account</Link>
+            </p>
+            <br />
+            <br/>
             <Form onSubmit={handleLogin}>
               <Form.Row className="justify-content-center">
                 <Col sm={6}>
-                  <Form.Group controlId="formBasicEmail">
+                  <Form.Group controlId="email">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
                       name="email"
@@ -60,7 +72,7 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
                       placeholder="Enter email"
                     />
                   </Form.Group>
-                  <Form.Group controlId="formBasicPassword">
+                  <Form.Group controlId="password">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                       name="password"
@@ -68,56 +80,44 @@ const Login = ({ history, showLogin, handleCloseLogin, handleShowSignup }) => {
                       placeholder="Password"
                     />
                   </Form.Group>
+                </Col>
+              </Form.Row>
+              <br />
+              <br />
+              <Form.Row className="justify-content-center">
+                <Col sm={3}>
                   <Form.Row className="justify-content-center">
-                    <Col>
-                      <Form.Row className="justify-content-center">
-                        <Button
-                          variant="primary"
-                          type="submit"
-                          className="w-100"
-                        >
-                          Login
-                        </Button>
-                      </Form.Row>
-                      <br></br>
-                      <Form.Row className="align-items-center">
-                        <Button
-                          onClick={handleFacebookLogin}
-                          className="w-100 align-items-center"
-                        >
-                          <Facebook></Facebook> Continue with Facebook
-                        </Button>
-                      </Form.Row>
-                      <br></br>
-                      <Form.Row className="justify-content-center">
-                        <Button onClick={handleGoogleLogin} className="w-100">
-                          <Google></Google> Sign in with Google
-                        </Button>
-                      </Form.Row>
-                      <br />
-                      <Form.Row className="align-items-center">
-                        <Button
-                          onClick={() => {
-                            handleShowSignup();
-                            handleCloseLogin();
-                          }}
-                        >
-                          Create Account
-                        </Button>
-                      </Form.Row>
-                    </Col>
+                    <Button
+                      style={{ backgroundColor: "#FF5308" }}
+                      type="submit"
+                      className="w-100"
+                    >
+                      Login
+                    </Button>
                   </Form.Row>
+                  <br></br>
+                  <Form.Row className="align-items-center">
+                    <Button
+                      onClick={handleFacebookLogin}
+                      className="w-100 align-items-center"
+                    >
+                      <Facebook></Facebook> Continue with Facebook
+                    </Button>
+                  </Form.Row>
+                  <br></br>
+                  <Form.Row className="justify-content-center">
+                    <Button onClick={handleGoogleLogin} className="w-100">
+                      <Google></Google> Sign in with Google
+                    </Button>
+                  </Form.Row>
+                  <br />
+                  <Form.Row className="align-items-center"></Form.Row>
                 </Col>
               </Form.Row>
             </Form>
-          </Container>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseLogin}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+          </Card.Body>
+        </Card>
+      </Container>
     </>
   );
 };

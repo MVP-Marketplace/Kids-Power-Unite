@@ -1,24 +1,13 @@
 import React, { useContext, useState } from "react";
 import { Container, Button, Nav, Navbar } from "react-bootstrap";
-import Login from "./Login";
-import Signup from "./Signup";
 import { AuthContext } from "../Auth";
 import app from "../firebase";
 
 import SimpleLogo from "../Images/simplelogo.png";
+import { Link } from "react-router-dom";
 
 function MyNavbar() {
-  // usestates
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
-  // context referencees
   const { currentUser } = useContext(AuthContext);
-  // Signup modal show and close functions 
-  const handleCloseSignup = () => setShowSignup(false);
-  const handleShowSignup = () => setShowSignup(true);
-  // Login modal show and close functions
-  const handleCloseLogin = () => setShowLogin(false);
-  const handleShowLogin = () => setShowLogin(true);
 
   return (
     <>
@@ -39,24 +28,16 @@ function MyNavbar() {
               <Button href="/about">About</Button>
               {!currentUser ? (
                 <>
-                  <Button onClick={handleShowLogin}>Login</Button>
-                  <Login
-                    showLogin={showLogin}
-                    handleShowSignup={handleShowSignup}
-                    handleCloseLogin={handleCloseLogin}
-                  />
+                  <Link to="/login">
+                    <Button>Login</Button>
+                  </Link>
                 </>
               ) : (
                 <>
                   <Button onClick={() => app.auth().signOut()}>Logout</Button>
                 </>
               )}
-              {showSignup ? (
-                <Signup
-                  showSignup={showSignup}
-                  handleCloseSignup={handleCloseSignup}
-                />
-              ) : null}
+
               <Button href="/referchild">Refer a Child</Button>
               <Button variant="primary">Donate</Button>
             </Nav>
