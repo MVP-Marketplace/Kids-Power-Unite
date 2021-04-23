@@ -157,7 +157,6 @@ const Dashboard = () => {
               </Row>
             </>
           )}
-          ;
         </Col>
       </Row>
     </Container>
