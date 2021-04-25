@@ -343,13 +343,12 @@ input .child-form-fields {
   text-align: left;
 }
 .sort-filter-text {
-  font-style: Semibold 14 (0.2 px);
-  font-family: Mulish;
-  font-size: 14px;
+  font-family: Open Sans;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: 0.20000000298023224px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
   text-align: left;
 }
 .account-side-text {
@@ -380,13 +379,13 @@ input .child-form-fields {
   text-align: left;
 }
 .add-child-button {
-  font-family: Open Sans;
-  font-size: 14px;
+  background: #ea6f39;
+  font-family: Paytone One;
+  src: url(PaytoneOne-Regular.ttf);
   font-style: normal;
-  font-weight: 600;
-  line-height: 19px;
-  letter-spacing: 0.4000000059604645px;
-  text-align: left;
+  font-weight: normal;
+  font-size: 19.125px;
+  color: #ffffff;
 }
 .header-text {
   font-family: Open Sans;

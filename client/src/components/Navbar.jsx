@@ -20,10 +20,13 @@ function MyNavbar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link className="header-text text-white pr-4" href="/">
-                Login
+              <Nav.Link className="header-text text-white pr-4" href="/login">
+                Log In
               </Nav.Link>
-              <Nav.Link className="header-text text-white pr-4" href="#link">
+              <Nav.Link
+                className="header-text text-white pr-4"
+                href="/referchild"
+              >
                 Refer a Child
               </Nav.Link>
               <Button variant="primary">Donate</Button>
