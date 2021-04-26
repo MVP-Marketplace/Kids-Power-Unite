@@ -1,13 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Container, Button, Nav, Navbar } from "react-bootstrap";
 import { AuthContext } from "../Auth";
 import app from "../firebase";
 
 import SimpleLogo from "../Images/simplelogo.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function MyNavbar() {
+  const history = useHistory();
   const { currentUser } = useContext(AuthContext);
+
+  const handleSignout = () => {
+    app.auth().signOut();
+    history.push("/");
+  };
 
   return (
     <>
@@ -34,7 +40,7 @@ function MyNavbar() {
                 </>
               ) : (
                 <>
-                  <Button onClick={() => app.auth().signOut()}>Logout</Button>
+                  <Button onClick={handleSignout}>Logout</Button>
                 </>
               )}
 

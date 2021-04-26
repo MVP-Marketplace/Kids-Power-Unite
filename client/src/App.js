@@ -11,7 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
-
+import CreateAccountForm from "./components/CreateAccountForm";
 
 //adding in a test.
 
@@ -25,7 +25,8 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-          
+          <Route exact path="/profile/info" component={CreateAccountForm} />
+
           <Route
             exact
             path="/professionalsform"
