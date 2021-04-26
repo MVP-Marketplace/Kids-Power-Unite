@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import KpuLogo from "../Images/kpu-logo.png";
+import HonorCode from "./HonorCode";
 import app from "../firebase";
 
 const Signup = ({ history }) => {
@@ -71,8 +72,23 @@ const Signup = ({ history }) => {
                       type="password"
                       placeholder="Enter Password"
                     />
+                    <p style={{ fontSize: "10px" }}>
+                      By creating an account, you agree to KidPower Unites'{" "}
+                      <Button
+                        style={{
+                          background: "none",
+                          border: "none",
+                          padding: "0",
+                          font: "inherit",
+                          textDecoration: "underline",
+                          color: "blue",
+                          cursor: "pointer",
+                        }}
+                      >
+                        Honor Code
+                      </Button>
+                    </p>
                   </Form.Group>
-
                   <Button type="submit" style={{ backgroundColor: "#FF5308" }}>
                     Sign Up
                   </Button>

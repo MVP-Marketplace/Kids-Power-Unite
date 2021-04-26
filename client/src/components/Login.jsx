@@ -51,7 +51,7 @@ const Login = ({ history }) => {
           <Row className="justify-content-center">
             <Card.Img
               src={KpuLogo}
-              style={{ height: "200px", width: "25npm 0px" }}
+              style={{ height: "200px", width: "250px" }}
               className="justify-self-center"
             />
           </Row>
