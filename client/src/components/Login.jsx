@@ -6,6 +6,7 @@ import { Form, Button, Container, Col, Card, Row } from "react-bootstrap";
 import { AuthContext } from "../Auth";
 import KpuLogo from "../Images/kpu-logo.png";
 import app from "../firebase";
+import firebase from "firebase/app";
 import "firebase/auth";
 
 const Login = ({ history }) => {
@@ -26,13 +27,13 @@ const Login = ({ history }) => {
   );
 
   const handleGoogleLogin = () => {
-    const googleAuthProvider = new app.auth.GoogleAuthProvider();
+    const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
     app.auth().signInWithPopup(googleAuthProvider);
     history.push("/dashboard");
   };
 
   const handleFacebookLogin = () => {
-    const facebookAuthProvider = new app.auth.FacebookAuthProvider();
+    const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
     app.auth().signInWithPopup(facebookAuthProvider);
     history.push("/dashboard");
   };
@@ -50,17 +51,19 @@ const Login = ({ history }) => {
           <Row className="justify-content-center">
             <Card.Img
               src={KpuLogo}
-              style={{ height: "200px", width: "250px" }}
+              style={{ height: "200px", width: "25npm 0px" }}
               className="justify-self-center"
             />
           </Row>
           <Card.Body>
-            <Card.Title><h1>Sign In</h1></Card.Title>
+            <Card.Title>
+              <h1>Sign In</h1>
+            </Card.Title>
             <p>
               Don't Have An Account? <Link to="/signup">Create Account</Link>
             </p>
             <br />
-            <br/>
+            <br />
             <Form onSubmit={handleLogin}>
               <Form.Row className="justify-content-center">
                 <Col sm={6}>
