@@ -388,6 +388,7 @@ Button {
 /* FEATURED FINDS - coming soon */
 .featured-finds {
   padding-top: 90px;
+  padding-bottom: 40px;
 }
 
 .featured-finds-text {
@@ -407,6 +408,20 @@ Button {
   display: flex;
   justify-content: space-evenly;
   margin: 100px 30px;
+}
+
+.featured-card-link {
+  color: black;
+}
+
+.featured-card-link:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.featured-finds-cards Link {
+  text-decoration: none;
+  color: black;
 }
 
 .featured-card {
@@ -435,22 +450,6 @@ Button {
 #featured-card-two {
   margin-left: 35px;
   padding-left: 70px;
-}
-
-/* NEWSLETTER - coming soon */
-.home-newsletter {
-  background: #fff5e1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.home-newsletter h3 {
-  font-family: Dosis, sans-serif;
-  font-size: 1.15rem;
-  font-weight: 600;
 }
 
 @media screen and (min-width: 600px) {

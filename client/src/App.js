@@ -1,17 +1,18 @@
 import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
+import Home from "./components/Home";
 import Signup from "./components/Signup";
 import ProfessionalsForm from "./components/ProfessionalsForm";
 import { AuthProvider } from "./Auth.js";
 import PrivateRoute from "./PrivateRoute";
-import Home from "./components/Home";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
+// import Donate from "./components/Donate"
+// import About from "./components/About"
 
 //adding in a test.
 
@@ -25,6 +26,8 @@ function App() {
           <PrivateRoute exact path="/Dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          {/* <Route exact path="/donate" component={Donate} /> */}
+          {/*  <Route exact path="/about" component={About}  /> */}
           <Route
             exact
             path="/professionalsform"

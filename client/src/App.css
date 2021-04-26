@@ -1,3 +1,12 @@
+html,
+body {
+  height: 100%;
+}
+
+#dashboard-container {
+  padding-bottom: 70%;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +14,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+#footer-container {
+  position: relative;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -37,7 +50,12 @@
   }
 }
 
+#dashboard-container {
+  overflow: auto;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 .refer-child-container {
   font-family: "Dosis", sans-serif;
@@ -201,4 +219,234 @@
     width: 46%;
     margin-left: 28%;
   }
+}
+
+.referral-form {
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ea6f39;
+  width: 109.82px;
+  height: 41px;
+  margin-left: 133px;
+  margin-top: 50px;
+
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+
+  text-align: center;
+
+  color: #ea6f39;
+}
+
+.recipient-info {
+  width: 217px;
+  height: 31px;
+  margin-left: 79px;
+  top: 104px;
+
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140.62%;
+
+  text-align: center;
+
+  color: #000000;
+}
+
+.child-form-line-break {
+  width: 214px;
+  height: 0px;
+  left: 81px;
+  top: 176px;
+  border: 1px solid #1f4fab;
+}
+
+.avatar-container {
+  margin-top: 30px;
+}
+
+.avatar-container-items {
+  text-align: center;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  margin-left: 123px;
+  top: 219px;
+
+  border: 2px solid #1f4fab;
+  box-sizing: border-box;
+}
+
+.add-avatar-sign {
+  padding-left: 68.67%;
+  padding-right: 34.4%;
+  padding-top: 50.73%;
+  color: #ea6f39;
+}
+
+.select-avatar {
+  width: 214px;
+  height: 20px;
+  margin-left: 81px;
+  margin-top: 20px;
+  top: 372px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: capitalize;
+
+  color: #000000;
+}
+
+input .child-form-fields {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 16px 0px 0px;
+
+  width: 217px;
+  height: 44px;
+  left: 79px;
+  top: 456px;
+
+  background: #ffffff;
+  border: 1px solid #898989;
+  box-sizing: border-box;
+  border-radius: 5.5px;
+}
+
+.recipient-details-text {
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+}
+.recipient-details-text-light {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: left;
+}
+.sort-filter-text {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.account-side-text {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+}
+.overview-side-text {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.20000000298023224px;
+  text-align: left;
+}
+.all-recipients-text {
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+}
+.add-child-button {
+  background: #ea6f39;
+  font-family: Paytone One;
+  src: url(PaytoneOne-Regular.ttf);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19.125px;
+  color: #ffffff;
+}
+.header-text {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.footer-bold {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.footer-links {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.copyright {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.newsletter-signup {
+  font-family: Dosis;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.newsletter-filler {
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.email-newsletter {
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
 }

@@ -116,7 +116,7 @@ const Home = () => {
             Refer a Child. <br /> Help them get their wish fulfilled.
           </h3>
           <img src={Legos} alt="top view of legos in multiple colors" />
-          <Link className="btn refer-btn" to="/signup">
+          <Link className="btn refer-btn" to="/referchild">
             Sponsor
           </Link>
         </section>
@@ -129,28 +129,21 @@ const Home = () => {
           child in need.
         </p>
         <div className="featured-finds-cards">
-          <div className="featured-card">
-            <img src={ProductOne} alt="Product Image"></img>
-            <p>
-              Welly <br /> Braverly Bandages for Kids
-            </p>
-          </div>
-          <div className="featured-card">
-            <img src={ProductTwo} alt="Product Image"></img>
-            <p id="featured-card-two">Fidget Toy</p>
-          </div>
+          <Link className="featured-card-link">
+            <div className="featured-card">
+              <img src={ProductOne} alt="Product Image"></img>
+              <p>
+                Welly <br /> Braverly Bandages for Kids
+              </p>
+            </div>
+          </Link>
+          <Link className="featured-card-link">
+            <div className="featured-card">
+              <img src={ProductTwo} alt="Product Image"></img>
+              <p id="featured-card-two">Fidget Toy</p>
+            </div>
+          </Link>
         </div>
-      </section>
-      <section className="home-newsletter">
-        <h3>Sign Up For Our Newsletter</h3>
-        <p>COMING SOON!!!!!</p>
-        {/* <form action="">
-            <label htmlFor="email">
-              <input type="text" name="email" placeholder="enter email" />
-              Email Address
-            </label>
-            <Button>Sign Up</Button>
-          </form> */}
       </section>
     </>
   );
