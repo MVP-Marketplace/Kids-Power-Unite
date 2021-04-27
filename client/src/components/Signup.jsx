@@ -57,7 +57,7 @@ const Signup = ({ history }) => {
 
             <Form onSubmit={handleSignUp}>
               <Form.Row className="justify-content-center">
-                <Col sm={6}>
+                <Col xs={"auto"} sm={"auto"} className="text-left">
                   <Form.Group controlId="name">
                     <Form.Label>Full Name</Form.Label>
                     <Form.Control name="name" placeholder="Enter Full Name" />
@@ -95,9 +95,14 @@ const Signup = ({ history }) => {
                       </Button>
                     </p>
                   </Form.Group>
-                  <Button type="submit" style={{ backgroundColor: "#FF5308" }}>
-                    Sign Up
-                  </Button>
+                  <Form.Row className="justify-content-center">
+                    <Button
+                      type="submit"
+                      style={{ backgroundColor: "#FF5308", padding:'10px 30px', fontSize:'20px' }}
+                    >
+                      Sign Up
+                    </Button>
+                  </Form.Row>
                 </Col>
               </Form.Row>
             </Form>

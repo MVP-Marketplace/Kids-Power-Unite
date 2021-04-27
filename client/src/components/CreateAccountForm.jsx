@@ -159,7 +159,7 @@ const CreateAccountForm = ({ history }) => {
                     <Col>
                     <Button
                       type="submit"
-                      style={{ backgroundColor: "#FF5308" }}
+                      style={{ backgroundColor: "#FF5308", padding:'10px 20px', fontSize:'20px' }}
                     >
                       Create Account
                     </Button>

@@ -66,7 +66,7 @@ const Login = ({ history }) => {
             <br />
             <Form onSubmit={handleLogin}>
               <Form.Row className="justify-content-center">
-                <Col sm={6}>
+                <Col xs={"auto"} sm={3} className="text-left">
                   <Form.Group controlId="email">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
@@ -88,10 +88,10 @@ const Login = ({ history }) => {
               <br />
               <br />
               <Form.Row className="justify-content-center">
-                <Col sm={3}>
+                <Col xs={'auto'} sm={'auto'}>
                   <Form.Row className="justify-content-center">
                     <Button
-                      style={{ backgroundColor: "#FF5308" }}
+                      style={{ backgroundColor: "#FF5308", padding:'10px', fontSize:'20px' }}
                       type="submit"
                       className="w-100"
                     >

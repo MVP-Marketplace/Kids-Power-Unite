@@ -34,9 +34,7 @@ function MyNavbar() {
               <Button href="/about">About</Button>
               {!currentUser ? (
                 <>
-                  <Link to="/login">
-                    <Button>Login</Button>
-                  </Link>
+                  <Button href="/login">Login</Button>
                 </>
               ) : (
                 <>
