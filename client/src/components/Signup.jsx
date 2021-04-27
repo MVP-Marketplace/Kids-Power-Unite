@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
@@ -7,6 +7,11 @@ import HonorCode from "./HonorCode";
 import app from "../firebase";
 
 const Signup = ({ history }) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const handleSignUp = useCallback(async (event) => {
     event.preventDefault();
     const { email, password, name } = event.target.elements;
@@ -84,6 +89,7 @@ const Signup = ({ history }) => {
                           color: "blue",
                           cursor: "pointer",
                         }}
+                        onClick={handleShow}
                       >
                         Honor Code
                       </Button>
@@ -97,6 +103,7 @@ const Signup = ({ history }) => {
             </Form>
           </Card.Body>
         </Card>
+        <HonorCode handleClose={handleClose} show={show} />
       </Container>
     </>
   );

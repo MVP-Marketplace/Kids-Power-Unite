@@ -1,10 +1,15 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import KpuLogo from "../Images/kpu-logo.png";
 import HonorCode from "./HonorCode";
 import app from "../firebase";
 
 const CreateAccountForm = ({ history }) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
     const {
@@ -71,7 +76,7 @@ const CreateAccountForm = ({ history }) => {
             </Card.Title>
             <Form onSubmit={handleSubmit}>
               <Form.Row className="justify-content-center">
-                <Col sm={6}>
+                <Col xs={'auto'} sm={'auto'} md={'auto'} className="text-left">
                   <Form.Group controlId="occupation">
                     <Form.Label>*Job Title</Form.Label>
                     <Form.Control name="occupation" placeholder="Title" />
@@ -150,30 +155,39 @@ const CreateAccountForm = ({ history }) => {
                       <Form.Control name="deliveryZip" placeholder="123456" />
                     </Form.Group>
                   </Form.Row>
-                  <Button type="submit" style={{ backgroundColor: "#FF5308" }}>
-                    Create Account
-                  </Button>
-                  <p style={{ fontSize: "10px" }}>
-                    By creating an account, you agree to KidPower Unites'{" "}
+                  <Form.Row className=' text-center'>
+                    <Col>
                     <Button
-                      style={{
-                        background: "none",
-                        border: "none",
-                        padding: "0",
-                        font: "inherit",
-                        textDecoration: "underline",
-                        color: "blue",
-                        cursor: "pointer",
-                      }}
+                      type="submit"
+                      style={{ backgroundColor: "#FF5308" }}
                     >
-                      Honor Code
+                      Create Account
                     </Button>
-                  </p>
+                    <p style={{ fontSize: "10px" }}>
+                      By creating an account, you agree to KidPower Unites'{" "}
+                      <Button
+                        style={{
+                          background: "none",
+                          border: "none",
+                          padding: "0",
+                          font: "inherit",
+                          textDecoration: "underline",
+                          color: "blue",
+                          cursor: "pointer",
+                        }}
+                        onClick={handleShow}
+                      >
+                        Honor Code
+                      </Button>
+                      </p>
+                    </Col>
+                  </Form.Row>
                 </Col>
               </Form.Row>
             </Form>
           </Card.Body>
         </Card>
+        <HonorCode show={show} handleClose={handleClose} />
       </Container>
     </>
   );

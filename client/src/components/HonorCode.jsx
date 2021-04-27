@@ -1,11 +1,10 @@
 import { Modal } from "react-bootstrap";
-import React from "react";
 
-const HonorCode = () => {
+const HonorCode = ({ handleClose, show }) => {
   return (
     <div>
-      <Modal>
-        <Modal.Header closeButton/>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton style={{borderBottom: '0 none'}} />
         <Modal.Body>
           <p>
             <strong>Honor code:</strong> We are unable to verify each child’s
