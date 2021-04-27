@@ -88,10 +88,14 @@ const Login = ({ history }) => {
               <br />
               <br />
               <Form.Row className="justify-content-center">
-                <Col xs={'auto'} sm={'auto'}>
+                <Col xs={"auto"} sm={"auto"}>
                   <Form.Row className="justify-content-center">
                     <Button
-                      style={{ backgroundColor: "#FF5308", padding:'10px', fontSize:'20px' }}
+                      style={{
+                        backgroundColor: "#FF5308",
+                        padding: "10px",
+                        fontSize: "20px",
+                      }}
                       type="submit"
                       className="w-100"
                     >
@@ -114,7 +118,6 @@ const Login = ({ history }) => {
                     </Button>
                   </Form.Row>
                   <br />
-                  <Form.Row className="align-items-center"></Form.Row>
                 </Col>
               </Form.Row>
             </Form>

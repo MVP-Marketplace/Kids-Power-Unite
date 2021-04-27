@@ -4,7 +4,7 @@ import { AuthContext } from "../Auth";
 import app from "../firebase";
 
 import SimpleLogo from "../Images/simplelogo.png";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function MyNavbar() {
   const history = useHistory();
@@ -31,19 +31,41 @@ function MyNavbar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Button href="/about">About</Button>
+              <Nav.Link
+                href="/about"
+                style={{ fontFamily: "Paytone One", color: "#FFFFFF" }}
+              >
+                About Us
+              </Nav.Link>
               {!currentUser ? (
                 <>
-                  <Button href="/login">Login</Button>
+                  <Nav.Link
+                    href="/login"
+                    style={{ fontFamily: "Paytone One", color: "#FFFFFF" }}
+                  >
+                    Login
+                  </Nav.Link>
                 </>
               ) : (
                 <>
-                  <Button onClick={handleSignout}>Logout</Button>
+                  <Nav.Link
+                    onClick={handleSignout}
+                    style={{ fontFamily: "Paytone One", color: "#FFFFFF" }}
+                  >
+                    Logout
+                  </Nav.Link>
                 </>
               )}
 
-              <Button href="/referchild">Refer a Child</Button>
-              <Button variant="primary">Donate</Button>
+              <Nav.Link
+                href="/referchild"
+                style={{ fontFamily: "Paytone One", color: "#FFFFFF" }}
+              >
+                Refer a Child
+              </Nav.Link>
+              <Button style={{ color: "#000000", backgroundColor: "#FCA40E" }}>
+                Donate
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

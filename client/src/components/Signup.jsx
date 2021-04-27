@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import KpuLogo from "../Images/kpu-logo.png";
 import HonorCode from "./HonorCode";
+import { Google, Facebook } from "react-bootstrap-icons";
+import firebase from "firebase/app";
 import app from "../firebase";
 
 const Signup = ({ history }) => {
@@ -35,6 +37,18 @@ const Signup = ({ history }) => {
       alert(error);
     }
   }, []);
+
+  const handleGoogleLogin = () => {
+    const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+    app.auth().signInWithPopup(googleAuthProvider);
+    history.push("/profile/info");
+  };
+
+  const handleFacebookLogin = () => {
+    const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+    app.auth().signInWithPopup(facebookAuthProvider);
+    history.push("/profile/info");
+  };
 
   return (
     <>
@@ -98,11 +112,31 @@ const Signup = ({ history }) => {
                   <Form.Row className="justify-content-center">
                     <Button
                       type="submit"
-                      style={{ backgroundColor: "#FF5308", padding:'10px 30px', fontSize:'20px' }}
+                      style={{
+                        backgroundColor: "#FF5308",
+                        padding: "10px 50px",
+                        fontSize: "20px",
+                      }}
                     >
                       Sign Up
                     </Button>
                   </Form.Row>
+                  <br></br>
+                  <Form.Row className="align-items-center">
+                    <Button
+                      onClick={handleFacebookLogin}
+                      className="w-100 align-items-center"
+                    >
+                      <Facebook></Facebook> Continue with Facebook
+                    </Button>
+                  </Form.Row>
+                  <br></br>
+                  <Form.Row className="justify-content-center">
+                    <Button onClick={handleGoogleLogin} className="w-100">
+                      <Google></Google> Sign in with Google
+                    </Button>
+                  </Form.Row>
+                  <br />
                 </Col>
               </Form.Row>
             </Form>
