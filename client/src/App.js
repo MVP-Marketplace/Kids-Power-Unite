@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
+import About from "./components/About";
 // import Donate from "./components/Donate"
 // import About from "./components/About"
 
@@ -26,8 +27,9 @@ function App() {
           <PrivateRoute exact path="/Dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/about" component={About} />
           {/* <Route exact path="/donate" component={Donate} /> */}
-          {/*  <Route exact path="/about" component={About}  /> */}
+       
           <Route
             exact
             path="/professionalsform"

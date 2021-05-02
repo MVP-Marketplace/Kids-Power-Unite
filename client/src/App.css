@@ -506,3 +506,12 @@ input .child-form-fields {
   letter-spacing: 0em;
   text-align: left;
 }
+.about-page {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+}
