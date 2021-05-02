@@ -1,4 +1,8 @@
 /* UNIVERSAL STYLING */
+.home-page-container {
+  width: 100vw;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
 }

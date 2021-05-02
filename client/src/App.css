@@ -48,6 +48,7 @@ body {
 
 #dashboard-container {
   overflow: auto;
+  padding-bottom: 70%;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");

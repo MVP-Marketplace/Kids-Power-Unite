@@ -65,7 +65,7 @@ function MyNavbar() {
               </Nav.Link>
               <Button
                 href="/donate"
-                style={{ color: "#000000", backgroundColor: "#FCA40E" }}
+                style={{ color: "#000000",fontFamily: "Paytone One", backgroundColor: "#FCA40E" }}
               >
                 Donate
               </Button>

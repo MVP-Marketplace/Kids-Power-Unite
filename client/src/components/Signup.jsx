@@ -31,7 +31,7 @@ const Signup = ({ history }) => {
             });
         })
         .then(() => {
-          history.push("/profile/info");
+          history.push("/create-account");
         });
     } catch (error) {
       alert(error);
@@ -41,13 +41,13 @@ const Signup = ({ history }) => {
   const handleGoogleLogin = () => {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
     app.auth().signInWithPopup(googleAuthProvider);
-    history.push("/profile/info");
+    history.push("/create-account");
   };
 
   const handleFacebookLogin = () => {
     const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
     app.auth().signInWithPopup(facebookAuthProvider);
-    history.push("/profile/info");
+    history.push("/create-account");
   };
 
   return (
