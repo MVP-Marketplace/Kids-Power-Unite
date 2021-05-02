@@ -100,6 +100,28 @@ const ReferChildForm = () => {
     });
   };
 
+  // function validate(
+  //   nickname,
+  //   amazonLink,
+  //   giftName,
+  //   giftReason,
+  //   childBio,
+  //   giftExplanation,
+  //   relationship,
+  //   age,
+  //   month,
+  //   day,
+  //   year,
+  //   parentalConsent
+  // ) {
+  //   const errors = [];
+
+  //   if (nickname.length === 0) {
+  //     errors.push("Nickname can't be empty");
+  //   }
+  //   if (amazonLink)
+  // };
+
   return (
     <div className="child-form-container">
       <div className="child-form-header">
@@ -373,6 +395,6 @@ const ReferChildForm = () => {
   );
 };
 
-ReactDOM.render(<LimitedTextarea limit={150} value=""></LimitedTextarea>);
+// ReactDOM.render(<LimitedTextarea limit={150} value=""></LimitedTextarea>);
 
 export default ReferChildForm;
