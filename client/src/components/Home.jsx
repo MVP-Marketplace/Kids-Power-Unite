@@ -1,7 +1,7 @@
 import React, { useContext, useCallback } from "react";
 import { withRouter, Redirect } from "react-router";
 import { Link } from "react-router-dom";
-import { Button, Accordion, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import app from "../firebase";
 import "../Home.css";
 import logo from "../Images/kpu-logo.png";
@@ -43,36 +43,34 @@ const Home = () => {
       </section>
       <section className="home-howto">
         <h2 className="section-header">How Does It Work?</h2>
-        <Card.Body>
-          <section className="how-tos">
-            <div className="howto-step">
-              <p className="stepNo">01</p>
-              <section className="howto-text">
-                <p>Search the wishlist</p>
-                <p id="howto-text-one">Find a gift for a kid just like you!</p>
-              </section>
-            </div>
-            <div className="howto-step">
-              <p className="stepNo">02</p>
-              <section className="howto-text">
-                <p>Grab your parent</p>
-                <p id="howto-text-two">
-                  Follow the link to purchase the gift you chose on Amazon.
-                </p>
-              </section>
-            </div>
-            <div className="howto-step">
-              <p className="stepNo">03</p>
-              <section className="howto-text">
-                <p>Experience the power of giving</p>
-                <p id="howto-text-three">
-                  Thanks to you, your peer will have the gift they need.
-                </p>
-              </section>
-            </div>
-          </section>
-          <Button className="orange-button">Find a Gift</Button>
-        </Card.Body>
+        <section className="how-tos">
+          <div className="howto-step">
+            <p className="stepNo">01</p>
+            <section className="howto-text">
+              <p>Search the wishlist</p>
+              <p id="howto-text-one">Find a gift for a kid just like you!</p>
+            </section>
+          </div>
+          <div className="howto-step">
+            <p className="stepNo">02</p>
+            <section className="howto-text">
+              <p>Grab your parent</p>
+              <p id="howto-text-two">
+                Follow the link to purchase the gift you chose on Amazon.
+              </p>
+            </section>
+          </div>
+          <div className="howto-step">
+            <p className="stepNo">03</p>
+            <section className="howto-text">
+              <p>Experience the power of giving</p>
+              <p id="howto-text-three">
+                Thanks to you, your peer will have the gift they need.
+              </p>
+            </section>
+          </div>
+        </section>
+        <Button className="orange-button">Find a Gift</Button>
       </section>
       <section className="home-featured">
         <h2 className="section-header">
