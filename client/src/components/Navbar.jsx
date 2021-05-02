@@ -63,7 +63,10 @@ function MyNavbar() {
               >
                 Refer a Child
               </Nav.Link>
-              <Button href='/donate' style={{ color: "#000000", backgroundColor: "#FCA40E" }}>
+              <Button
+                href="/donate"
+                style={{ color: "#000000", backgroundColor: "#FCA40E" }}
+              >
                 Donate
               </Button>
             </Nav>

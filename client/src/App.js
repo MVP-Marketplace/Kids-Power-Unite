@@ -12,6 +12,8 @@ import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
 import CreateAccountForm from "./components/CreateAccountForm";
+// import Donate from "./components/Donate"
+// import About from "./components/About"
 
 //adding in a test.
 
@@ -27,6 +29,8 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/profile/info" component={CreateAccountForm} />
 
+          {/* <Route exact path="/donate" component={Donate} /> */}
+          {/*  <Route exact path="/about" component={About}  /> */}
           <Route
             exact
             path="/professionalsform"

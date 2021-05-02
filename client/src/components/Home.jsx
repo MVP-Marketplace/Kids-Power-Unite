@@ -1,13 +1,16 @@
 import React, { useContext, useCallback } from "react";
 import { withRouter, Redirect } from "react-router";
 import { Link } from "react-router-dom";
-import { Button, Accordion, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import app from "../firebase";
 import "../Home.css";
 import logo from "../Images/kpu-logo.png";
 import Vector from "../Images/Vector.png";
 import Donate from "../Images/donatehero.png";
 import Legos from "../Images/legos.png";
+import FeaturedSuccess from "../Images/featured-success.png";
+import ProductOne from "../Images/product-one.png";
+import ProductTwo from "../Images/product-two.png";
 
 const Home = () => {
   return (
@@ -23,77 +26,77 @@ const Home = () => {
         <img className="home-logo" src={logo} alt="KPU kapow logo" />
         <div className="mission-text">
           <p id="bold">
-            We're creating opportunities for kids
+            We're Creating Opportunities For Kids
             <br />
-            to offer each other a helping hand.
+            To Offer Each Other A Helping Hand
           </p>
-          <p>
+          <p id="mission-para">
             Sometimes in life we need to ask for help, and other times we have
             an abundance so we can give. Learning to do both takes courage.
           </p>
-          <p>
+          <p id="mission-para">
             On the Kid Power Unites platform, find opportunities to give to
             another kid who needs something.
           </p>
+          <Button className="green-button">Learn More</Button>
         </div>
-        <Button className="green-button">Learn More</Button>
       </section>
       <section className="home-howto">
-        <Accordion>
-          <Card>
-            <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
-              How does it work?
-              <img className="howto-arrow" src={Vector} alt="expand-arrow" />
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <section className="how-tos">
-                  <div className="howto-step">
-                    <p className="stepNo">01</p>
-                    <section className="howto-text">
-                      <p>Search the wishlist.</p>
-                      <p>Find a gift for a kid just like you!</p>
-                    </section>
-                  </div>
-                  <div className="howto-step">
-                    <p className="stepNo">02</p>
-                    <section className="howto-text">
-                      <p>Grab your parent.</p>
-                      <p>Follow the link to purchase the gift on Amazon</p>
-                    </section>
-                  </div>
-                  <div className="howto-step">
-                    <p className="stepNo">03</p>
-                    <section className="howto-text">
-                      <p>Experience the power of giving!</p>
-                      <p>
-                        Thanks to you, your peer will have the gift they need.
-                      </p>
-                    </section>
-                  </div>
-                </section>
-                <Button className="orange-button">Find a Gift</Button>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion>
+        <h2 className="section-header">How Does It Work?</h2>
+        <section className="how-tos">
+          <div className="howto-step">
+            <p className="stepNo">01</p>
+            <section className="howto-text">
+              <p>Search the wishlist</p>
+              <p id="howto-text-one">Find a gift for a kid just like you!</p>
+            </section>
+          </div>
+          <div className="howto-step">
+            <p className="stepNo">02</p>
+            <section className="howto-text">
+              <p>Grab your parent</p>
+              <p id="howto-text-two">
+                Follow the link to purchase the gift you chose on Amazon.
+              </p>
+            </section>
+          </div>
+          <div className="howto-step">
+            <p className="stepNo">03</p>
+            <section className="howto-text">
+              <p>Experience the power of giving</p>
+              <p id="howto-text-three">
+                Thanks to you, your peer will have the gift they need.
+              </p>
+            </section>
+          </div>
+        </section>
+        <Button className="orange-button">Find a Gift</Button>
       </section>
-      {/* <section className="home-success">
-        <h1>Featured Success Story</h1>
-        <img src="#" alt="recipient child with their gift" />
-        <h2>"successful recipient's name goes here" -- "recipient's city"</h2>
-        <p>
-          "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna ali."
-        </p>
-        <Button>Learn More</Button>
-      </section> */}
+      <section className="home-featured">
+        <h2 className="section-header">
+          Featured Success Story (COMING SOON!!!!)
+        </h2>
+        <div className="featured-success-info">
+          <img src={FeaturedSuccess} alt="recipient child with their gift" />
+          <div className="featured-success-text">
+            <h2>
+              <b>Marci, 16 &mdash;</b> Boston, MA
+            </h2>
+            <p id="featured-quote">"</p>
+            <p id="quote-two">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna ali.<em>"</em>
+            </p>
+          </div>
+        </div>
+        {/* to do: discuss how to display and handle featured finds section */}
+      </section>
       <div className="home-quicklinks">
         <section className="home-donate">
           <h3>
-            Donate a Gift
+            Donate a Gift.
             <br />
-            Experience the power of giving
+            Experience the power of giving.
           </h3>
           <div className="donate-content">
             <img
@@ -101,24 +104,44 @@ const Home = () => {
               src={Donate}
               alt="two people laughing at a phone screen"
             />
-            <Link className="btn donate-btn" to="/donate">
+            <Button className="btn donate-btn" href="/donate">
               Give
-            </Link>
+            </Button>
           </div>
         </section>
         <section className="home-refer">
-          <h3>Refer a Child to get their wish fulfilled</h3>
+          <h3>
+            Refer a Child. <br /> Help them get their wish fulfilled.
+          </h3>
           <img src={Legos} alt="top view of legos in multiple colors" />
           <Button className="btn refer-btn" href="/referchild">
             Sponsor
           </Button>
         </section>
       </div>
-      <section className="home-featured">
-        <h2>FEATURED FINDS</h2>
-        <p>COMING SOON!!!!</p>
-        {/* to do: discuss how to display and handle featured finds section */}
-        {/* <Button>Find More</Button> */}
+      <section className="featured-finds">
+        <h2 className="section-header">Featured Finds (COMING SOON!!!!)</h2>
+        <p className="featured-finds-text">
+          We've done the research to recommend great products for families and
+          kids at great prices! Consider purchasing an additional item for a
+          child in need.
+        </p>
+        <div className="featured-finds-cards">
+          <Link className="featured-card-link">
+            <div className="featured-card">
+              <img src={ProductOne} alt="Product Image"></img>
+              <p>
+                Welly <br /> Braverly Bandages for Kids
+              </p>
+            </div>
+          </Link>
+          <Link className="featured-card-link">
+            <div className="featured-card">
+              <img src={ProductTwo} alt="Product Image"></img>
+              <p id="featured-card-two">Fidget Toy</p>
+            </div>
+          </Link>
+        </div>
       </section>
     </>
   );

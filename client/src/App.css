@@ -3,10 +3,6 @@ body {
   height: 100%;
 }
 
-#dashboard-container {
-  padding-bottom: 70%;
-}
-
 .App {
   text-align: center;
 }
@@ -56,98 +52,185 @@ body {
 
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+/* REFER CHILD PAGE */
+/* Header Section */
 .refer-child-container {
   font-family: "Dosis", sans-serif;
 }
 
 .refer-child-header {
+  border-bottom: 15px solid #fca40e;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.refer-child-header h2 {
   display: flex;
   justify-content: center;
-  background-color: rgba(0, 199, 249, 0.355);
+  position: absolute;
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  top: 320px;
+  left: 40.5%;
+  color: #fca40e;
 }
 
-.refer-child-header-text {
-  text-align: center;
-  font-size: 12pt;
-  width: 48%;
-  margin: 85px 60px;
+/* Need to Know Section */
+.to-know {
+  padding-top: 94px;
+  padding-left: 398px;
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
 }
 
-.kpu-difference-container {
-  padding: 40px 53px;
-  background: #e7e7e7;
+.to-know-text {
+  width: 72%;
+  margin-top: 42px;
+  padding-left: 398px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 70px;
 }
 
-.kpu-difference {
-  text-align: center;
-  font-size: 13pt;
-}
-
+/* Eligibility Section */
 .eligible-container {
-  padding-top: 40px;
+  background: #f4f7fd;
 }
 
-.who-is-eligible {
-  text-align: center;
-  font-size: 13pt;
-}
-
-.eligible-children {
-  text-align: center;
-  font-size: 11pt;
-}
-
-.eligible-requirements-list {
-  list-style-type: none;
-  padding-left: 65px;
-  padding-bottom: 20px;
-  font-size: 12pt;
+.eligible-header-text {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  padding-left: 170px;
+  margin-bottom: 59px;
+  margin-top: 107px;
 }
 
 .eligible-image {
-  width: 100%;
-  height: 200px;
-  background-color: rgba(0, 199, 249, 0.355);
+  width: 711px;
+  height: 520px;
+}
+
+#eligible-image-one {
+  margin-left: 10px;
 }
 
 .referrals-from-container {
-  padding: 40px;
-  background: #e7e7e7;
-}
-
-.accept-referrals-from {
-  text-align: center;
-  font-size: 13pt;
-}
-
-.referrals-list {
-  padding: 0;
-  padding-left: 60px;
-  list-style-type: none;
-  font-size: 12pt;
-}
-
-.referrals-list-item {
-  background: url("Images/pow-bullet.png") no-repeat left top;
-  background-size: 35px;
-  padding-left: 40px;
-  margin: 10px 0;
-}
-
-.refer-child-button-container {
   display: flex;
+  flex-direction: row;
+  background: #f4f7fd;
+}
+
+.eligible-requirements-list {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  padding-left: 245px;
+  line-height: 180%;
+}
+
+/* What to Expect Section */
+.what-to-expect-container h2 {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 48px;
+  margin-top: 74px;
+  text-align: center;
+}
+
+.what-to-expect {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  padding: 10px;
+  justify-content: space-around;
+  margin: 0px 100px;
+}
+
+.expect-step {
+  width: 291px;
+  height: 256px;
+  text-align: center;
+}
+
+.expect-step p:first-child {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 16px;
+}
+
+.expect-step {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  margin-bottom: 42px;
+}
+
+#expect-text-one {
+  padding-top: 37px;
+}
+
+#expect-text-two {
+  padding-top: 37px;
+}
+
+#expect-text-three {
+  width: 295px;
 }
 
 .refer-child-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
   color: white;
-  background: black;
+  width: 230px;
+  height: 64px;
+  background: #4dac79;
+  border-radius: 8px;
+  border: 2px solid #4dac79;
+  margin-left: 606px;
+  margin-top: 65px;
+}
+
+.refer-child-button:hover {
+  background: white;
+  color: #4dac79;
+  border: 2px solid #4dac79;
+  transition: all 500ms ease;
+  text-decoration: none;
 }
 
 .honor-code-container {
-  padding: 52px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.honor-code-text {
+  width: 100%;
+  margin-top: 58px;
+  margin-bottom: 63px;
+  width: 679px;
 }
 
 @media screen and (min-width: 700px) {
@@ -157,31 +240,13 @@ body {
     width: 55%;
     padding: 100px;
   }
-  .kpu-difference-container {
-    text-align: center;
-  }
-  .kpu-difference {
-    font-size: 20pt;
-  }
-  .kpu-difference-text {
-    text-align: left;
-    font-size: 14pt;
-    padding-left: 27%;
-    width: 73%;
-  }
   .eligible-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
   .eligible-text {
-    margin-top: 90px;
     width: 50%;
-    padding-left: 18%;
-  }
-  .who-is-eligible {
-    text-align: left;
-    font-size: 20pt;
   }
   .eligible-children {
     text-align: left;
@@ -191,11 +256,6 @@ body {
     text-align: left;
     margin-left: -60px;
     font-size: 14pt;
-  }
-  .eligible-image {
-    height: 60vh;
-    width: 50vw;
-    margin-top: -40px;
   }
   .accept-referrals-from {
     font-size: 20pt;
@@ -210,17 +270,9 @@ body {
   .refer-child-button {
     width: 15%;
   }
-  .honor-code {
-    font-size: 20pt;
-    text-align: center;
-  }
-  .honor-code-text {
-    font-size: 14pt;
-    width: 46%;
-    margin-left: 28%;
-  }
 }
 
+/* REFFERRAL FORM PAGE */
 .referral-form {
   letter-spacing: 0em;
   text-align: center;
@@ -244,26 +296,23 @@ body {
 .recipient-info {
   width: 217px;
   height: 31px;
-  margin-left: 79px;
+  margin-left: 77px;
   top: 104px;
 
   font-family: Dosis;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 140.62%;
 
   text-align: center;
 
   color: #000000;
+  margin-top: 20px;
 }
 
-.child-form-line-break {
-  width: 214px;
-  height: 0px;
-  left: 81px;
-  top: 176px;
-  border: 1px solid #1f4fab;
+.recipient-field {
+  margin-left: 36px;
 }
 
 .avatar-container {
@@ -277,16 +326,14 @@ body {
   height: 130px;
   margin-left: 123px;
   top: 219px;
-
-  border: 2px solid #1f4fab;
-  box-sizing: border-box;
+  border: 1px solid gray;
 }
 
 .add-avatar-sign {
   padding-left: 68.67%;
   padding-right: 34.4%;
   padding-top: 50.73%;
-  color: #ea6f39;
+  color: #4dac79;
 }
 
 .select-avatar {
@@ -324,6 +371,172 @@ input .child-form-fields {
   border-radius: 5.5px;
 }
 
+.child-form-header {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #4dac79;
+  border-bottom: 1px solid #4dac79;
+  margin-top: 10px;
+}
+
+.form-back-button {
+  background-color: white;
+  border: none;
+}
+
+.left-arrow {
+  width: 20px;
+  height: 30px;
+  margin-left: 102px;
+}
+
+.child-recipient-form {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: 15px;
+  margin-left: 300px;
+}
+
+#fam-approval {
+  display: flex;
+  flex-direction: row;
+}
+
+.star {
+  color: #dc0909;
+  margin-right: 3px;
+}
+
+.recipient-info-one input[type="text"] {
+  padding-left: 15px;
+}
+
+[type="text"] {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+  font-size: 16px;
+}
+
+#limited-field {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+  font-size: 16px;
+  padding-left: 15px;
+}
+
+@media screen and (min-width: 700px) {
+  .avatar-container {
+    margin-left: 325px;
+    margin-bottom: 55px;
+  }
+  .select-avatar {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .recipient-info-one {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 70vw;
+  }
+  .recipient-field {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 25px;
+
+    text-transform: capitalize;
+
+    color: #000000;
+    width: 190px;
+    margin-right: 145px;
+  }
+  .child-form-fields::placeholder {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+  .child-form-fields {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px 16px 0px 0px;
+
+    background: #ffffff;
+
+    border: 1px solid #4f5cf0;
+    box-sizing: border-box;
+    border-radius: 5.5px;
+
+    width: 415px;
+    height: 48px;
+    margin-bottom: 25px;
+    margin-top: -12px;
+  }
+  #limited-field {
+    height: 104px;
+  }
+  #age-field {
+    width: 90px;
+    text-align: center;
+  }
+  .referral-approval {
+    display: flex;
+    flex-direction: row;
+  }
+  .date-fillers {
+    display: flex;
+    flex-direction: row;
+  }
+  #date-month {
+    width: 90px;
+    margin-right: 10px;
+    padding-right: 0;
+    text-align: center;
+  }
+  #date-day {
+    width: 65px;
+    margin-right: 10px;
+    padding-right: 0;
+    text-align: center;
+  }
+  #date-year {
+    width: 120px;
+    text-align: center;
+  }
+  #child-checkbox {
+    width: 30px;
+  }
+  .approval-received {
+    color: #dc0909;
+    font-size: 16px;
+    width: 300px;
+    margin-left: 20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+  }
+  .submit-child-form-button {
+    margin-left: 371px;
+    align-items: center;
+    padding: 15px 37px;
+    background: #898989;
+    border-radius: 8px;
+    color: white;
+    border: none;
+  }
+}
+
 .recipient-details-text {
   font-family: Open Sans;
   font-size: 14px;
@@ -343,13 +556,12 @@ input .child-form-fields {
   text-align: left;
 }
 .sort-filter-text {
-  font-style: Semibold 14 (0.2 px);
-  font-family: Mulish;
-  font-size: 14px;
+  font-family: Open Sans;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: 0.20000000298023224px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0em;
   text-align: left;
 }
 .account-side-text {
@@ -380,13 +592,13 @@ input .child-form-fields {
   text-align: left;
 }
 .add-child-button {
-  font-family: Open Sans;
-  font-size: 14px;
+  background: #ea6f39;
+  font-family: Paytone One;
+  src: url(PaytoneOne-Regular.ttf);
   font-style: normal;
-  font-weight: 600;
-  line-height: 19px;
-  letter-spacing: 0.4000000059604645px;
-  text-align: left;
+  font-weight: normal;
+  font-size: 19.125px;
+  color: #ffffff;
 }
 .header-text {
   font-family: Open Sans;
