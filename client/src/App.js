@@ -22,7 +22,7 @@ function App() {
         <div>
           <MyNavbar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/profile/info" component={CreateAccountForm} />

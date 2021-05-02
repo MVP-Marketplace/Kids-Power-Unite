@@ -9,6 +9,7 @@ const CreateAccountForm = ({ history }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
 
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
