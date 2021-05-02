@@ -126,7 +126,7 @@
   left: 248px;
   position: absolute;
   top: -5px;
-  transform: rotate(-90.00deg);
+  /* transform: rotate(-90.00deg); */
   width: 651px;
 }
 .confirm-group-12 {
