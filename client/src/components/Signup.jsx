@@ -40,13 +40,35 @@ const Signup = ({ history }) => {
 
   const handleGoogleLogin = () => {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-    app.auth().signInWithPopup(googleAuthProvider);
+    app
+      .auth()
+      .signInWithPopup(googleAuthProvider)
+      .then(() => {
+        app
+          .firestore()
+          .collection("professional")
+          .doc(app.auth().currentUser.uid)
+          .set({
+            name: app.auth().currentUser.displayName,
+          });
+      });
     history.push("/create-account");
   };
 
   const handleFacebookLogin = () => {
     const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-    app.auth().signInWithPopup(facebookAuthProvider);
+    app
+      .auth()
+      .signInWithPopup(facebookAuthProvider)
+      .then(() => {
+        app
+          .firestore()
+          .collection("professional")
+          .doc(app.auth().currentUser.uid)
+          .set({
+            name: app.auth().currentUser.displayName,
+          });
+      });
     history.push("/create-account");
   };
 
