@@ -1,12 +1,25 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useCallback } from "react";
 import { AuthContext } from "../Auth";
 import "../App.css";
+import ReactDOM from "react-dom";
 import app from "../firebase";
 import PlusSign from "../Images/plus-sign.png";
 import LeftArrow from "../Images/LeftArrow.png";
 import Form from "react-bootstrap/Form";
 
 const ReferChildForm = () => {
+  const [count, setCount] = useState(0);
+  const LimitedTextarea = ({ rows, cols, value, limit }) => {
+    const [countLimit, setCountLimit] = useState(value.slice(0, limit));
+
+    const setFormattedArea = useCallback(
+      (text) => {
+        setCountLimit(text.slice(0, limit));
+      },
+      [limit, setCountLimit]
+    );
+  };
+
   const { currentUser } = useContext(AuthContext);
   const [sponsorId, setSponsorId] = useState("");
   const [submit, setSubmit] = useState(false);
@@ -79,6 +92,8 @@ const ReferChildForm = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    // setFormattedArea(event.target.value);
+    setCount(event.target.value.length);
     setValues({
       ...values,
       [name]: value,
@@ -179,8 +194,9 @@ const ReferChildForm = () => {
               <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Control
                   as="textarea"
-                  rows="3"
-                  placeholder="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do"
+                  // rows={rows}
+                  // cols={cols}
+                  placeholder="Please type here.."
                   id="limited-field"
                   className="child-form-fields"
                   name="childBio"
@@ -188,6 +204,10 @@ const ReferChildForm = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
+              <p>
+                {/* {count.length}/{limit} */}
+                {/* {count}/{limit} */}
+              </p>
               {submit && !values.childBio ? (
                 <span className="error-message">Please enter a bio</span>
               ) : null}
@@ -200,14 +220,13 @@ const ReferChildForm = () => {
                 <Form.Control
                   as="textarea"
                   rows="3"
-                  placeholder="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do"
+                  placeholder="Please type here.."
                   id="limited-field"
                   className="child-form-fields"
                   type="text"
                   name="giftExplanation"
                   value={values.giftExplanation}
                   onChange={handleChange}
-                  placeholder="Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore"
                 />
               </Form.Group>
               {submit && !values.giftExplanation ? (
@@ -353,5 +372,7 @@ const ReferChildForm = () => {
     </div>
   );
 };
+
+ReactDOM.render(<LimitedTextarea limit={150} value=""></LimitedTextarea>);
 
 export default ReferChildForm;
