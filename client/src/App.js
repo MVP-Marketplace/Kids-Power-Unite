@@ -8,16 +8,11 @@ import Signup from "./components/Signup";
 import ProfessionalsForm from "./components/ProfessionalsForm";
 import { AuthProvider } from "./Auth.js";
 import PrivateRoute from "./PrivateRoute";
-import Home from "./components/Home";
 import MyNavbar from "./components/Navbar";
 import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
-<<<<<<< HEAD
 // import Donate from "./components/Donate"
 // import About from "./components/About"
-=======
-import Home from "./components/Home"
->>>>>>> 4230dedd2943822f83c49d39930dbae0d6dfd4d7
 
 //adding in a test.
 
@@ -28,11 +23,7 @@ function App() {
         <div>
           <MyNavbar />
           <Route exact path="/" component={Home} />
-<<<<<<< HEAD
           <Route exact path="/dashboard" component={Dashboard} />
-=======
-          <PrivateRoute exact path="/Dashboard" component={Dashboard} />
->>>>>>> 4230dedd2943822f83c49d39930dbae0d6dfd4d7
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           {/* <Route exact path="/donate" component={Donate} /> */}
