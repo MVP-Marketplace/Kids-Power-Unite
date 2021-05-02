@@ -6,20 +6,10 @@ import app from "../firebase";
 import PlusSign from "../Images/plus-sign.png";
 import LeftArrow from "../Images/LeftArrow.png";
 import Form from "react-bootstrap/Form";
+import Textarea from "./Textarea";
 
 const ReferChildForm = () => {
   const [count, setCount] = useState(0);
-  // const LimitedTextarea = ({ rows, cols, value, limit }) => {
-  //   const [countLimit, setCountLimit] = useState(value.slice(0, limit));
-
-  //   const setFormattedArea = useCallback(
-  //     (text) => {
-  //       setCountLimit(text.slice(0, limit));
-  //     },
-  //     [limit, setCountLimit]
-  //   );
-  // };
-
   const { currentUser } = useContext(AuthContext);
   const [sponsorId, setSponsorId] = useState("");
   const [submit, setSubmit] = useState(false);
@@ -100,27 +90,17 @@ const ReferChildForm = () => {
     });
   };
 
-  // function validate(
-  //   nickname,
-  //   amazonLink,
-  //   giftName,
-  //   giftReason,
-  //   childBio,
-  //   giftExplanation,
-  //   relationship,
-  //   age,
-  //   month,
-  //   day,
-  //   year,
-  //   parentalConsent
-  // ) {
-  //   const errors = [];
+  function validate(values) {
+    const errors = {};
 
-  //   if (nickname.length === 0) {
-  //     errors.push("Nickname can't be empty");
-  //   }
-  //   if (amazonLink)
-  // };
+    if (!values.nickname && values.nickname.length === 0) {
+      errors.nickname("Please enter a nickname");
+    }
+    if (!values.amazonLink) {
+      errors.amazonLink("Please enter a link");
+    }
+    return errors;
+  }
 
   return (
     <div className="child-form-container">
