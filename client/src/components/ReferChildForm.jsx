@@ -26,6 +26,7 @@ const ReferChildForm = () => {
     month: "",
     day: "",
     year: "",
+    status:"in progress",
     parentalConsent: false,
   });
 
@@ -50,6 +51,7 @@ const ReferChildForm = () => {
       values.month &&
       values.day &&
       values.year &&
+      values.status &&
       values.parentalConsent
     ) {
       try {
@@ -76,6 +78,7 @@ const ReferChildForm = () => {
       month: "",
       day: "",
       year: "",
+      status:"in progress",
       parentalConsent: false,
     });
   };

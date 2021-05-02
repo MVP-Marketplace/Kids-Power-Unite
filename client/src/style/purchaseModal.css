@@ -1,0 +1,652 @@
+.birthday {
+  height: 8px;
+  left: 255px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 147px;
+  width: 52px;
+}
+.cost {
+  height: 32px;
+  left: 369px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 170px;
+  width: 190px;
+}
+.modal-date {
+  height: 18px;
+  left: 188px;
+  letter-spacing: -0.90px;
+  position: absolute;
+  text-align: center;
+  top: 209px;
+  width: 186px;
+}
+.date-added {
+  height: 32px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 170px;
+  width: 186px;
+}
+.group-79 {
+  align-items: flex-start;
+  display: flex;
+  height: 242px;
+  left: 0px;
+  min-width: 575px;
+  position: absolute;
+  top: 0px;
+}
+.group-80 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 3px;
+  min-height: 170px;
+  position: absolute;
+  top: 56px;
+  width: 184px;
+}
+.group-81 {
+  align-items: flex-start;
+  display: flex;
+  height: 242px;
+  left: 0px;
+  min-width: 557px;
+  position: absolute;
+  top: 69px;
+}
+.image-5 {
+  height: 126px;
+  left: 416px;
+  object-fit: cover;
+  position: absolute;
+  top: 32px;
+  width: 93px;
+}
+.important {
+  height: 18px;
+  left: 10px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  top: 13px;
+  width: 186px;
+}
+.item {
+  height: 32px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 186px;
+}
+.item-picture {
+  height: 32px;
+  left: 372px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 186px;
+}
+.purchaseLine-43 {
+  height: 1px;
+  left: 188px;
+  position: absolute;
+  top: 168px;
+  width: 369px;
+}
+.line-45 {
+  height: 242px;
+  left: 372px;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+.purchaseLine-46 {
+  height: 1px;
+  left: 188px;
+  position: absolute;
+  top: 62px;
+  width: 184px;
+}
+.line-47 {
+  height: 242px;
+  left: 188px;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+.marvel-backpack {
+  height: 18px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 34px;
+  width: 186px;
+}
+.mask-group {
+  height: 119px;
+  width: 119px;
+}
+.occasion {
+  height: 32px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 64px;
+  width: 186px;
+}
+.modal-overlap-group {
+  height: 311px;
+  position: relative;
+  width: 562px;
+}
+.modal-overlap-group1 {
+  height: 242px;
+  position: relative;
+  width: 575px;
+}
+.modal-overlap-group2 {
+  height: 242px;
+  position: relative;
+  width: 559px;
+}
+.modal-overlap-group3 {
+  align-items: center;
+  background-size: 100% 100%;
+  display: flex;
+  height: 129px;
+  justify-content: flex-end;
+  margin-right: 1.19px;
+  margin-top: -5px;
+  min-width: 130px;
+  padding: 0 5.2px;
+}
+.modal-price {
+  height: 33px;
+  left: 369px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 201px;
+  width: 190px;
+}
+.purchase-modal{
+  align-items: flex-start;
+  background-color: var(--zircon);
+  display: flex;
+  flex-direction: column;
+  height: 541px;
+  padding: 33.1px 35px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 633px;
+}
+.recipient {
+  height: 32px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  width: 190px;
+}
+.rectangle-1764 {
+  background-color: var(--white);
+  height: 242px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 557px;
+}
+.span {
+  color: rgba(0,0,0,1.0);
+  font-family: 'Open Sans-Regular', Helvetica;
+  font-size: 16px;
+}
+.span1 {
+  color: rgba(234,111,57,1.0);
+  font-family: 'Open Sans-Bold', Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+}
+.span3 {
+  color: rgba(76,172,120,1.0);
+  font-family: 'Open Sans-Bold', Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+}
+.steven-age-7 {
+  letter-spacing: 0.00px;
+  margin-top: 14px;
+  min-height: 32px;
+  text-align: center;
+  width: 184px;
+}
+.modal-text-1 {
+  left: 191px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  top: 3px;
+  width: 330px;
+}
+.modal-text-2 {
+  letter-spacing: 0.00px;
+  margin-top: 14px;
+  min-height: 51px;
+  width: 559px;
+}
+.modal-vector {
+  height: 39px;
+  left: 259px;
+  position: absolute;
+  top: 102px;
+  width: 36px;
+}
+.claritycaret-line {
+  align-items: flex-start;
+  display: flex;
+  height: 41px;
+  left: 521px;
+  padding: 5.6px 6.2px;
+  position: absolute;
+  top: 0px;
+  transform: rotate(-90.00deg);
+  width: 41px;
+}
+.vector-1 {
+  height: 28px;
+  transform: rotate(90.00deg);
+  width: 29px;
+}
+.button-orange-desktop {
+  align-items: center;
+  align-self: center;
+  background-color: var(--smashed-pumpkin);
+  border-radius: 8px;
+  display: flex;
+  height: 51px;
+  justify-content: flex-end;
+  margin-top: 20fpx;
+  min-width: 147px;
+  padding: 0 27.4px;
+}
+
+.button-green-desktop {
+  align-items: center;
+  align-self: center;
+  background-color: #4DAC79;
+  border-radius: 8px;
+  display: flex;
+  height: 51px;
+  justify-content: flex-end;
+  margin-top: 20fpx;
+  min-width: 147px;
+  padding: 0 27.4px;
+  text-align: center;
+}
+
+.text-i66847885331 {
+  height: 27px;
+  letter-spacing: 0.00px;
+  min-height: 27px;
+  min-width: 90px;
+  text-align: center;
+}
+.birthday {
+  height: 8px;
+  left: 255px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 147px;
+  width: 52px;
+}
+.cost {
+  height: 32px;
+  left: 369px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 170px;
+  width: 190px;
+}
+.modal-date {
+  height: 18px;
+  left: 188px;
+  letter-spacing: -0.90px;
+  position: absolute;
+  text-align: center;
+  top: 209px;
+  width: 186px;
+}
+.date-added {
+  height: 32px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 170px;
+  width: 186px;
+}
+.group-79 {
+  align-items: flex-start;
+  display: flex;
+  height: 242px;
+  left: 0px;
+  min-width: 575px;
+  position: absolute;
+  top: 0px;
+}
+.group-80 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 3px;
+  min-height: 170px;
+  position: absolute;
+  top: 56px;
+  width: 184px;
+}
+.group-81 {
+  align-items: flex-start;
+  display: flex;
+  height: 242px;
+  left: 0px;
+  min-width: 557px;
+  position: absolute;
+  top: 69px;
+}
+.modal-image-5 {
+  height: 126px;
+  left: 416px;
+  object-fit: cover;
+  position: absolute;
+  top: 32px;
+  width: 93px;
+}
+.important {
+  height: 18px;
+  left: 10px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  top: 13px;
+  width: 186px;
+}
+.item {
+  height: 32px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 186px;
+}
+.item-picture {
+  height: 32px;
+  left: 372px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 186px;
+}
+.line-43 {
+  height: 1px;
+  left: 188px;
+  position: absolute;
+  top: 168px;
+  width: 369px;
+}
+.line-45 {
+  height: 242px;
+  left: 372px;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+.line-46 {
+  height: 1px;
+  left: 188px;
+  position: absolute;
+  top: 62px;
+  width: 184px;
+}
+.modal-line-47 {
+  height: 242px;
+  left: 188px;
+  position: absolute;
+  top: 0px;
+  width: 1px;
+}
+.marvel-backpack {
+  height: 18px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 34px;
+  width: 186px;
+}
+.mask-group-modal {
+  height: 119px;
+  width: 119px;
+}
+.occasion {
+  height: 32px;
+  left: 188px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 64px;
+  width: 186px;
+}
+.modal-overlap-group {
+  height: 311px;
+  position: relative;
+  width: 562px;
+}
+.modal-overlap-group1 {
+  height: 242px;
+  position: relative;
+  width: 575px;
+}
+.overlap-group2 {
+  height: 242px;
+  position: relative;
+  width: 559px;
+}
+.overlap-group3 {
+  align-items: center;
+  background-size: 100% 100%;
+  display: flex;
+  height: 129px;
+  justify-content: flex-end;
+  margin-right: 1.19px;
+  margin-top: -5px;
+  min-width: 130px;
+  padding: 0 5.2px;
+}
+.modal-price {
+  height: 33px;
+  left: 369px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 201px;
+  width: 190px;
+}
+.purchase-modal-flow-1 {
+  align-items: flex-start;
+  background-color: var(--zircon);
+  display: flex;
+  flex-direction: column;
+  height: 541px;
+  padding: 33.1px 35px;
+  position: relative;
+  width: 633px;
+}
+.recipient {
+  height: 32px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 2px;
+  width: 190px;
+}
+.rectangle-1764 {
+  background-color: var(--white);
+  height: 242px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 557px;
+}
+.span {
+  color: rgba(0,0,0,1.0);
+  font-family: 'Open Sans-Regular', Helvetica;
+  font-size: 16px;
+}
+.span1 {
+  color: rgba(234,111,57,1.0);
+  font-family: 'Open Sans-Bold', Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+}
+.span3 {
+  color: rgba(76,172,120,1.0);
+  font-family: 'Open Sans-Bold', Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+}
+.steven-age-7 {
+  letter-spacing: 0.00px;
+  margin-top: 14px;
+  min-height: 32px;
+  text-align: center;
+  width: 184px;
+}
+.modal-text-1 {
+  left: 191px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  top: 3px;
+  width: 330px;
+}
+.modal-text-2 {
+  letter-spacing: 0.00px;
+  margin-top: 14px;
+  min-height: 51px;
+  width: 559px;
+}
+.vector {
+  height: 39px;
+  left: 259px;
+  position: absolute;
+  top: 102px;
+  width: 36px;
+}
+.border-1px-royal-blue {
+  border: 1px solid var(--royal-blue);
+}
+.modal-dosis-semi-bold-monza-32px {
+  color: var(--monza);
+  font-family: var(--font-family-dosis-semibold);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 600;
+}
+.dosis-semi-bold-royal-blue-26-1px {
+  color: var(--royal-blue);
+  font-family: var(--font-family-dosis-semibold);
+  font-size: var(--font-size-26_1px);
+  font-style: normal;
+  font-weight: 600;
+}
+.opensans-regular-normal-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-open_sans-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.opensans-regular-normal-black-18px {
+  color: var(--black);
+  font-family: var(--font-family-open_sans-regular);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+.opensans-regular-normal-fuscous-gray-14px {
+  color: var(--fuscous-gray);
+  font-family: var(--font-family-open_sans-regular);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+.opensans-regular-normal-white-16px {
+  font-family: var(--font-family-open_sans-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.opensans-semi-bold-black-10px {
+  color: var(--black);
+  font-family: var(--font-family-open_sans-semibold);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 600;
+}
+.opensans-semi-bold-black-14px {
+  color: var(--black);
+  font-family: var(--font-family-open_sans-semibold);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 600;
+}
+.paytoneone-regular-normal-white-19-1px {
+  color: var(--white);
+  font-family: var(--font-family-paytone_one-regular);
+  font-size: var(--font-size-19_1px);
+  font-style: normal;
+  font-weight: 400;
+}
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --font-family-dosis-semibold: "Dosis-SemiBold", Helvetica;
+  --font-family-open_sans-regular: "Open Sans-Regular", Helvetica;
+  --font-family-open_sans-semibold: "Open Sans-SemiBold", Helvetica;
+  --font-family-paytone_one-regular: "Paytone One-Regular", Helvetica;
+  --font-size-19_1px: 19.1px;
+  --font-size-26_1px: 26.1px;
+  --font-size-l: 18px;
+  --font-size-m: 16px;
+  --font-size-s: 14px;
+  --font-size-xxs: 10px;
+  --font-size-xxxxl: 32px;
+  --fuscous-gray: rgba(80, 79, 79, 1);
+  --monza: rgba(219, 9, 9, 1);
+  --royal-blue: rgba(79, 92, 240, 1);
+  --smashed-pumpkin: rgba(234, 111, 57, 1);
+  --white: rgba(255, 255, 255, 1);
+  --zircon: rgba(244, 247, 253, 1);
+}
+
+.valign-text-middle2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

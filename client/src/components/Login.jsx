@@ -1,11 +1,13 @@
-import React, { useContext, useCallback } from "react";
-import { Google, Facebook } from "react-bootstrap-icons";
+import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
-import app from "../firebase";
+import { Link } from "react-router-dom";
+import { Google, Facebook } from "react-bootstrap-icons";
+import { Form, Button, Container, Col, Card, Row } from "react-bootstrap";
 import { AuthContext } from "../Auth";
+import KpuLogo from "../Images/kpu-logo.png";
+import app from "../firebase";
 import firebase from "firebase/app";
 import "firebase/auth";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -16,7 +18,7 @@ const Login = ({ history }) => {
         await app
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
+        history.push("/dashboard");
       } catch (error) {
         alert(error);
       }
@@ -27,74 +29,102 @@ const Login = ({ history }) => {
   const handleGoogleLogin = () => {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
     app.auth().signInWithPopup(googleAuthProvider);
+    history.push("/dashboard");
   };
 
   const handleFacebookLogin = () => {
     const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
     app.auth().signInWithPopup(facebookAuthProvider);
+    history.push("/dashboard");
   };
 
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/Dashboard" />;
+    return <Redirect to="/dashboard" />;
   }
 
   return (
-    <div>
-      <div style={{ height: "100px" }}></div>
-      <Container fluid>
-        <Row className="justify-content-center">
-          <Col sm={4}>
-            <Row className="justify-content-center">Log In</Row>
-
+    <>
+      <Container fluid style={{ marginTop: "80px" }}>
+        <Card className="text-center">
+          <Row className="justify-content-center">
+            <Card.Img
+              src={KpuLogo}
+              style={{ height: "200px", width: "250px" }}
+              className="justify-self-center"
+            />
+          </Row>
+          <Card.Body>
+            <Card.Title>
+              <h1>Sign In</h1>
+            </Card.Title>
+            <p>
+              Don't Have An Account? <Link to="/signup">Create Account</Link>
+            </p>
+            <br />
+            <br />
             <Form onSubmit={handleLogin}>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control
-                  name="email"
-                  type="email"
-                  placeholder="Enter Email Address"
-                />
-              </Form.Group>
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  name="password"
-                  type="password"
-                  placeholder="Enter Password"
-                />
-              </Form.Group>
-              <Row className="justify-content-center">
-                <Col sm={6}>
-                  <Row className="justify-content-center">
-                    <Button variant="primary" type="submit" className="w-100">
+              <Form.Row className="justify-content-center">
+                <Col xs={"auto"} sm={3} className="text-left">
+                  <Form.Group controlId="email">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                      name="email"
+                      type="email"
+                      placeholder="Enter email"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="password">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      name="password"
+                      type="password"
+                      placeholder="Password"
+                    />
+                  </Form.Group>
+                </Col>
+              </Form.Row>
+              <br />
+              <br />
+              <Form.Row className="justify-content-center">
+                <Col xs={"auto"} sm={"auto"}>
+                  <Form.Row className="justify-content-center">
+                    <Button
+                      style={{
+                        backgroundColor: "#FF5308",
+                        padding: "10px",
+                        fontSize: "20px",
+                      }}
+                      type="submit"
+                      className="w-100"
+                    >
                       Login
                     </Button>
-                  </Row>
+                  </Form.Row>
                   <br></br>
-                  <Row className="align-items-center">
+                  <Form.Row className="align-items-center">
                     <Button
                       onClick={handleFacebookLogin}
                       className="w-100 align-items-center"
                     >
                       <Facebook></Facebook> Continue with Facebook
                     </Button>
-                  </Row>
+                  </Form.Row>
                   <br></br>
-                  <Row className="justify-content-center">
+                  <Form.Row className="justify-content-center">
                     <Button onClick={handleGoogleLogin} className="w-100">
                       <Google></Google> Sign in with Google
                     </Button>
-                  </Row>
+                  </Form.Row>
+                  <br />
                 </Col>
-              </Row>
+              </Form.Row>
             </Form>
-          </Col>
-        </Row>
+          </Card.Body>
+        </Card>
       </Container>
-      <div style={{ height: "100px" }}></div>
-    </div>
+    </>
   );
 };
 

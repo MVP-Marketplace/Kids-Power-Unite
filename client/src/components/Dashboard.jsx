@@ -387,11 +387,11 @@ const Dashboard = () => {
       const doc = await response.get();
       const data = doc.data();
       setGuardianValues({
-        city: data.address.city,
-        state: data.address.state,
-        street: data.address.street,
-        suite: data.address.suite,
-        zip: data.address.zip,
+        city: data.deliveryAddress.city,
+        state: data.deliveryAddress.state,
+        street: data.deliveryAddress.street,
+        suite: data.deliveryAddress.suite,
+        zip: data.deliveryAddress.zip,
         employer: data.employer,
         credentials: data.name.credentials,
         first: data.name.first,
