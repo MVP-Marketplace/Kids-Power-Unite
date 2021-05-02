@@ -2,6 +2,7 @@ import React, {useEffect,useState} from "react";
 import "../style/donatePage.css";
 import DonateCard from "./DonateCard";
 import PurchaseModal from "./PurchaseModal";
+import ConfirmPurchaseModal from "./ConfirmPurchaseModal"
 
 
 import app from "../firebase"
@@ -14,20 +15,58 @@ const DonatePage = () => {
     isOpen:false,
     data: {}
   })
+  const [confirmModalInfo,setConfirmModalInfo] = useState({})
+
+  const [confirmPurchase,setConfirmPurchase] = useState(false)
 
   const openModal = (id) =>{
     modalData = children[id]
     setModalInfo({isOpen:true,data:modalData})
+    setConfirmModalInfo(modalData)
   }
   const closeModal = () => {
     setModalInfo({isOpen:false})
   }
-  useEffect(()=>{
-    app.firestore().collection('recipient')
-       .get()
-       .then((query)=>{
+
+  const openConfirmModal = () => {
+    setConfirmPurchase(true)
+    setModalInfo({isOpen:false})
+  }
+
+  const closeConfirmModal = () =>{
+    setConfirmPurchase(false)
+  }
+
+  const updatePurchase = (nickName) => {
+    // let childQuery = app.firestore().collection('recipient')
+    //                     .where("values.nickname",'==',nickName)
+    let childRef = app.firestore().collection('recipient').doc(nickName)
+    childRef.update({
+      "values.status":"complete"
+    }).then(()=>{
+      window.location.reload();
+    })
+    // childQuery.get().then(function(querySnapshot) {
+    //                   querySnapshot.forEach(function(doc) {
+    //                         doc.ref.update({
+    //                           status:"purchased"
+    //                         });
+    //                 });
+    //                 window.location.reload();
+    //               });
+  }
+
+  useEffect(()=>{ 
+    getActiveChildren();
+  },[])
+
+  const getActiveChildren = async () =>{
+     await app.firestore().collection("recipient")
+                            .where("values.status",'==', "in progress")
+                            .get()
+        .then((querySnapshot)=>{
          let data = []
-         query.forEach((doc)=>{
+         querySnapshot.forEach((doc)=>{
            let child = doc.data()
            data.push(child.values)
          })
@@ -36,7 +75,7 @@ const DonatePage = () => {
        .catch((error)=>{
           console.log(error)
        })
-  },[])
+  }
 
   return (
     <div>
@@ -48,7 +87,8 @@ const DonatePage = () => {
         return <DonateCard open={()=>{openModal(i)}} key={i}  {...child}/>
       }): null}
       </div>
-      {modalInfo.isOpen ? <PurchaseModal close={closeModal} {...modalInfo.data}/> :null}
+      {modalInfo.isOpen ? <PurchaseModal openConfirm={openConfirmModal} close={closeModal} {...modalInfo.data}/> :null}
+      {confirmPurchase ? <ConfirmPurchaseModal updatePurchase={()=>updatePurchase(confirmModalInfo.nickname)} closeConfirm={closeConfirmModal} {...confirmModalInfo}/> :null}
     </div>
   );
 };

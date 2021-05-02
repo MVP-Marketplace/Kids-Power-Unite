@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import vector from "../Images/vector1.png"
 import OrangePurchaseButton from "../components/OrangePurchaseButton"
+import GreenPurchaseButton from "../components/GreenPurchaseButton"
 
 import purchaseLine43 from "../Images/purchaseLine43.png"
 import purchaseLine46 from "../Images/purchaseLine46.png"
@@ -11,6 +12,8 @@ import "../style/purchaseModal.css"
 
 
 const PurchaseModal = (props) =>{
+  const [amazonOpen,setAmazonOpen] = useState(false)
+  
   return (
     <div className="purchase-modal">
       <div className="modal-overlap-group">
@@ -67,7 +70,16 @@ const PurchaseModal = (props) =>{
         <span className="span3">I’ve Purchased This Item</span>
         <span className="span"> so we can keep track of everything.</span>
       </p>
-      <OrangePurchaseButton link={props.amazonLink}/>
+      { amazonOpen ? 
+      <div>
+        <OrangePurchaseButton close={props.close} buttonMessage={"I Didn't Purchase"}link={props.amazonLink}/>
+        <GreenPurchaseButton openConfirm={props.openConfirm} buttonMessage={"I Did Purchase"}/>
+      </div>
+      :<div onClick={()=>{setAmazonOpen(true)}}>
+        <OrangePurchaseButton buttonMessage={"Purchase"}link={props.amazonLink}/>
+      </div>
+      }
+      
     </div>
   );
 }

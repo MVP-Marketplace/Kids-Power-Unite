@@ -279,10 +279,25 @@
   display: flex;
   height: 51px;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: 20fpx;
   min-width: 147px;
   padding: 0 27.4px;
 }
+
+.button-green-desktop {
+  align-items: center;
+  align-self: center;
+  background-color: #4DAC79;
+  border-radius: 8px;
+  display: flex;
+  height: 51px;
+  justify-content: flex-end;
+  margin-top: 20fpx;
+  min-width: 147px;
+  padding: 0 27.4px;
+  text-align: center;
+}
+
 .text-i66847885331 {
   height: 27px;
   letter-spacing: 0.00px;

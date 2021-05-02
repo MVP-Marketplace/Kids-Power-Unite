@@ -19,6 +19,7 @@ const ReferChildForm = () => {
     month: "",
     day: "",
     year: "",
+    status:"in progress",
     parentalConsent: false,
   });
   const [valid, setValid] = useState(false);
@@ -43,6 +44,7 @@ const ReferChildForm = () => {
       values.month &&
       values.day &&
       values.year &&
+      values.status &&
       values.parentalConsent
     ) {
       setValid(true);
@@ -70,6 +72,7 @@ const ReferChildForm = () => {
       month: "",
       day: "",
       year: "",
+      status:"in progress",
       parentalConsent: false,
     });
   };
