@@ -46,15 +46,24 @@ const Login = ({ history }) => {
       <Container fluid>
         <Row className="justify-content-center">
           <Col sm={4}>
-            <h1>Log in</h1>
+            <Row className="justify-content-center">Log In</Row>
+
             <Form onSubmit={handleLogin}>
               <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Label>Email Address</Form.Label>
+                <Form.Control
+                  name="email"
+                  type="email"
+                  placeholder="Enter Email Address"
+                />
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  name="password"
+                  type="password"
+                  placeholder="Enter Password"
+                />
               </Form.Group>
               <Row className="justify-content-center">
                 <Col sm={6}>
