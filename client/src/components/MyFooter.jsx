@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Button, Col, Row, Form } from "react-bootstrap";
+import officiallogo from "../Images/officiallogo.png";
+import { Twitter, Facebook, Instagram } from "react-bootstrap-icons";
 
 const handleNewsletterSignup = () => {
   return true;
@@ -8,68 +10,81 @@ const handleNewsletterSignup = () => {
 function MyFooter() {
   return (
     <>
-      <Container fluid>
-        <Row className="align-items-center bg-primary p-3">
-          <Col sm={4} className="text-right text-light">
-            <div>Subscribe to our newsletter</div>
+      <Container fluid id="footer-container">
+        <Row className="align-items-end bg-warning pt-5 pb-5">
+          <Col sm={4} className="newsletter-signup text-right">
+            <div>Sign up for our newsletter</div>
           </Col>
           <Col sm={6} className="align-items-center">
             <Form>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Label className="email-newsletter">
+                Email Address
+              </Form.Label>
+              <Form.Control
+                className="newsletter-filler"
+                type="email"
+                placeholder="forever_upwards@gmail.com"
+              />
             </Form>
           </Col>
           <Col sm={2}>
-            <Button className="btn-success" onClick={handleNewsletterSignup}>
-              Subscribe
+            <Button className="btn-primary" onClick={handleNewsletterSignup}>
+              Sign Up
             </Button>
           </Col>
         </Row>
-        <Row className="p-3">
+        <Row className="p-3 bg-primary">
           <Col>
-            <h3>KidPower Unites</h3>
-            <p>© 2021</p>
-            <a href="#">Privacy -- Terms</a>
-            <br></br>
+            <img
+              src={officiallogo}
+              width="200"
+              className="d-inline-block align-top"
+              alt="Official Logo"
+            />
+          </Col>
+          <Col>
+            <Row className="mb-4">
+              <b className="footer-bold text-white">Get Involved</b>
+            </Row>
+            <Row className="mb-4">
+              <a className="text-white footer-links" href="#">
+                Donate
+              </a>
+            </Row>
+            <Row className="mb-4">
+              <a className="text-white footer-links" href="#">
+                Refer a Child
+              </a>
+            </Row>
             <Row>
-              <a href="#">Twitter</a>
-              <a href="#">Facebook</a>
-              <a href="#">Instagram</a>
+              <p className="text-white copyright">© 2021 Kid Power Unites</p>
             </Row>
           </Col>
           <Col>
-            <b>About</b>
-            <br></br>
-            <a href="#">About Us</a>
-            <br></br>
-            <a href="#">Mission</a>
-            <br></br>
-            <a href="#">Success Stories</a>
+            <Row className="mb-4">
+              <b className="footer-bold text-white">About Us</b>
+            </Row>
           </Col>
           <Col>
-            <b>Get Involved</b>
-            <br></br>
-            <a href="#">Donate</a>
-            <br></br>
-            <a href="#">Refer a Child</a>
-            <br></br>
-            <a href="#">FAQ</a>
-          </Col>
-          <Col>
-            <b>Resources</b>
-            <br></br>
-            <a href="#">Book List</a>
-            <br></br>
-            <a href="#">Kid Entrepreneurs</a>
-            <br></br>
-            <a href="#">Wishlist</a>
-          </Col>
-          <Col>
-            <b>Contact Us</b>
-            <br></br>
-            <a href="#">Contact</a>
-          </Col>
-          <Col>
-            <Button variant="primary">Donate</Button>
+            <Row>
+              <Button variant="primary">Donate</Button>
+            </Row>
+            <Row className="mt-3">
+              <a href="#">
+                <Twitter className="m-2" style={{ color: "white" }}></Twitter>
+              </a>
+
+              <a href="#">
+                <Facebook className="m-2" style={{ color: "white" }}></Facebook>
+              </a>
+
+              <a href="#">
+                <Instagram
+                  className="m-2"
+                  style={{ color: "white" }}
+                ></Instagram>
+              </a>
+            </Row>
           </Col>
         </Row>
       </Container>
