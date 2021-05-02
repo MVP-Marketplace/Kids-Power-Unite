@@ -104,9 +104,9 @@ const Home = () => {
               src={Donate}
               alt="two people laughing at a phone screen"
             />
-            <Link className="btn donate-btn" to="/donate">
+            <Button className="btn donate-btn" href="/donate">
               Give
-            </Link>
+            </Button>
           </div>
         </section>
         <section className="home-refer">
@@ -114,9 +114,9 @@ const Home = () => {
             Refer a Child. <br /> Help them get their wish fulfilled.
           </h3>
           <img src={Legos} alt="top view of legos in multiple colors" />
-          <Link className="btn refer-btn" to="/referchild">
+          <Button className="btn refer-btn" href="/referchild">
             Sponsor
-          </Link>
+          </Button>
         </section>
       </div>
       <section className="featured-finds">
