@@ -23,7 +23,7 @@ function App() {
         <div>
           <MyNavbar />
           <Route exact path="/" component={Home} />
-          <PrivateRoute exact path="/Dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           {/* <Route exact path="/donate" component={Donate} /> */}

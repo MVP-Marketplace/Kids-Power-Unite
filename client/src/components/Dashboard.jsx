@@ -450,7 +450,7 @@ const Dashboard = () => {
     const response = app
       .firestore()
       .collection("recipient")
-      .where("sponsorId", "==", currentUser);
+      .where("sponsorId", "==", currentUser.uid);
     const data = await response.get();
     data.docs.forEach((recipient) => {
       setList((list) => [
