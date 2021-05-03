@@ -13,8 +13,7 @@ import MyFooter from "./components/MyFooter";
 import ReferChild from "./components/ReferChild";
 import DonatePage from "./components/DonatePage";
 import ReferChildForm from "./components/ReferChildForm";
-import CreateAccountForm from "./components/CreateAccountForm"
-
+import CreateAccountForm from "./components/CreateAccountForm";
 
 //adding in a test.
 
@@ -38,8 +37,8 @@ function App() {
             component={ProfessionalsForm}
           />
           <Route exact path="/referchild" component={ReferChild} />
-          <Route exact path="/referchildform" component={ReferChildForm}/>
-          <Route exact path="/donate" component={DonatePage}/>
+          <Route exact path="/referchildform" component={ReferChildForm} />
+          <Route exact path="/donate" component={DonatePage} />
           <MyFooter />
         </div>
       </Route>

@@ -529,6 +529,7 @@ const Dashboard = () => {
   useEffect(() => {
     updateGuardian();
   }, []);
+
   const overview = (
     <>
       <Row className="p-2 align-items-center">
@@ -709,7 +710,7 @@ const Dashboard = () => {
         </Col>
         <Col sm={10}>
           {displayChildForm ? (
-            <ReferChildForm />
+            <ReferChildForm setDisplayChildForm={setDisplayChildForm} />
           ) : (
             <>{dispOverview ? overview : settings}</>
           )}
