@@ -71,11 +71,11 @@ const PurchaseModal = (props) =>{
         <span className="span"> so we can keep track of everything.</span>
       </p>
       { amazonOpen ? 
-      <div>
+      <div className="flex-parent jc-center">
         <OrangePurchaseButton close={props.close} buttonMessage={"I Didn't Purchase"}link={props.amazonLink}/>
         <GreenPurchaseButton openConfirm={props.openConfirm} buttonMessage={"I Did Purchase"}/>
       </div>
-      :<div onClick={()=>{setAmazonOpen(true)}}>
+      :<div className="single-orange-button" onClick={()=>{setAmazonOpen(true)}}>
         <OrangePurchaseButton buttonMessage={"Purchase"}link={props.amazonLink}/>
       </div>
       }
