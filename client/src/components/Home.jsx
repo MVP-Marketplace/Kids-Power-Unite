@@ -21,7 +21,7 @@ const Home = () => {
             Where the power to ask <br />
             meets the power to give
           </h1>
-          <Button className="hero-button" href="./donate">
+          <Button className="hero-button" href="/donate">
             Donate
           </Button>
         </section>
@@ -41,7 +41,11 @@ const Home = () => {
               On the Kid Power Unites platform, find opportunities to give to
               another kid who needs something.
             </p>
-            <Button className="green-button">Learn More</Button>
+            <div className="green-button-container">
+              <Button className="green-button" href="/about">
+                Learn More
+              </Button>
+            </div>
           </div>
         </section>
         <section className="home-howto">
@@ -73,7 +77,7 @@ const Home = () => {
               </section>
             </div>
           </section>
-          <Button className="orange-button" href="./donate">
+          <Button className="orange-button" href="/donate">
             Find a Gift
           </Button>
         </section>
@@ -127,11 +131,13 @@ const Home = () => {
         </div>
         <section className="featured-finds">
           <h2 className="section-header">Featured Finds (COMING SOON!!!!)</h2>
-          <p className="featured-finds-text">
-            We've done the research to recommend great products for families and
-            kids at great prices! Consider purchasing an additional item for a
-            child in need.
-          </p>
+          <div className="featured-finds-text-container">
+            <p className="featured-finds-text">
+              We've done the research to recommend great products for families
+              and kids at great prices! Consider purchasing an additional item
+              for a child in need.
+            </p>
+          </div>
           <div className="featured-finds-cards">
             <Link className="featured-card-link">
               <div className="featured-card">

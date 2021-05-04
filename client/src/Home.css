@@ -21,7 +21,9 @@ Button {
   font-weight: normal;
   font-size: 24px;
   border-radius: 8px;
-  margin-bottom: 50px;
+  margin-bottom: 84px;
+  margin-top: 28px;
+  padding-top: 12px;
 }
 
 .orange-button:hover {
@@ -31,13 +33,23 @@ Button {
 .green-button {
   background-color: #4dac79;
   border: 2px solid #4dac79;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
   font-size: 24px;
+  line-height: 34px;
   width: 35%;
-  margin-top: 390px;
   border-radius: 8px;
   width: 209px;
   height: 64px;
-  margin-right: 380px;
+  margin-top: 79px;
+  padding-top: 12px;
+}
+
+.green-button-container {
+  width: 100%;
+  display: flex;
+  padding-left: 6.2rem;
 }
 
 .green-button:hover {
@@ -91,6 +103,7 @@ Button {
   width: 165px;
   height: 64px;
   font-size: 24px;
+  padding-top: 10px;
 }
 
 .hero-button:hover {
@@ -116,7 +129,7 @@ Button {
 }
 
 .mission-text {
-  margin-top: -35px;
+  margin-top: 96px;
 }
 
 .home-logo {
@@ -250,6 +263,7 @@ Button {
 .featured-success-info {
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .featured-success-text {
@@ -289,6 +303,16 @@ Button {
 }
 
 /* DONATE A GIFT SECTION - quick link to wishlists page */
+.home-quicklinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 64.46px;
+  margin-bottom: 141.03px;
+  margin-top: 122px;
+  width: 100vw;
+}
+
 .home-donate {
   width: 582.54px;
   height: 654.97px;
@@ -394,6 +418,13 @@ Button {
   padding-bottom: 40px;
 }
 
+.featured-finds-text-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 39px;
+  margin-bottom: 99px;
+}
+
 .featured-finds-text {
   font-family: Open Sans;
   font-style: normal;
@@ -401,8 +432,6 @@ Button {
   font-size: 20px;
   text-align: center;
   width: 900px;
-  margin-left: 20%;
-  margin-top: 50px;
 }
 
 .featured-finds-cards {
@@ -508,6 +537,7 @@ Button {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    padding-top: 95px;
   }
 
   .howto-step {
@@ -522,13 +552,13 @@ Button {
     margin-top: 30px;
   }
 
-  .home-quicklinks {
+  /* .home-quicklinks {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 60px;
     margin-bottom: 50px;
-  }
+  } */
 
   .home-donate,
   .home-refer {

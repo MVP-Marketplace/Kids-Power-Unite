@@ -14,6 +14,7 @@ import ReferChild from "./components/ReferChild";
 import DonatePage from "./components/DonatePage";
 import ReferChildForm from "./components/ReferChildForm";
 import CreateAccountForm from "./components/CreateAccountForm";
+import About from "./components/About";
 
 //adding in a test.
 
@@ -28,8 +29,8 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/create-account" component={CreateAccountForm} />
+          <Route exact path="/about" component={About} />
           {/* <Route exact path="/donate" component={Donate} /> */}
-          {/*  <Route exact path="/about" component={About}  /> */}
           <Route
             exact
             path="/professionalsform"
