@@ -28,7 +28,6 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/create-account" component={CreateAccountForm} />
-
           {/* <Route exact path="/donate" component={Donate} /> */}
           {/*  <Route exact path="/about" component={About}  /> */}
           <Route

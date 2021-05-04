@@ -21,7 +21,9 @@ const Home = () => {
             Where the power to ask <br />
             meets the power to give
           </h1>
-          <Button className="hero-button">Donate</Button>
+          <Button className="hero-button" href="./donate">
+            Donate
+          </Button>
         </section>
         <section className="home-mission">
           <img className="home-logo" src={logo} alt="KPU kapow logo" />
@@ -71,7 +73,9 @@ const Home = () => {
               </section>
             </div>
           </section>
-          <Button className="orange-button">Find a Gift</Button>
+          <Button className="orange-button" href="./donate">
+            Find a Gift
+          </Button>
         </section>
         <section className="home-featured">
           <h2 className="section-header">
