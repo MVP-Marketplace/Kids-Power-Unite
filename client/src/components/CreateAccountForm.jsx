@@ -158,9 +158,10 @@ const CreateAccountForm = ({ history }) => {
                   <Form.Row className=" text-center">
                     <Col>
                       <Button
+                        className='mt-5'
                         type="submit"
                         style={{
-                          backgroundColor: "#FF5308",
+                          backgroundColor: "#EA6F39",
                           padding: "10px 20px",
                           fontSize: "20px",
                         }}

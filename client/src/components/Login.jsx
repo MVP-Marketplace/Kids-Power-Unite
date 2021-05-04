@@ -92,7 +92,7 @@ const Login = ({ history }) => {
                   <Form.Row className="justify-content-center">
                     <Button
                       style={{
-                        backgroundColor: "#FF5308",
+                        backgroundColor: "#EA6F39",
                         padding: "10px",
                         fontSize: "20px",
                       }}
