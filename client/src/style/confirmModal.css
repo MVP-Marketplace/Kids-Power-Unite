@@ -1,0 +1,106 @@
+.button-orange-confirm {
+  align-items: center;
+  background-color: rgba(234,111,57,1.0);
+  border-radius: 8px;
+  display: flex;
+  height: 51px;
+  justify-content: flex-end;
+  left: 220px;
+  min-width: 115px;
+  padding: 0 27.4px;
+  position: absolute;
+  top: 831px;
+}
+.text-i66847995331-confirm {
+  height: 27px;
+  letter-spacing: 0.00px;
+  min-height: 27px;
+  min-width: 58px;
+  text-align: center;
+}
+.button-blue-confirm {
+  align-items: center;
+  background-color: var(--royal-blue);
+  border-radius: 8px;
+  display: flex;
+  height: 51px;
+  justify-content: flex-end;
+  left: 444px;
+  min-width: 146px;
+  padding: 0 27.4px;
+  position: absolute;
+  top: 831px;
+}
+.confirm-text-i75543726472 {
+  height: 27px;
+  letter-spacing: 0.00px;
+  min-height: 27px;
+  min-width: 89px;
+  text-align: center;
+}
+
+.confirm-group-83 {
+  align-items: flex-start;
+  display: flex;
+  height: 453px;
+  left: 116px;
+  min-width: 567px;
+  position: absolute;
+  top: 208px;
+}
+
+.confirm-overlap-group {
+  height: 1115px;
+  margin-left: -81px;
+  margin-top: -170.45px;
+  position: relative;
+  width: 780px;
+}
+
+.confirm-purchase-modal-flow-3 {
+  align-items: flex-start;
+  background-color: rgba(244,247,253,1.0);
+  display: flex;
+  height: 777px;
+  overflow: hidden;
+  width: 633px;
+  background-image: url(../Images/group84.png);
+}
+.confirm-text-1 {
+  color: rgba(0,0,0,1.0);
+  font-family: var(--font-family-open_sans);
+  font-size: var(--font-size-m);
+  left: 153px;
+  letter-spacing: 0.00px;
+  position: absolute;
+  text-align: center;
+  top: 663px;
+  width: 478px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,500,600|Open+Sans:400,700,600,800|Paytone+One:400|Libre+Franklin:600|Mulish:400,600");
+.confirm-container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  align-items: flex-start;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.confirm-container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+.confirm-valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,566 @@
+/* UNIVERSAL STYLING */
+.home-page-container {
+  width: 100vw;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+Button {
+  font-family: "Paytone One", sans-serif;
+}
+
+.orange-button {
+  width: 201px;
+  height: 64px;
+  background-color: #ea6f39;
+  border: none;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  border-radius: 8px;
+  margin-bottom: 84px;
+  margin-top: 28px;
+  padding-top: 12px;
+}
+
+.orange-button:hover {
+  background-color: #ea6f39;
+}
+
+.green-button {
+  background-color: #4dac79;
+  border: 2px solid #4dac79;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 34px;
+  width: 35%;
+  border-radius: 8px;
+  width: 209px;
+  height: 64px;
+  margin-top: 79px;
+  padding-top: 12px;
+}
+
+.green-button-container {
+  width: 100%;
+  display: flex;
+  padding-left: 6.2rem;
+}
+
+.green-button:hover {
+  color: #4dac79;
+  background-color: white;
+  border: 2px solid #4dac79;
+}
+
+.section-header {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #ffffff;
+  background-color: #437ce6;
+  width: 100vw;
+  height: 102px;
+  padding-top: 30px;
+  margin: 0;
+}
+
+/* FONT IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
+/* hero section */
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: "Paytone One", sans-serif;
+  height: 16rem;
+  background-image: url("./Images/home-hero.jpeg");
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+
+.hero-button {
+  background-color: #fca40e;
+  color: black;
+  border: 2px solid #fca40e;
+  margin: 1.5rem;
+  border-radius: 8px;
+  width: 165px;
+  height: 64px;
+  font-size: 24px;
+  padding-top: 10px;
+}
+
+.hero-button:hover {
+  color: #fca40e;
+  border: 2px solid #fca40e;
+  background-color: white;
+  margin: 1.5rem;
+}
+
+.home-hero h1 {
+  font-size: 1.5rem;
+  margin: 2rem;
+  text-align: center;
+}
+
+/* mission section */
+.home-mission,
+.mission-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-text {
+  margin-top: 96px;
+}
+
+.home-logo {
+  max-width: 50%;
+  margin-top: 15px;
+  transform: matrix(1, 0.08, -0.07, 1, 0, 0);
+}
+
+.home-mission p {
+  font-family: "Dosis", sans-serif;
+  margin-top: 10px;
+  width: 75%;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+#bold {
+  font-weight: 600;
+  font-size: 32px;
+  margin-top: -50px;
+  padding-bottom: 30px;
+}
+
+#mission-para {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+}
+
+/* How does it work section */
+.home-howto h1 {
+  color: white;
+  font-family: Dosis, sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0;
+  height: 4rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home-howto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.card {
+  border: none;
+}
+
+.card-header {
+  background-color: #437ce6;
+  color: white;
+  font-family: Dosis, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.howto-step {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.howto-text {
+  width: 70%;
+  font-size: 1rem;
+}
+
+.stepNo {
+  font-family: Dosis, sans-serif;
+  font-weight: 600;
+  color: #4dac79;
+  font-size: 32px;
+  margin-left: 15px;
+}
+
+.howto-text p {
+  font-size: 20px;
+  width: 90%;
+  margin-left: 26px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#howto-text-one {
+  width: 70%;
+  margin-left: 60px;
+  margin-top: 50px;
+}
+
+#howto-text-two {
+  margin-top: 52px;
+}
+
+#howto-text-three {
+  margin-top: -13px;
+}
+
+.howto-text p:first-child {
+  font-weight: 600;
+  font-family: Open Sans;
+  font-style: normal;
+  font-size: 24px;
+  text-transform: capitalize;
+  width: 80%;
+  margin-left: 43px;
+  padding-bottom: 20px;
+}
+/* FEATURED SUCCESS SECTION */
+.home-featured {
+  padding-bottom: 90px;
+}
+
+.home-featured img {
+  width: 719px;
+  height: 498px;
+}
+
+.featured-success-info {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.featured-success-text {
+  background-color: #f4f7fd;
+  width: 50vw;
+}
+
+.featured-success-text h2 {
+  font-family: Dosis;
+  font-style: normal;
+  font-size: 28px;
+  color: #ea6f39;
+  margin-left: 18%;
+  margin-top: 70px;
+  padding-bottom: 45px;
+}
+
+#featured-quote {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 100px;
+  color: #ea6f39;
+  text-align: left;
+  margin-left: 18%;
+}
+
+#quote-two {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: left;
+  width: 489px;
+  margin-left: 18%;
+  margin-top: -95px;
+}
+
+/* DONATE A GIFT SECTION - quick link to wishlists page */
+.home-quicklinks {
+  display: flex;
+  flex-direction: row;
+  padding: 0 64.46px;
+  margin-bottom: 141.03px;
+  margin-top: 122px;
+  width: 100vw;
+  column-gap: 146.46px;
+}
+
+.home-donate {
+  width: 582.54px;
+  height: 654.97px;
+  margin-left: 10px;
+}
+
+.home-refer {
+  width: 582.54px;
+  height: 654.97px;
+  margin-right: 10px;
+}
+
+.home-donate h3 {
+  background: #ffc700;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28.8567px;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 147px;
+}
+
+.donate-btn {
+  position: relative;
+  left: 374px;
+  bottom: 135px;
+  width: 125px;
+  height: 64px;
+  background: #4dac79;
+  border: 2px solid #4dac79;
+  color: white;
+  border-radius: 8px;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  padding-top: 12px;
+}
+
+.donate-btn:hover {
+  border: 2px solid #4dac79;
+  color: #4dac79;
+  background: none;
+  transition: all 900ms ease;
+}
+
+.home-donate img,
+.home-refer img {
+  width: 100%;
+  height: 508px;
+}
+
+/* REFER A CHILD SECTION - quick link to sign up page */
+.home-refer h3 {
+  background: #fca40e;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28.8567px;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 147px;
+}
+
+.refer-btn {
+  position: relative;
+  left: 350px;
+  bottom: 135px;
+  width: 174px;
+  height: 64px;
+  background: #4dac79;
+  border: 2px solid #4dac79;
+  color: white;
+  border-radius: 8px;
+  font-family: Paytone One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  padding-top: 12px;
+}
+
+.refer-btn:hover {
+  border: 2px solid #4dac79;
+  color: #4dac79;
+  background: none;
+  transition: all 900ms ease;
+}
+
+/* FEATURED FINDS - coming soon */
+.featured-finds {
+  padding-top: 90px;
+  padding-bottom: 40px;
+}
+
+.featured-finds-text-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 39px;
+  margin-bottom: 99px;
+}
+
+.featured-finds-text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  width: 900px;
+}
+
+.featured-finds-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 100px 30px;
+}
+
+.featured-card-link {
+  color: black;
+}
+
+.featured-card-link:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.featured-finds-cards Link {
+  text-decoration: none;
+  color: black;
+}
+
+.featured-card {
+  display: flex;
+  flex-direction: row;
+  width: 636.61px;
+  height: 311.81px;
+  box-shadow: 0px 0px 5.56799px rgba(0, 0, 0, 0.3);
+  border-radius: 0px 18.56px 18.56px 0px;
+  padding: 1% 1.5%;
+}
+
+.featured-card p {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25.9839px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 254.27px;
+  height: 306.24px;
+  margin-left: 35px;
+}
+
+#featured-card-two {
+  margin-left: 35px;
+  padding-left: 70px;
+}
+
+@media screen and (min-width: 600px) {
+  /* HERO SECTION */
+  .home-hero {
+    background-position: 0;
+    height: 43rem;
+  }
+
+  .home-hero h1 {
+    font-weight: 400;
+    font-size: 3.5rem;
+  }
+
+  .hero-button {
+    position: relative;
+    bottom: 60px;
+  }
+
+  /* MISSION SECTION */
+
+  .home-mission {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 50px 60px;
+  }
+
+  .home-logo {
+    width: 40%;
+  }
+
+  .mission-text {
+    width: 60%;
+  }
+
+  .mission-text p {
+    font-size: 19px;
+    margin: 5px;
+  }
+
+  .home-mission Button {
+    position: absolute;
+  }
+
+  /* HOW TO SECTION */
+
+  .howto-arrow {
+    right: 330px;
+  }
+
+  .how-tos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 95px;
+  }
+
+  .howto-step {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-howto .orange-button {
+    width: 15%;
+    margin-top: 30px;
+  }
+
+  /* .home-quicklinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 60px;
+    margin-bottom: 50px;
+  } */
+
+  .home-donate,
+  .home-refer {
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.42);
+  }
+}
