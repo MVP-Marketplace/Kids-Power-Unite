@@ -95,8 +95,10 @@ const Dashboard = () => {
   const handleNameSort = async () => {
     setAsc(!asc);
     setList([]);
-    const response = app.firestore().collection("recipient");
-    // .where("sponsorId", "==", currentUser);
+    const response = app
+      .firestore()
+      .collection("recipient")
+      .where("sponsorId", "==", currentUser);
     const data = await response
       .orderBy("values.nickname", asc ? "asc" : "desc")
       .get();
@@ -248,7 +250,7 @@ const Dashboard = () => {
   const updateModal = (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Update Reipient</Modal.Title>
+        <Modal.Title>Update Recipient</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
@@ -492,10 +494,10 @@ const Dashboard = () => {
                   href={recipient.data().values.amazonLink}
                   target="_blank"
                 >
-                  {
-                    recipient.data().values.amazonLink
-                    // .split("/")[3].replaceAll("-", " ")
-                  }
+                  {recipient
+                    .data()
+                    .values.amazonLink.split("/")[3]
+                    .replaceAll("-", " ")}
                 </a>
               </Row>
             </Col>
@@ -540,6 +542,7 @@ const Dashboard = () => {
   useEffect(() => {
     updateGuardian();
   }, []);
+
   const overview = (
     <>
       <Row className="p-2 align-items-center">
@@ -811,7 +814,7 @@ const Dashboard = () => {
         </Col>
         <Col sm={10}>
           {displayChildForm ? (
-            <ReferChildForm />
+            <ReferChildForm setDisplayChildForm={setDisplayChildForm} />
           ) : (
             <>{dispOverview ? overview : settings}</>
           )}

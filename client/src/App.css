@@ -729,3 +729,9 @@ input .child-form-fields {
   border-top: 1px solid #4dac79;
   border-bottom: 1px solid #4dac79;
 }
+
+/*NAVBAR/FOOTER */
+
+.nav-blue {
+  background: #1f4fab;
+}
