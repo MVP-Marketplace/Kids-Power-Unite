@@ -35,6 +35,7 @@ import avatar4 from "../Images/avatars/Ellipse 5.png";
 
 const Dashboard = () => {
   const [displayChildForm, setDisplayChildForm] = useState(false);
+  const [dispOverview, setDispOverview] = useState(true);
   const [sponsorId, setSponsorId] = useState("");
   const { currentUser } = useContext(AuthContext);
   const [currentRecip, setCurrentRecip] = useState(null);
@@ -61,9 +62,28 @@ const Dashboard = () => {
     year: "",
     parentalConsent: false,
   });
+  const [guardianValues, setGuardianValues] = useState({
+    city: "",
+    state: "",
+    street: "",
+    suite: "",
+    zip: "",
+    employer: "",
+    credentials: "",
+    first: "",
+    last: "",
+    occupation: "",
+  });
   const handleChange = (event) => {
     const { name, value } = event.target;
     setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+  const handleGuardianChange = (event) => {
+    const { name, value } = event.target;
+    setGuardianValues({
       ...values,
       [name]: value,
     });
@@ -189,6 +209,33 @@ const Dashboard = () => {
     });
     setShow(false);
     deleteRecip(currentRecip);
+  };
+
+  const handleSubmitGuardian = async (event) => {
+    event.preventDefault();
+
+    if (
+      guardianValues.city &&
+      guardianValues.state &&
+      guardianValues.street &&
+      guardianValues.suite &&
+      guardianValues.zip &&
+      guardianValues.employer &&
+      guardianValues.credentials &&
+      guardianValues.first &&
+      guardianValues.last &&
+      guardianValues.occupation
+    ) {
+      try {
+        await app
+          .firestore()
+          .collection("professional")
+          .doc(`${sponsorId}`)
+          .set({ guardianValues, sponsorId });
+      } catch (error) {
+        alert(error);
+      }
+    }
   };
 
   const updateModal = (
@@ -331,6 +378,28 @@ const Dashboard = () => {
     console.log(values);
     handleShow();
   };
+  const updateGuardian = async () => {
+    if (currentUser) {
+      const response = await app
+        .firestore()
+        .collection("professional")
+        .doc(currentUser.uid);
+      const doc = await response.get();
+      const data = doc.data();
+      setGuardianValues({
+        city: data.deliveryAddress.city,
+        state: data.deliveryAddress.state,
+        street: data.deliveryAddress.street,
+        suite: data.deliveryAddress.suite,
+        zip: data.deliveryAddress.zip,
+        employer: data.employer,
+        credentials: data.name.credentials,
+        first: data.name.first,
+        last: data.name.last,
+        occupation: data.occupation,
+      });
+    }
+  };
   const popover = (
     <Popover id="popover-basic">
       <Popover.Content>
@@ -378,8 +447,10 @@ const Dashboard = () => {
   };
 
   const fetchRecips = async () => {
-    const response = app.firestore().collection("recipient");
-    // .where("sponsorId", "==", currentUser);
+    const response = app
+      .firestore()
+      .collection("recipient")
+      .where("sponsorId", "==", currentUser.uid);
     const data = await response.get();
     data.docs.forEach((recipient) => {
       setList((list) => [
@@ -410,10 +481,10 @@ const Dashboard = () => {
                   href={recipient.data().values.amazonLink}
                   target="_blank"
                 >
-                  {recipient
-                    .data()
-                    .values.amazonLink.split("/")[3]
-                    .replaceAll("-", " ")}
+                  {
+                    recipient.data().values.amazonLink
+                    // .split("/")[3].replaceAll("-", " ")
+                  }
                 </a>
               </Row>
             </Col>
@@ -455,6 +526,160 @@ const Dashboard = () => {
   useEffect(() => {
     fetchRecips();
   }, []);
+  useEffect(() => {
+    updateGuardian();
+  }, []);
+  const overview = (
+    <>
+      <Row className="p-2 align-items-center">
+        <Col sm={2}>
+          <h5 className="all-recipients-text"> All Recipients </h5>
+        </Col>
+        <Col sm={2}>
+          <Button
+            onClick={() => setDisplayChildForm(true)}
+            className="add-child-button"
+          >
+            {" "}
+            Add a Child{" "}
+          </Button>
+        </Col>
+        <Col sm={5}></Col>
+        <Col>
+          <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+            <Button
+              variant="white"
+              onClick={handleSort}
+              className="sort-filter-text"
+            >
+              {" "}
+              Sort <ChevronDown> </ChevronDown>
+            </Button>
+          </OverlayTrigger>
+        </Col>
+      </Row>
+      <Row>
+        <Table hover>
+          <thead>
+            <tr>
+              <th className="recipient-details-text">Child</th>
+              <th className="recipient-details-text">Gift</th>
+              <th className="recipient-details-text">Status</th>
+              <th className="recipient-details-text">Gift Desired By</th>
+            </tr>
+          </thead>
+          <tbody>{list}</tbody>
+        </Table>
+      </Row>
+    </>
+  );
+  const settings = (
+    <>
+      <Form onSubmit={handleSubmit}>
+        <Row>
+          <Form.Group>
+            <Form.Label>First Name</Form.Label>
+            <Form.Control
+              name="first"
+              type="text"
+              defaultValue={guardianValues.first}
+              onChange={handleGuardianChange}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Last Name</Form.Label>
+            <Form.Control
+              name="last"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.last}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Credentials</Form.Label>
+            <Form.Control
+              name="credentials"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.credentials}
+            />
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group>
+            <Form.Label>Occupation</Form.Label>
+            <Form.Control
+              name="occupation"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.occupation}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Employer</Form.Label>
+            <Form.Control
+              name="employer"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.employer}
+            />
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group>
+            <Form.Label>Street Address</Form.Label>
+            <Form.Control
+              name="street"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.street}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Suite</Form.Label>
+            <Form.Control
+              name="suite"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.suite}
+            />
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group>
+            <Form.Label>City</Form.Label>
+            <Form.Control
+              name="city"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.city}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>State</Form.Label>
+            <Form.Control
+              name="state"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.state}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Zip</Form.Label>
+            <Form.Control
+              name="zip"
+              type="text"
+              onChange={handleGuardianChange}
+              defaultValue={guardianValues.zip}
+            />
+          </Form.Group>
+        </Row>
+        <Button variant="primary" type="submit">
+          Save Changes
+        </Button>
+      </Form>
+    </>
+  );
   return (
     <Container fluid id="dashboard-container">
       {updateModal}
@@ -464,69 +689,29 @@ const Dashboard = () => {
             <h5 className="account-side-text"> ACCOUNT </h5>
           </Row>
           <ButtonGroup vertical>
-            <Row className="p-2 bg-light overview-side-text">
+            <Button
+              className="p-2 overview-side-text"
+              variant="light"
+              onClick={() => setDispOverview(true)}
+            >
               <img src={overviewIcon} className="mr-2" height="35"></img>{" "}
               Overview
-            </Row>
-            <Row className="p-2 overview-side-text">
+            </Button>
+            <Button
+              className="p-2 overview-side-text"
+              variant="light"
+              onClick={() => setDispOverview(false)}
+            >
               <img src={SettingsIcon} className="mr-2" height="35"></img>{" "}
               Settings
-            </Row>
+            </Button>
           </ButtonGroup>
         </Col>
         <Col sm={10}>
           {displayChildForm ? (
             <ReferChildForm />
           ) : (
-            <>
-              <Row className="p-2 align-items-center">
-                <Col sm={2}>
-                  <h5 className="all-recipients-text"> All Recipients </h5>
-                </Col>
-                <Col sm={2}>
-                  <Button
-                    onClick={() => setDisplayChildForm(true)}
-                    className="add-child-button"
-                    s
-                  >
-                    {" "}
-                    Add a Child{" "}
-                  </Button>
-                </Col>
-                <Col sm={5}></Col>
-                <Col>
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="bottom"
-                    overlay={popover}
-                  >
-                    <Button
-                      variant="white"
-                      onClick={handleSort}
-                      className="sort-filter-text"
-                    >
-                      {" "}
-                      Sort <ChevronDown> </ChevronDown>
-                    </Button>
-                  </OverlayTrigger>
-                </Col>
-              </Row>
-              <Row>
-                <Table hover>
-                  <thead>
-                    <tr>
-                      <th className="recipient-details-text">Child</th>
-                      <th className="recipient-details-text">Gift</th>
-                      <th className="recipient-details-text">Status</th>
-                      <th className="recipient-details-text">
-                        Gift Desired By
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>{list}</tbody>
-                </Table>
-              </Row>
-            </>
+            <>{dispOverview ? overview : settings}</>
           )}
         </Col>
       </Row>

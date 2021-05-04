@@ -61,6 +61,11 @@ function MyFooter() {
             </Row>
           </Col>
           <Col>
+            <Row className="mb-4">
+              <b className="footer-bold text-white">About Us</b>
+            </Row>
+          </Col>
+          <Col>
             <Row>
               <Button variant="primary">Donate</Button>
             </Row>

@@ -3,10 +3,6 @@ body {
   height: 100%;
 }
 
-#dashboard-container {
-  padding-bottom: 70%;
-}
-
 .App {
   text-align: center;
 }
@@ -52,6 +48,7 @@ body {
 
 #dashboard-container {
   overflow: auto;
+  padding-bottom: 70%;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
@@ -300,26 +297,23 @@ body {
 .recipient-info {
   width: 217px;
   height: 31px;
-  margin-left: 79px;
+  margin-left: 77px;
   top: 104px;
 
   font-family: Dosis;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 140.62%;
 
   text-align: center;
 
   color: #000000;
+  margin-top: 20px;
 }
 
-.child-form-line-break {
-  width: 214px;
-  height: 0px;
-  left: 81px;
-  top: 176px;
-  border: 1px solid #1f4fab;
+.recipient-field {
+  margin-left: 36px;
 }
 
 .avatar-container {
@@ -333,16 +327,14 @@ body {
   height: 130px;
   margin-left: 123px;
   top: 219px;
-
-  border: 2px solid #1f4fab;
-  box-sizing: border-box;
+  border: 1px solid gray;
 }
 
 .add-avatar-sign {
   padding-left: 68.67%;
   padding-right: 34.4%;
   padding-top: 50.73%;
-  color: #ea6f39;
+  color: #4dac79;
 }
 
 .select-avatar {
@@ -378,6 +370,172 @@ input .child-form-fields {
   border: 1px solid #898989;
   box-sizing: border-box;
   border-radius: 5.5px;
+}
+
+.child-form-header {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #4dac79;
+  border-bottom: 1px solid #4dac79;
+  margin-top: 10px;
+}
+
+.form-back-button {
+  background-color: white;
+  border: none;
+}
+
+.left-arrow {
+  width: 20px;
+  height: 30px;
+  margin-left: 102px;
+}
+
+.child-recipient-form {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: 15px;
+  margin-left: 300px;
+}
+
+#fam-approval {
+  display: flex;
+  flex-direction: row;
+}
+
+.star {
+  color: #dc0909;
+  margin-right: 3px;
+}
+
+.recipient-info-one input[type="text"] {
+  padding-left: 15px;
+}
+
+[type="text"] {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+  font-size: 16px;
+}
+
+#limited-field {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+  font-size: 16px;
+  padding-left: 15px;
+}
+
+@media screen and (min-width: 700px) {
+  .avatar-container {
+    margin-left: 325px;
+    margin-bottom: 55px;
+  }
+  .select-avatar {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .recipient-info-one {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 70vw;
+  }
+  .recipient-field {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 25px;
+
+    text-transform: capitalize;
+
+    color: #000000;
+    width: 190px;
+    margin-right: 145px;
+  }
+  .child-form-fields::placeholder {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+  .child-form-fields {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px 16px 0px 0px;
+
+    background: #ffffff;
+
+    border: 1px solid #4f5cf0;
+    box-sizing: border-box;
+    border-radius: 5.5px;
+
+    width: 415px;
+    height: 48px;
+    margin-bottom: 25px;
+    margin-top: -12px;
+  }
+  #limited-field {
+    height: 104px;
+  }
+  #age-field {
+    width: 90px;
+    text-align: center;
+  }
+  .referral-approval {
+    display: flex;
+    flex-direction: row;
+  }
+  .date-fillers {
+    display: flex;
+    flex-direction: row;
+  }
+  #date-month {
+    width: 90px;
+    margin-right: 10px;
+    padding-right: 0;
+    text-align: center;
+  }
+  #date-day {
+    width: 65px;
+    margin-right: 10px;
+    padding-right: 0;
+    text-align: center;
+  }
+  #date-year {
+    width: 120px;
+    text-align: center;
+  }
+  #child-checkbox {
+    width: 30px;
+  }
+  .approval-received {
+    color: #dc0909;
+    font-size: 16px;
+    width: 300px;
+    margin-left: 20px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+  }
+  .submit-child-form-button {
+    margin-left: 371px;
+    align-items: center;
+    padding: 15px 37px;
+    background: #898989;
+    border-radius: 8px;
+    color: white;
+    border: none;
+  }
 }
 
 .recipient-details-text {
