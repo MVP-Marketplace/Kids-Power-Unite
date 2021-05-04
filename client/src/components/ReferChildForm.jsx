@@ -6,7 +6,7 @@ import app from "../firebase";
 import PlusSign from "../Images/plus-sign.png";
 import LeftArrow from "../Images/LeftArrow.png";
 import Form from "react-bootstrap/Form";
-import 'firebase/storage';
+import "firebase/storage";
 
 import LimitedTextarea from "./LimitedTextarea";
 
@@ -80,30 +80,32 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
     status: "in progress",
     parentalConsent: checked,
   });
-  const [profilePics,setProfilePics] = useState()
-  const [profilepicModal,setprofilepicModal] = useState(false)
+  const [profilePics, setProfilePics] = useState();
+  const [profilepicModal, setprofilepicModal] = useState(false);
 
   let storageRef = app.firebase_.storage().ref();
-  const getImage = () =>{
-    let imageArray = []
-    for(let i=1;i<=9;i++){
-      let imageRef = storageRef.child(`Profile Images/profile${i}.png`)
-      imageRef.getDownloadURL().then((url)=>{
-        imageArray.push(url)
-      })
-      .catch((error)=>{
-        console.log(error)
-      })
+  const getImage = () => {
+    let imageArray = [];
+    for (let i = 1; i <= 9; i++) {
+      let imageRef = storageRef.child(`Profile Images/profile${i}.png`);
+      imageRef
+        .getDownloadURL()
+        .then((url) => {
+          imageArray.push(url);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
-    setProfilePics(imageArray)
-  }
+    setProfilePics(imageArray);
+  };
 
   // getImage();
 
   useEffect(() => {
     if (currentUser) {
       setSponsorId(currentUser.uid);
-      getImage()
+      getImage();
     }
   }, [currentUser]);
 
@@ -275,17 +277,18 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
           <div className="recipient-info-one">
             <label className="recipient-field">Brief bio of child</label>
             <Form.Group controlId="limited-field">
-              {/* <Form.Control
+              <Form.Control
                 as="textarea"
                 // rows={rows}
                 // cols={cols}
                 placeholder="Please type here.."
                 className="child-form-fields"
                 name="childBio"
+                maxLength={150}
                 value={values.childBio}
                 onChange={handleChange}
-              /> */}
-              <LimitedTextarea
+              />
+              {/* <LimitedTextarea
                 placeholder="Please type here.."
                 className="child-form-fields"
                 name="childBio"
@@ -295,7 +298,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
                 cols={10}
                 limit={150}
                 maxLength="150"
-              />
+              /> */}
             </Form.Group>
 
             {submit || (validate && errors?.childBio) ? (
@@ -314,6 +317,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
                 className="child-form-fields"
                 type="text"
                 name="giftExplanation"
+                maxLength={150}
                 value={values.giftExplanation}
                 onChange={handleChange}
               />
