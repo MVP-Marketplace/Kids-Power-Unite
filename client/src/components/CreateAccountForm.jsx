@@ -9,7 +9,6 @@ const CreateAccountForm = ({ history }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
 
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
@@ -77,7 +76,7 @@ const CreateAccountForm = ({ history }) => {
             </Card.Title>
             <Form onSubmit={handleSubmit}>
               <Form.Row className="justify-content-center">
-                <Col xs={'auto'} sm={'auto'} md={'auto'} className="text-left">
+                <Col xs={"auto"} sm={"auto"} md={"auto"} className="text-left">
                   <Form.Group controlId="occupation">
                     <Form.Label>*Job Title</Form.Label>
                     <Form.Control name="occupation" placeholder="Title" />
@@ -94,7 +93,7 @@ const CreateAccountForm = ({ history }) => {
                     />
                   </Form.Group>
                   <Form.Group controlId="street">
-                    <Form.Label>Street Address</Form.Label>
+                    <Form.Label>Employer Street Address</Form.Label>
                     <Form.Control
                       name="employerStreet"
                       placeholder="123 Fake st"
@@ -156,30 +155,35 @@ const CreateAccountForm = ({ history }) => {
                       <Form.Control name="deliveryZip" placeholder="123456" />
                     </Form.Group>
                   </Form.Row>
-                  <Form.Row className=' text-center'>
+                  <Form.Row className=" text-center">
                     <Col>
-                    <Button
-                      type="submit"
-                      style={{ backgroundColor: "#FF5308", padding:'10px 20px', fontSize:'20px' }}
-                    >
-                      Create Account
-                    </Button>
-                    <p style={{ fontSize: "10px" }}>
-                      By creating an account, you agree to KidPower Unites'{" "}
                       <Button
+                        className='mt-5'
+                        type="submit"
                         style={{
-                          background: "none",
-                          border: "none",
-                          padding: "0",
-                          font: "inherit",
-                          textDecoration: "underline",
-                          color: "blue",
-                          cursor: "pointer",
+                          backgroundColor: "#EA6F39",
+                          padding: "10px 20px",
+                          fontSize: "20px",
                         }}
-                        onClick={handleShow}
                       >
-                        Honor Code
+                        Create Account
                       </Button>
+                      <p style={{ fontSize: "10px" }}>
+                        By creating an account, you agree to KidPower Unites'{" "}
+                        <Button
+                          style={{
+                            background: "none",
+                            border: "none",
+                            padding: "0",
+                            font: "inherit",
+                            textDecoration: "underline",
+                            color: "blue",
+                            cursor: "pointer",
+                          }}
+                          onClick={handleShow}
+                        >
+                          Honor Code
+                        </Button>
                       </p>
                     </Col>
                   </Form.Row>
