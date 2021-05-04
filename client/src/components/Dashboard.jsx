@@ -395,7 +395,7 @@ const Dashboard = () => {
     const doc = await response.get();
     if (doc.exists) {
       const data = doc.data();
-      console.log(currentUser.uid);
+
       setGuardianValues({
         credentials: data.employerInfo.credentials,
         occupation: data.employerInfo.occupation,
