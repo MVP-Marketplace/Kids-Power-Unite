@@ -5,7 +5,7 @@ import Asset3 from "../Images/about_page/Asset 3 1.png";
 import Asset5 from "../Images/about_page/Asset 5 1.png";
 import KPU_Logo from "../Images/kpu-logo.png";
 import "../App.css";
-import { Container, Col, Row, Image } from "react-bootstrap";
+import { Container, Col, Row, Image, Button } from "react-bootstrap";
 
 const About = () => {
   return (
