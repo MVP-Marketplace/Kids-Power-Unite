@@ -63,16 +63,19 @@ const Dashboard = () => {
     parentalConsent: false,
   });
   const [guardianValues, setGuardianValues] = useState({
-    city: "",
-    state: "",
-    street: "",
-    suite: "",
-    zip: "",
-    employer: "",
     credentials: "",
-    first: "",
-    last: "",
     occupation: "",
+    employer: "",
+    employerStreet: "",
+    employerSuite: "",
+    employerCity: "",
+    employerState: "",
+    employerZip: "",
+    deliveryStreet: "",
+    deliverySuite: "",
+    deliveryCity: "",
+    deliveryState: "",
+    deliveryZip: "",
   });
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -92,8 +95,10 @@ const Dashboard = () => {
   const handleNameSort = async () => {
     setAsc(!asc);
     setList([]);
-    const response = app.firestore().collection("recipient");
-    // .where("sponsorId", "==", currentUser);
+    const response = app
+      .firestore()
+      .collection("recipient")
+      .where("sponsorId", "==", currentUser);
     const data = await response
       .orderBy("values.nickname", asc ? "asc" : "desc")
       .get();
@@ -213,35 +218,39 @@ const Dashboard = () => {
 
   const handleSubmitGuardian = async (event) => {
     event.preventDefault();
-
-    if (
-      guardianValues.city &&
-      guardianValues.state &&
-      guardianValues.street &&
-      guardianValues.suite &&
-      guardianValues.zip &&
-      guardianValues.employer &&
-      guardianValues.credentials &&
-      guardianValues.first &&
-      guardianValues.last &&
-      guardianValues.occupation
-    ) {
-      try {
-        await app
-          .firestore()
-          .collection("professional")
-          .doc(`${sponsorId}`)
-          .set({ guardianValues, sponsorId });
-      } catch (error) {
-        alert(error);
-      }
+    try {
+      await app
+        .firestore()
+        .collection("professional")
+        .doc(app.auth().currentUser.uid)
+        .update({
+          employerInfo: {
+            credentials: guardianValues.credentials,
+            occupation: guardianValues.occupation,
+            employer: guardianValues.employer,
+            street: guardianValues.employerStreet,
+            suite: guardianValues.employerSuite,
+            city: guardianValues.employerCity,
+            state: guardianValues.employerState,
+            zip: guardianValues.employerZip,
+          },
+          deliveryAddress: {
+            street: guardianValues.deliveryStreet,
+            suite: guardianValues.deliverySuite,
+            city: guardianValues.deliveryCity,
+            state: guardianValues.deliveryState,
+            zip: guardianValues.deliveryZip,
+          },
+        });
+    } catch (error) {
+      alert(error);
     }
   };
 
   const updateModal = (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Update Reipient</Modal.Title>
+        <Modal.Title>Update Recipient</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
@@ -379,24 +388,28 @@ const Dashboard = () => {
     handleShow();
   };
   const updateGuardian = async () => {
-    if (currentUser) {
-      const response = await app
-        .firestore()
-        .collection("professional")
-        .doc(currentUser.uid);
-      const doc = await response.get();
+    const response = await app
+      .firestore()
+      .collection("professional")
+      .doc(currentUser.uid);
+    const doc = await response.get();
+    if (doc.exists) {
       const data = doc.data();
+      console.log(currentUser.uid);
       setGuardianValues({
-        city: data.deliveryAddress.city,
-        state: data.deliveryAddress.state,
-        street: data.deliveryAddress.street,
-        suite: data.deliveryAddress.suite,
-        zip: data.deliveryAddress.zip,
-        employer: data.employer,
-        credentials: data.name.credentials,
-        first: data.name.first,
-        last: data.name.last,
-        occupation: data.occupation,
+        credentials: data.employerInfo.credentials,
+        occupation: data.employerInfo.occupation,
+        employer: data.employerInfo.employer,
+        employerStreet: data.employerInfo.street,
+        employerSuite: data.employerInfo.suite,
+        employerCity: data.employerInfo.city,
+        employerState: data.employerInfo.state,
+        employerZip: data.employerInfo.zip,
+        deliveryStreet: data.deliveryAddress.street,
+        deliverySuite: data.deliveryAddress.suite,
+        deliveryCity: data.deliveryAddress.city,
+        deliveryState: data.deliveryAddress.state,
+        deliveryZip: data.deliveryAddress.zip,
       });
     }
   };
@@ -481,10 +494,10 @@ const Dashboard = () => {
                   href={recipient.data().values.amazonLink}
                   target="_blank"
                 >
-                  {
-                    recipient.data().values.amazonLink
-                    // .split("/")[3].replaceAll("-", " ")
-                  }
+                  {recipient
+                    .data()
+                    .values.amazonLink.split("/")[3]
+                    .replaceAll("-", " ")}
                 </a>
               </Row>
             </Col>
@@ -529,6 +542,7 @@ const Dashboard = () => {
   useEffect(() => {
     updateGuardian();
   }, []);
+
   const overview = (
     <>
       <Row className="p-2 align-items-center">
@@ -575,108 +589,199 @@ const Dashboard = () => {
   );
   const settings = (
     <>
-      <Form onSubmit={handleSubmit}>
-        <Row>
-          <Form.Group>
-            <Form.Label>First Name</Form.Label>
-            <Form.Control
-              name="first"
-              type="text"
-              defaultValue={guardianValues.first}
-              onChange={handleGuardianChange}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control
-              name="last"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.last}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Credentials</Form.Label>
-            <Form.Control
-              name="credentials"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.credentials}
-            />
-          </Form.Group>
-        </Row>
-        <Row>
-          <Form.Group>
-            <Form.Label>Occupation</Form.Label>
-            <Form.Control
-              name="occupation"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.occupation}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Employer</Form.Label>
-            <Form.Control
-              name="employer"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.employer}
-            />
-          </Form.Group>
-        </Row>
-        <Row>
-          <Form.Group>
-            <Form.Label>Street Address</Form.Label>
-            <Form.Control
-              name="street"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.street}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Suite</Form.Label>
-            <Form.Control
-              name="suite"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.suite}
-            />
-          </Form.Group>
-        </Row>
-        <Row>
-          <Form.Group>
-            <Form.Label>City</Form.Label>
-            <Form.Control
-              name="city"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.city}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>State</Form.Label>
-            <Form.Control
-              name="state"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.state}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Zip</Form.Label>
-            <Form.Control
-              name="zip"
-              type="text"
-              onChange={handleGuardianChange}
-              defaultValue={guardianValues.zip}
-            />
-          </Form.Group>
-        </Row>
-        <Button variant="primary" type="submit">
-          Save Changes
-        </Button>
+      <div className="dash-grn-border mt-3 mb-3">
+        <h2 className="dash-edit-account text-center">Edit Account</h2>
+      </div>
+      <Form onSubmit={handleSubmitGuardian}>
+        <Form.Row>
+          <Col sm={6} className="text-left offset-2">
+            <div className="dash-edit-headers mt-5 mb-5">
+              Guardian Advocate Information
+            </div>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Job Title
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="occupation"
+                  type="text"
+                  defaultValue={guardianValues.occupation}
+                  onChange={handleGuardianChange}
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Credentials
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="credentials"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.credentials}
+                />
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Employer Name
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="employer"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.employer}
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Employer Street Address
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="employerStreet"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.employerStreet}
+                />{" "}
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Floor, Suite, or Room No.
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="employerSuite"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.employerSuite}
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                City
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="employerCity"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.employerCity}
+                />{" "}
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                State
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="employerState"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.employerState}
+                />{" "}
+              </Col>
+            </Form.Group>
+
+            <Form.Group className="mb-5" as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Zip Code
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="employerZip"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.employerZip}
+                />{" "}
+              </Col>
+            </Form.Group>
+            <div className="dash-edit-headers pt-5 mb-5 border-top">
+              Gift Delivery Address
+            </div>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Street Address
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="deliveryStreet"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.deliveryStreet}
+                />{" "}
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Suite, Floor, or Room No.
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="deliverySuite"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.deliverySuite}
+                />{" "}
+              </Col>
+            </Form.Group>
+
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                City
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="deliveryCity"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.deliveryCity}
+                />{" "}
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                State
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="deliveryState"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.deliveryState}
+                />{" "}
+              </Col>
+            </Form.Group>
+            <Form.Group as={Row}>
+              <Form.Label className="dash-edit-labels" column sm="4">
+                Zip Code
+              </Form.Label>
+              <Col sm="8">
+                <Form.Control
+                  name="deliveryZip"
+                  type="text"
+                  onChange={handleGuardianChange}
+                  defaultValue={guardianValues.deliveryZip}
+                />{" "}
+              </Col>
+            </Form.Group>
+            <Row className="justify-content-center pt-5">
+              <Button variant="primary" type="submit">
+                Submit Changes
+              </Button>
+            </Row>
+          </Col>
+        </Form.Row>
       </Form>
     </>
   );
@@ -709,7 +814,7 @@ const Dashboard = () => {
         </Col>
         <Col sm={10}>
           {displayChildForm ? (
-            <ReferChildForm />
+            <ReferChildForm setDisplayChildForm={setDisplayChildForm} />
           ) : (
             <>{dispOverview ? overview : settings}</>
           )}

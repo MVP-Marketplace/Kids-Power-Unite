@@ -135,7 +135,8 @@ const Signup = ({ history }) => {
                     <Button
                       type="submit"
                       style={{
-                        backgroundColor: "#EA6F39",
+                        backgroundColor: " #EA6F39",
+
                         padding: "10px 50px",
                         fontSize: "20px",
                       }}
