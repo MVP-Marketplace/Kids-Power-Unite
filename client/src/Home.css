@@ -306,11 +306,11 @@ Button {
 .home-quicklinks {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   padding: 0 64.46px;
   margin-bottom: 141.03px;
   margin-top: 122px;
   width: 100vw;
+  column-gap: 146.46px;
 }
 
 .home-donate {
@@ -437,7 +437,6 @@ Button {
 .featured-finds-cards {
   display: flex;
   flex-direction: row;
-  display: flex;
   justify-content: space-evenly;
   margin: 100px 30px;
 }
