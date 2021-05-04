@@ -17,7 +17,7 @@ function MyNavbar() {
 
   return (
     <>
-      <Container fluid className="bg-primary">
+      <Container fluid className="nav-blue">
         <Navbar expand="lg">
           <Navbar.Brand href="/">
             <img
@@ -63,10 +63,7 @@ function MyNavbar() {
               >
                 Refer a Child
               </Nav.Link>
-              <Button
-                href="/donate"
-                style={{ color: "#000000",fontFamily: "Paytone One", backgroundColor: "#FCA40E" }}
-              >
+              <Button href="/donate" variant="primary">
                 Donate
               </Button>
             </Nav>

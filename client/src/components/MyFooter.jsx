@@ -10,7 +10,7 @@ const handleNewsletterSignup = () => {
 function MyFooter() {
   return (
     <>
-      <Container fluid id="footer-container">
+      <Container fluid className="nav-blue">
         <Row className="align-items-end bg-warning pt-5 pb-5">
           <Col sm={4} className="newsletter-signup text-right">
             <div>Sign up for our newsletter</div>
@@ -35,7 +35,8 @@ function MyFooter() {
         </Row>
         <Row className="p-3 bg-primary">
           <Col>
-            <img
+            <a
+              img
               src={officiallogo}
               width="200"
               className="d-inline-block align-top"
@@ -47,12 +48,12 @@ function MyFooter() {
               <b className="footer-bold text-white">Get Involved</b>
             </Row>
             <Row className="mb-4">
-              <a className="text-white footer-links" href="#">
+              <a className="text-white footer-links" href="/donatepage">
                 Donate
               </a>
             </Row>
             <Row className="mb-4">
-              <a className="text-white footer-links" href="#">
+              <a className="text-white footer-links" href="/referchild">
                 Refer a Child
               </a>
             </Row>
@@ -62,19 +63,23 @@ function MyFooter() {
           </Col>
           <Col>
             <Row className="mb-4">
-              <b className="footer-bold text-white">About Us</b>
+              <a className="footer-bold text-white" href="/about">
+                About Us
+              </a>
             </Row>
           </Col>
           <Col>
             <Row>
-              <Button variant="primary">Donate</Button>
+              <Button href="/donate" variant="primary">
+                Donate
+              </Button>
             </Row>
             <Row className="mt-3">
-              <a href="#">
+              <a href="/donatepage">
                 <Twitter className="m-2" style={{ color: "white" }}></Twitter>
               </a>
 
-              <a href="#">
+              <a href="https://www.facebook.com/kidpowerunites/">
                 <Facebook className="m-2" style={{ color: "white" }}></Facebook>
               </a>
 
