@@ -15,13 +15,13 @@ import school from "../Images/occassion_images/School.png"
 const DonateCard = (props) =>{
   let occassionImage 
   console.log(props)
-  if (props.giftReason==="Birthday") {
+  if (props.giftReason==="birthday") {
     occassionImage = <img src={birthday}/>;
-  }else if(props.giftReason==="Holiday"){
+  }else if(props.giftReason==="holiday"){
     occassionImage = <img src={holiday}/>;
-  }else if(props.giftReason==="Medical"){
+  }else if(props.giftReason==="medical"){
     occassionImage = <img src={medical}/>;
-  }else if(props.giftReason==="School"){
+  }else if(props.giftReason==="school"){
     occassionImage = <img src={school}/>;
   } 
   return (
