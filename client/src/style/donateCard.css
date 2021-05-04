@@ -323,3 +323,7 @@
   --sazerac: rgba(255, 245, 225, 1);
   --white: rgba(255, 255, 255, 1);
 }
+
+.occassion{
+  display: grid;
+}

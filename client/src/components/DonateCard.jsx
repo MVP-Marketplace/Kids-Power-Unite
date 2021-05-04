@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "../style/donateCard.css";
 import YellowButton from "./YellowButton";
 import line49 from "../Images/Line49.png";
@@ -7,9 +7,23 @@ import line52 from "../Images/Line52.png";
 import line53 from "../Images/Line53.png";
 import line51 from "../Images/Line51.png";
 
-
+import birthday from "../Images/occassion_images/Birthday.png"
+import holiday from "../Images/occassion_images/Holiday.png"
+import medical from "../Images/occassion_images/Medical.png"
+import school from "../Images/occassion_images/School.png"
 
 const DonateCard = (props) =>{
+  let occassionImage 
+  console.log(props)
+  if (props.giftReason==="birthday") {
+    occassionImage = <img src={birthday}/>;
+  }else if(props.giftReason==="holiday"){
+    occassionImage = <img src={holiday}/>;
+  }else if(props.giftReason==="medical"){
+    occassionImage = <img src={medical}/>;
+  }else if(props.giftReason==="school"){
+    occassionImage = <img src={school}/>;
+  } 
   return (
     <div className="box wishlist-item-story-desktop">
       <div className="modal-overlap-group">
@@ -33,7 +47,9 @@ const DonateCard = (props) =>{
 
         <div className="text-8 valign-text-middle opensans-normal-fuscous-gray-14px">Item Picture</div>
 
-        <div className="text-9 valign-text-middle opensans-normal-fuscous-gray-14px">Ocassion</div>
+        <div className="occassion text-9 valign-text-middle opensans-normal-fuscous-gray-14px">Occassion
+            {occassionImage}
+        </div>
         <div className="text-10 valign-text-middle opensans-normal-fuscous-gray-14px">Price</div>
 
         <img className="line-49" src={line49} alt="line" />

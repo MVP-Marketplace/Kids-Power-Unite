@@ -6,6 +6,8 @@ import app from "../firebase";
 import PlusSign from "../Images/plus-sign.png";
 import LeftArrow from "../Images/LeftArrow.png";
 import Form from "react-bootstrap/Form";
+import 'firebase/storage';
+
 import LimitedTextarea from "./LimitedTextarea";
 
 function validate(values) {
@@ -78,10 +80,30 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
     status: "in progress",
     parentalConsent: checked,
   });
+  const [profilePics,setProfilePics] = useState()
+  const [profilepicModal,setprofilepicModal] = useState(false)
+
+  let storageRef = app.firebase_.storage().ref();
+  const getImage = () =>{
+    let imageArray = []
+    for(let i=1;i<=9;i++){
+      let imageRef = storageRef.child(`Profile Images/profile${i}.png`)
+      imageRef.getDownloadURL().then((url)=>{
+        imageArray.push(url)
+      })
+      .catch((error)=>{
+        console.log(error)
+      })
+    }
+    setProfilePics(imageArray)
+  }
+
+  // getImage();
 
   useEffect(() => {
     if (currentUser) {
       setSponsorId(currentUser.uid);
+      getImage()
     }
   }, [currentUser]);
 
