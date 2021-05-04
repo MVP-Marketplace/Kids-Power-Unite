@@ -664,3 +664,68 @@ input .child-form-fields {
   letter-spacing: 0em;
   text-align: left;
 }
+.about-page {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.about-page-heading {
+  background-color: #fff5e1;
+}
+
+.about-page-logo {
+  left: 195.2px;
+  top: 147.45px;
+  position: absolute;
+}
+
+.about-title {
+  font-family: Dosis;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 90.03%;
+}
+
+.about-border {
+  background: #fca40e;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.dash-edit-account {
+  font-family: Dosis;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.dash-edit-headers {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.dash-edit-labels {
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.dash-grn-border {
+  border-top: 1px solid #4dac79;
+  border-bottom: 1px solid #4dac79;
+}
