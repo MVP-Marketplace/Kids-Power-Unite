@@ -22,7 +22,7 @@ const Home = () => {
             meets the power to give
           </h1>
           <Button className="hero-button" href="/donate">
-            Donate
+            Sponsor a Child
           </Button>
         </section>
         <section className="home-mission">

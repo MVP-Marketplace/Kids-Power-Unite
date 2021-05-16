@@ -43,7 +43,7 @@ function MyNavbar() {
                     href="/login"
                     style={{ fontFamily: "Paytone One", color: "#FFFFFF" }}
                   >
-                    Login
+                    Sign in
                   </Nav.Link>
                 </>
               ) : (
@@ -63,8 +63,12 @@ function MyNavbar() {
               >
                 Refer a Child
               </Nav.Link>
-              <Button href="/donate" variant="primary">
-                Donate
+              <Button
+                className="nav-sponsor-btn"
+                href="/donate"
+                variant="primary"
+              >
+                Sponsor a Child
               </Button>
             </Nav>
           </Navbar.Collapse>

@@ -730,8 +730,22 @@ input .child-form-fields {
   border-bottom: 1px solid #4dac79;
 }
 
-/*NAVBAR/FOOTER */
+/* NAVBAR/FOOTER */
 
 .nav-blue {
-  background: #1f4fab;
+  background-color: #1f4fab;
+}
+
+.nav-sponsor-btn {
+  background-color: #fca40e;
+  color: black;
+  border: 2px solid #fca40e;
+  margin-left: 10px;
+  font-family: "Paytone One", sans-serif;
+}
+
+.nav-sponsor-btn:hover {
+  background-color: #fca40e;
+  color: black;
+  border: 2px solid #fca40e;
 }
