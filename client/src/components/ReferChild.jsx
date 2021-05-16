@@ -31,6 +31,7 @@ const ReferChild = () => {
           <ul className="eligible-requirements-list">
             <li>Children ages 18 and under</li>
             <li>In a disadvantaged situation</li>
+            <li>Needing a gift for $50 and under</li>
           </ul>
         </div>
         <img
