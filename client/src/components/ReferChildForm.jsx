@@ -56,7 +56,7 @@ function validate(values) {
   return errors;
 }
 
-const ReferChildForm = ({ setDisplayChildForm }) => {
+const ReferChildForm = ({ formSuccess }) => {
   let limit = "";
 
   const [checked, setChecked] = useState(false);
@@ -165,7 +165,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
       status: "in progress",
       parentalConsent: checked,
     });
-    setDisplayChildForm(false);
+    formSuccess();
   };
 
   const handleChange = (event) => {
