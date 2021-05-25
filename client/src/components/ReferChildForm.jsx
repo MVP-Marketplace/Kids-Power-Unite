@@ -254,9 +254,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
               onChange={handleChange}
               placeholder="Select reason below"
             >
-              <option value="" disabled selected>
-                Select your reason
-              </option>
+              <option value="...">Select your reason</option>
               <option className="option-field" value="birthday">
                 Birthday
               </option>
@@ -287,6 +285,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
                 maxLength={150}
                 value={values.childBio}
                 onChange={handleChange}
+                maxLength={150}
               />
               {/* <LimitedTextarea
                 placeholder="Please type here.."
@@ -320,6 +319,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
                 maxLength={150}
                 value={values.giftExplanation}
                 onChange={handleChange}
+                maxLength={150}
               />
             </Form.Group>
             {submit || (validate && errors?.giftExplanation) ? (
