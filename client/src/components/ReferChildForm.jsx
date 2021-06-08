@@ -9,6 +9,7 @@ import Form from "react-bootstrap/Form";
 import "firebase/storage";
 
 import LimitedTextarea from "./LimitedTextarea";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function validate(values) {
   let errors = {};
@@ -56,9 +57,8 @@ function validate(values) {
   return errors;
 }
 
-const ReferChildForm = ({ setDisplayChildForm }) => {
+const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture }) => {
   let limit = "";
-
   const [checked, setChecked] = useState(false);
   const [errors, setErrors] = useState(null);
   const { currentUser } = useContext(AuthContext);
@@ -78,34 +78,15 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
     day: "",
     year: "",
     status: "in progress",
+    profilePicture: picture,
     parentalConsent: checked,
   });
-  const [profilePics, setProfilePics] = useState();
-  const [profilepicModal, setprofilepicModal] = useState(false);
-
-  let storageRef = app.firebase_.storage().ref();
-  const getImage = () => {
-    let imageArray = [];
-    for (let i = 1; i <= 9; i++) {
-      let imageRef = storageRef.child(`Profile Images/profile${i}.png`);
-      imageRef
-        .getDownloadURL()
-        .then((url) => {
-          imageArray.push(url);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-    setProfilePics(imageArray);
-  };
 
   // getImage();
 
   useEffect(() => {
     if (currentUser) {
       setSponsorId(currentUser.uid);
-      getImage();
     }
   }, [currentUser]);
 
@@ -135,6 +116,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
       error.day ||
       error.year ||
       error.status ||
+      error.profilePicture ||
       error.parentalConsent
     ) {
       return;
@@ -163,6 +145,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
       day: "",
       year: "",
       status: "in progress",
+      profilePicture: picture,
       parentalConsent: checked,
     });
     setDisplayChildForm(false);
@@ -189,11 +172,12 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
         <p className="recipient-info">Recipient Information</p>
         <div className="avatar-container">
           <button className="avatar-container-items">
-            <img></img>
+            <img src={picture}></img>
             <img
               className="add-avatar-sign"
               src={PlusSign}
               alt="add avatar"
+              onClick={profileDisplay}
             ></img>
           </button>
           <p className="select-avatar">Select Avatar</p>
@@ -324,7 +308,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
               <span className="error-message">
                 Please enter a gift explanation
               </span>
-            ) : null}
+            ) : null}cd 
           </div>
           <div className="recipient-info-one">
             <label className="recipient-field">

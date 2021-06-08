@@ -55,7 +55,7 @@ const DonatePage = () => {
     //                 window.location.reload();
     //               });
   }
-
+  
   useEffect(()=>{ 
     getActiveChildren();
   },[])
