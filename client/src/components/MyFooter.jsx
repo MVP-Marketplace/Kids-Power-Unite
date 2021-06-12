@@ -12,7 +12,7 @@ function MyFooter() {
     <>
       <Container fluid className="nav-blue">
         <Row className="align-items-end bg-warning pt-5 pb-5">
-          <Col sm={4} className="newsletter-signup text-right">
+          {/* <Col sm={4} className="newsletter-signup text-right">
             <div>Sign up for our newsletter</div>
           </Col>
           <Col sm={6} className="align-items-center">
@@ -26,7 +26,7 @@ function MyFooter() {
                 placeholder="forever_upwards@gmail.com"
               />
             </Form>
-          </Col>
+          </Col> */}
           <Col sm={2}>
             <Button className="btn-primary" onClick={handleNewsletterSignup}>
               Sign Up
@@ -76,15 +76,24 @@ function MyFooter() {
             </Row>
             <Row className="mt-3">
               <a href="/donatepage">
-                <Twitter className="m-2" style={{ color: "white" }}></Twitter>
+                <Twitter
+                  target="_blank"
+                  className="m-2"
+                  style={{ color: "white" }}
+                ></Twitter>
               </a>
 
               <a href="https://www.facebook.com/kidpowerunites/">
-                <Facebook className="m-2" style={{ color: "white" }}></Facebook>
+                <Facebook
+                  target="_blank"
+                  className="m-2"
+                  style={{ color: "white" }}
+                ></Facebook>
               </a>
 
               <a href="#">
                 <Instagram
+                  target="_blank"
                   className="m-2"
                   style={{ color: "white" }}
                 ></Instagram>
