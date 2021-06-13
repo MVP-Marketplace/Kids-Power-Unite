@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Auth";
-import { useHistory } from "react-router-dom";
 import "../App.css";
 import app from "../firebase";
 import PlusSign from "../Images/plus-sign.png";
@@ -8,7 +7,7 @@ import LeftArrow from "../Images/LeftArrow.png";
 import Form from "react-bootstrap/Form";
 import "firebase/storage";
 
-import LimitedTextarea from "./LimitedTextarea";
+// import LimitedTextarea from "./LimitedTextarea";
 
 function validate(values) {
   let errors = {};
@@ -57,12 +56,13 @@ function validate(values) {
 }
 
 const ReferChildForm = ({ setDisplayChildForm }) => {
-  let limit = "";
+  // let limit = "";
 
   const [checked, setChecked] = useState(false);
   const [errors, setErrors] = useState(null);
   const { currentUser } = useContext(AuthContext);
   const [sponsorId, setSponsorId] = useState("");
+  const [sponsorName, setSponsorName] = useState("");
   const [submit, setSubmit] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [values, setValues] = useState({
@@ -105,6 +105,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
   useEffect(() => {
     if (currentUser) {
       setSponsorId(currentUser.uid);
+      setSponsorName(currentUser.displayName);
       getImage();
     }
   }, [currentUser]);
@@ -144,7 +145,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
         .firestore()
         .collection("recipient")
         .doc(`${values.nickname}`)
-        .set({ values, sponsorId });
+        .set({ values, sponsorId, sponsorName });
     } catch (error) {
       alert(error);
     }
