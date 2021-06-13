@@ -435,10 +435,10 @@ Button {
 }
 
 .featured-finds-cards {
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
   justify-content: space-evenly;
-  margin: 80px 10px;
+  margin:140px;
+  
 }
 
 .featured-card-link {
@@ -469,7 +469,7 @@ Button {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 25.9839px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   text-align: center;
