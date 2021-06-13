@@ -11,8 +11,8 @@ function MyFooter() {
   return (
     <>
       <Container fluid className="nav-blue">
-        <Row className="align-items-end bg-warning pt-5 pb-5">
-          {/* <Col sm={4} className="newsletter-signup text-right">
+        {/* <Row className="align-items-end bg-warning pt-5 pb-5">
+          <Col sm={4} className="newsletter-signup text-right">
             <div>Sign up for our newsletter</div>
           </Col>
           <Col sm={6} className="align-items-center">
@@ -26,13 +26,13 @@ function MyFooter() {
                 placeholder="forever_upwards@gmail.com"
               />
             </Form>
-          </Col> */}
+          </Col>
           <Col sm={2}>
             <Button className="btn-primary" onClick={handleNewsletterSignup}>
               Sign Up
             </Button>
           </Col>
-        </Row>
+        </Row> */}
         <Row className="p-3 bg-primary">
           <Col>
             <a

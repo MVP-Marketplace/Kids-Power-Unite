@@ -14,7 +14,7 @@ import school from "../Images/occassion_images/School.png"
 
 const DonateCard = (props) =>{
   let occassionImage 
-  console.log(props)
+ 
   if (props.giftReason==="birthday") {
     occassionImage = <img src={birthday}/>;
   }else if(props.giftReason==="holiday"){

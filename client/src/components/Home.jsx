@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router";
 import { Button } from "react-bootstrap";
-import app from "../firebase";
 import FeaturedItems from "./FeaturedItems";
 import "../Home.css";
 import logo from "../Images/kpu-logo.png";
@@ -9,12 +8,14 @@ import Donate from "../Images/donatehero.png";
 import Legos from "../Images/legos.png";
 import FeaturedSuccess from "../Images/featured-success.png";
 
+import app from "../firebase";
+
 const Home = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState();
 
   useEffect(() => {
     getFeaturedItems();
-  });
+  }, []);
 
   const getFeaturedItems = async () => {
     await app
@@ -25,7 +26,7 @@ const Home = () => {
         let data = [];
         querySnapshot.forEach((doc) => {
           let child = doc.data();
-          data.push(child.values);
+          data.push(child);
         });
         setItems(data);
       })
@@ -159,9 +160,9 @@ const Home = () => {
               for a child in need.
             </p>
           </div>
-          {items
-            ? items.map((item, i) => {
-                return <FeaturedItems key={i} {...item} />;
+          {items && items !== undefined
+            ? items.map((child, i) => {
+                return <FeaturedItems key={i} {...child} />;
               })
             : null}
         </section>
