@@ -438,7 +438,7 @@ Button {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 100px 30px;
+  margin: 80px 10px;
 }
 
 .featured-card-link {

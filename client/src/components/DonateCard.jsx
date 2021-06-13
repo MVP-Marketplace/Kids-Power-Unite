@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "../style/donateCard.css";
 import YellowButton from "./YellowButton";
 import line49 from "../Images/Line49.png";

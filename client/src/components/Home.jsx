@@ -1,18 +1,39 @@
-import React, { useContext, useCallback } from "react";
-import { withRouter, Redirect } from "react-router";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router";
 import { Button } from "react-bootstrap";
 import app from "../firebase";
+import FeaturedItems from "./FeaturedItems";
 import "../Home.css";
 import logo from "../Images/kpu-logo.png";
-import Vector from "../Images/Vector.png";
 import Donate from "../Images/donatehero.png";
 import Legos from "../Images/legos.png";
 import FeaturedSuccess from "../Images/featured-success.png";
-import ProductOne from "../Images/product-one.png";
-import ProductTwo from "../Images/product-two.png";
 
 const Home = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    getFeaturedItems();
+  });
+
+  const getFeaturedItems = async () => {
+    await app
+      .firestore()
+      .collection("featured")
+      .get()
+      .then((querySnapshot) => {
+        let data = [];
+        querySnapshot.forEach((doc) => {
+          let child = doc.data();
+          data.push(child.values);
+        });
+        setItems(data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  };
+
   return (
     <>
       <div className="home-page-container">
@@ -130,7 +151,7 @@ const Home = () => {
           </section>
         </div>
         <section className="featured-finds">
-          <h2 className="section-header">Featured Finds (COMING SOON!!!!)</h2>
+          <h2 className="section-header">Featured Finds</h2>
           <div className="featured-finds-text-container">
             <p className="featured-finds-text">
               We've done the research to recommend great products for families
@@ -138,22 +159,11 @@ const Home = () => {
               for a child in need.
             </p>
           </div>
-          <div className="featured-finds-cards">
-            <Link className="featured-card-link">
-              <div className="featured-card">
-                <img src={ProductOne} alt="Product Image"></img>
-                <p>
-                  Welly <br /> Braverly Bandages for Kids
-                </p>
-              </div>
-            </Link>
-            <Link className="featured-card-link">
-              <div className="featured-card">
-                <img src={ProductTwo} alt="Product Image"></img>
-                <p id="featured-card-two">Fidget Toy</p>
-              </div>
-            </Link>
-          </div>
+          {items
+            ? items.map((item, i) => {
+                return <FeaturedItems key={i} {...item} />;
+              })
+            : null}
         </section>
       </div>
     </>
