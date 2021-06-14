@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router";
 import { Button } from "react-bootstrap";
 import FeaturedItems from "./FeaturedItems";
+import SuccessStory from "./SuccessStory";
 import "../Home.css";
 import logo from "../Images/kpu-logo.png";
 import Donate from "../Images/donatehero.png";
@@ -12,10 +13,33 @@ import app from "../firebase";
 
 const Home = () => {
   const [items, setItems] = useState();
+  const [success, setSuccess] = useState();
+
+  useEffect(() => {
+    getSuccess();
+  }, []);
 
   useEffect(() => {
     getFeaturedItems();
   }, []);
+
+  const getSuccess = async () => {
+    await app
+      .firestore()
+      .collection("success")
+      .get()
+      .then((querySnapshot) => {
+        let data = [];
+        querySnapshot.forEach((doc) => {
+          let child = doc.data();
+          data.push(child);
+        });
+        setSuccess(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const getFeaturedItems = async () => {
     await app
@@ -31,7 +55,7 @@ const Home = () => {
         setItems(data);
       })
       .catch((error) => {
-        console.log("error", error);
+        console.log(error);
       });
   };
 
@@ -109,17 +133,11 @@ const Home = () => {
           </h2>
           <div className="featured-success-info">
             <img src={FeaturedSuccess} alt="recipient child with their gift" />
-            <div className="featured-success-text">
-              <h2>
-                <b>Marci, 16 &mdash;</b> Boston, MA
-              </h2>
-              <p id="featured-quote">"</p>
-              <p id="quote-two">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna ali.
-                <em>"</em>
-              </p>
-            </div>
+            {success && success !== undefined
+            ? success.map((child, i) => {
+                return <SuccessStory key={i} {...child} />;
+              })
+            : null}
           </div>
           {/* to do: discuss how to display and handle featured finds section */}
         </section>
