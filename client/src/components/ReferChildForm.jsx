@@ -55,7 +55,7 @@ function validate(values) {
   return errors;
 }
 
-const ReferChildForm = ({ setDisplayChildForm }) => {
+const ReferChildForm = ({ formSuccess }) => {
   // let limit = "";
 
   const [checked, setChecked] = useState(false);
