@@ -166,7 +166,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
       status: "in progress",
       parentalConsent: checked,
     });
-    setDisplayChildForm(false);
+    formSuccess();
   };
 
   const handleChange = (event) => {
