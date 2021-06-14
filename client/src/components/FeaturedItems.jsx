@@ -3,19 +3,19 @@ import "../Home.css";
 
 const FeaturedItems = (props) => {
   
-  // const { amazonLink, image, name } = props;
+  const { amazonLink, image, name } = props;
 
   return (
     <div className="featured-finds-cards">
       <a
-        href={props.amazonLink}
+        href={amazonLink}
         target="_blank"
         className="featured-card-link"
       >
         <div className="featured-card">
-          <img src={props.image} alt={props.name} />
+          <img src={image} alt={name} />
           <p>
-            <br /> {props.name}
+            <br /> {name}
           </p>
         </div>
       </a>

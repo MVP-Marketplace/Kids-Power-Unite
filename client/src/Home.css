@@ -437,8 +437,7 @@ Button {
 .featured-finds-cards {
   display: inline-block;
   justify-content: space-evenly;
-  margin:140px;
-  
+  margin: 140px;
 }
 
 .featured-card-link {
