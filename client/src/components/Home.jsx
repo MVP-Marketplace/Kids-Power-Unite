@@ -176,13 +176,12 @@ const Home = () => {
               for a child in need.
             </p>
           </div>
-          <div className="featured-card-container">
-            {items && items !== undefined
-              ? items.map((child, i) => {
-                  return <FeaturedItems key={i} {...child} />;
-                })
-              : null}
-          </div>
+
+          {items && items !== undefined
+            ? items.map((child, i) => {
+                return <FeaturedItems key={i} {...child} />;
+              })
+            : null}
         </section>
       </div>
     </>

@@ -412,7 +412,7 @@ Button {
   transition: all 900ms ease;
 }
 
-/* FEATURED FINDS - coming soon */
+/* FEATURED FINDS  */
 .featured-finds {
   padding-top: 90px;
   padding-bottom: 40px;
@@ -434,18 +434,11 @@ Button {
   width: 900px;
 }
 
-.featured-cards-container{
-  display: flex;
-  flex-direction: row;
-
-}
 
 .featured-finds-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: inline-block;
   justify-content: space-evenly;
-  /* margin: 140px; */
+  margin: 140px;
 }
 
 .featured-card-link {

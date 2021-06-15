@@ -54,9 +54,9 @@ const DonatePage = () => {
     //                 });
     //                 window.location.reload();
     //               });
-  };
-
-  useEffect(() => {
+  }
+  
+  useEffect(()=>{ 
     getActiveChildren();
   }, []);
   

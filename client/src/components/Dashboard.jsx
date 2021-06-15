@@ -28,15 +28,13 @@ import app from "../firebase";
 import { AuthContext } from "../Auth";
 import overviewIcon from "../Images/Overview Icon.svg";
 import SettingsIcon from "../Images/sidebar/Settings Icon.png";
-import avatar1 from "../Images/avatars/Ellipse 1.png";
-import avatar2 from "../Images/avatars/Ellipse 2.png";
-import avatar3 from "../Images/avatars/Ellipse 4.png";
-import avatar4 from "../Images/avatars/Ellipse 5.png";
+import ProfilePictures from "./ProfilePictures.jsx"
 import group83 from "../Images/group83.png";
 import group84 from "../Images/group84.png";
 
 const Dashboard = () => {
   const [displayChildForm, setDisplayChildForm] = useState(false);
+  const [displayProfileSelect,setDisplayProfileSelect] = useState(false);
   const [dispOverview, setDispOverview] = useState(true);
   const [sponsorId, setSponsorId] = useState("");
   const { currentUser } = useContext(AuthContext);
@@ -49,6 +47,26 @@ const Dashboard = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [asc, setAsc] = useState(false);
+  const [profilePics, setProfilePics] = useState();
+  const [selectedPic,setSelectedPic] = useState("");
+
+  let storageRef = app.firebase_.storage().ref();
+  const getImage = () => {
+    let imageArray = [];
+    for (let i = 1; i <= 9; i++) {
+      let imageRef = storageRef.child(`Profile Images/profile${i}.png`);
+      imageRef
+        .getDownloadURL()
+        .then((url) => {
+          imageArray.push(url);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    setProfilePics(imageArray);
+  };
+
   useEffect(() => {
     if (currentUser) {
       setSponsorId(currentUser.uid);
@@ -122,7 +140,7 @@ const Dashboard = () => {
           <td>
             <Row>
               <Col>
-                <img src={avatar1} height="44"></img>
+                <img src={recipient.data().values.profilePicture} height="44"></img>
               </Col>
               <Col>
                 <b className="recipient-details-text">
@@ -500,7 +518,7 @@ const Dashboard = () => {
           <td>
             <Row>
               <Col>
-                <img src={avatar1} height="44"></img>
+                <img src={recipient.data().values.profilePicture} height="44"></img>
               </Col>
               <Col>
                 <b className="recipient-details-text">
@@ -562,11 +580,17 @@ const Dashboard = () => {
   };
   useEffect(() => {
     fetchRecips();
+    getImage();
   }, []);
+
   useEffect(() => {
     updateGuardian();
   }, []);
 
+  useEffect(() => {
+    setDisplayProfileSelect(false)
+  },[selectedPic])
+  console.log(selectedPic)
   const overview = (
     <>
       <Row className="p-2 align-items-center">
@@ -809,6 +833,12 @@ const Dashboard = () => {
       </Form>
     </>
   );
+
+  const displayProfileSelectPage = () =>{
+    setDisplayProfileSelect(true)
+  }
+
+
   return (
     <Container fluid id="dashboard-container">
       {updateModal}
@@ -839,7 +869,13 @@ const Dashboard = () => {
         </Col>
         <Col sm={10}>
           {displayChildForm ? (
-            <ReferChildForm formSuccess={formSuccess} />
+            <> 
+            {
+                displayProfileSelect ? (
+                <ProfilePictures pictures={profilePics} setSelectedPic={setSelectedPic}></ProfilePictures> ): 
+                <ReferChildForm formSuccess={formSuccess} picture={selectedPic} profileDisplay={()=>{displayProfileSelectPage()}} setDisplayChildForm={setDisplayChildForm} />
+            }
+            </> 
           ) : (
             <>{dispOverview ? overview : settings}</>
           )}
