@@ -128,16 +128,14 @@ const Home = () => {
           </Button>
         </section>
         <section className="home-featured">
-          <h2 className="section-header">
-            Featured Success Story (COMING SOON!!!!)
-          </h2>
+          <h2 className="section-header">Featured Success Story</h2>
           <div className="featured-success-info">
             <img src={FeaturedSuccess} alt="recipient child with their gift" />
             {success && success !== undefined
-            ? success.map((child, i) => {
-                return <SuccessStory key={i} {...child} />;
-              })
-            : null}
+              ? success.map((child, i) => {
+                  return <SuccessStory key={i} {...child} />;
+                })
+              : null}
           </div>
           {/* to do: discuss how to display and handle featured finds section */}
         </section>
@@ -178,11 +176,13 @@ const Home = () => {
               for a child in need.
             </p>
           </div>
-          {items && items !== undefined
-            ? items.map((child, i) => {
-                return <FeaturedItems key={i} {...child} />;
-              })
-            : null}
+          <div className="featured-card-container">
+            {items && items !== undefined
+              ? items.map((child, i) => {
+                  return <FeaturedItems key={i} {...child} />;
+                })
+              : null}
+          </div>
         </section>
       </div>
     </>

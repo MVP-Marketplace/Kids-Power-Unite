@@ -434,10 +434,18 @@ Button {
   width: 900px;
 }
 
+.featured-cards-container{
+  display: flex;
+  flex-direction: row;
+
+}
+
 .featured-finds-cards {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-evenly;
-  margin: 140px;
+  /* margin: 140px; */
 }
 
 .featured-card-link {

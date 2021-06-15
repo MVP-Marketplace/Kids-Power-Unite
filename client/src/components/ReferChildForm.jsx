@@ -80,6 +80,7 @@ const ReferChildForm = ({ formSuccess }) => {
     status: "in progress",
     parentalConsent: checked,
   });
+  
   const [profilePics, setProfilePics] = useState();
   const [profilepicModal, setprofilepicModal] = useState(false);
 
