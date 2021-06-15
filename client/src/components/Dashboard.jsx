@@ -29,6 +29,8 @@ import { AuthContext } from "../Auth";
 import overviewIcon from "../Images/Overview Icon.svg";
 import SettingsIcon from "../Images/sidebar/Settings Icon.png";
 import ProfilePictures from "./ProfilePictures.jsx"
+import group83 from "../Images/group83.png";
+import group84 from "../Images/group84.png";
 
 const Dashboard = () => {
   const [displayChildForm, setDisplayChildForm] = useState(false);
@@ -37,8 +39,11 @@ const Dashboard = () => {
   const [sponsorId, setSponsorId] = useState("");
   const { currentUser } = useContext(AuthContext);
   const [currentRecip, setCurrentRecip] = useState(null);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [show, setShow] = useState(false);
   const [list, setList] = useState([]);
+  const handleCloseSuccess = () => setShowSuccess(false);
+  const handleShowSuccess = () => setShowSuccess(true);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [asc, setAsc] = useState(false);
@@ -108,6 +113,10 @@ const Dashboard = () => {
       ...values,
       [name]: value,
     });
+  };
+  const formSuccess = () => {
+    setDisplayChildForm(false);
+    handleShowSuccess();
   };
   const handleSort = () => {};
   const handleNameSort = async () => {
@@ -375,6 +384,21 @@ const Dashboard = () => {
             Save Changes
           </Button>
         </Form>
+      </Modal.Body>
+    </Modal>
+  );
+
+  const successModal = (
+    <Modal show={showSuccess} onHide={handleCloseSuccess}>
+      <Modal.Body
+        style={{
+          backgroundImage: `url(${group83}), url(${group84})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          height: "600px",
+        }}
+      >
+        <h1 style={{color:'gold',marginTop:'500px'}}>Child successfully Added</h1>
       </Modal.Body>
     </Modal>
   );
@@ -818,6 +842,7 @@ const Dashboard = () => {
   return (
     <Container fluid id="dashboard-container">
       {updateModal}
+      {successModal}
       <Row className="p-3">
         <Col sm={2} className="d-none d-lg-block d-xl-block">
           <Row>
@@ -848,7 +873,7 @@ const Dashboard = () => {
             {
                 displayProfileSelect ? (
                 <ProfilePictures pictures={profilePics} setSelectedPic={setSelectedPic}></ProfilePictures> ): 
-                <ReferChildForm picture={selectedPic} profileDisplay={()=>{displayProfileSelectPage()}} setDisplayChildForm={setDisplayChildForm} />
+                <ReferChildForm formSuccess={formSuccess} picture={selectedPic} profileDisplay={()=>{displayProfileSelectPage()}} setDisplayChildForm={setDisplayChildForm} />
             }
             </> 
           ) : (

@@ -57,7 +57,7 @@ function validate(values) {
   return errors;
 }
 
-const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture }) => {
+const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture, formSuccess }) => {
   let limit = "";
   const [checked, setChecked] = useState(false);
   const [errors, setErrors] = useState(null);
@@ -148,7 +148,7 @@ const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture }) => {
       profilePicture: picture,
       parentalConsent: checked,
     });
-    setDisplayChildForm(false);
+    formSuccess();
   };
 
   const handleChange = (event) => {
@@ -266,6 +266,7 @@ const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture }) => {
                 placeholder="Please type here.."
                 className="child-form-fields"
                 name="childBio"
+                maxLength={150}
                 value={values.childBio}
                 onChange={handleChange}
                 maxLength={150}
@@ -299,6 +300,7 @@ const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture }) => {
                 className="child-form-fields"
                 type="text"
                 name="giftExplanation"
+                maxLength={150}
                 value={values.giftExplanation}
                 onChange={handleChange}
                 maxLength={150}
