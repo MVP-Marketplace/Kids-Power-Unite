@@ -7,8 +7,6 @@ import "../Home.css";
 import logo from "../Images/kpu-logo.png";
 import Donate from "../Images/donatehero.png";
 import Legos from "../Images/legos.png";
-import FeaturedSuccess from "../Images/featured-success.png";
-
 import app from "../firebase";
 
 const Home = () => {
@@ -136,7 +134,6 @@ const Home = () => {
                 })
               : null}
           </div>
-          {/* to do: discuss how to display and handle featured finds section */}
         </section>
         <div className="home-quicklinks">
           <section className="home-donate">
