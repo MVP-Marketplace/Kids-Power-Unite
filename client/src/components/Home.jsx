@@ -130,7 +130,6 @@ const Home = () => {
         <section className="home-featured">
           <h2 className="section-header">Featured Success Story</h2>
           <div className="featured-success-info">
-            <img src={FeaturedSuccess} alt="recipient child with their gift" />
             {success && success !== undefined
               ? success.map((child, i) => {
                   return <SuccessStory key={i} {...child} />;
