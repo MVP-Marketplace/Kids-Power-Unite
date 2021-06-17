@@ -412,7 +412,7 @@ Button {
   transition: all 900ms ease;
 }
 
-/* FEATURED FINDS - coming soon */
+/* FEATURED FINDS  */
 .featured-finds {
   padding-top: 90px;
   padding-bottom: 40px;
@@ -434,11 +434,11 @@ Button {
   width: 900px;
 }
 
+
 .featured-finds-cards {
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
   justify-content: space-evenly;
-  margin: 100px 30px;
+  margin: 140px;
 }
 
 .featured-card-link {
@@ -469,7 +469,7 @@ Button {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 25.9839px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   text-align: center;

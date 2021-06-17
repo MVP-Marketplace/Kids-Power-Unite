@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "../style/donateCard.css";
 import YellowButton from "./YellowButton";
 import line49 from "../Images/Line49.png";
@@ -14,7 +14,6 @@ import school from "../Images/occassion_images/School.png"
 
 const DonateCard = (props) =>{
   let occassionImage 
-
   if (props.giftReason==="birthday") {
     occassionImage = <img src={birthday}/>;
   }else if(props.giftReason==="holiday"){

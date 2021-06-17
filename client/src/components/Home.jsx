@@ -1,18 +1,62 @@
-import React, { useContext, useCallback } from "react";
-import { withRouter, Redirect } from "react-router";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router";
 import { Button } from "react-bootstrap";
-import app from "../firebase";
+import FeaturedItems from "./FeaturedItems";
+import SuccessStory from "./SuccessStory";
 import "../Home.css";
 import logo from "../Images/kpu-logo.png";
-import Vector from "../Images/Vector.png";
 import Donate from "../Images/donatehero.png";
 import Legos from "../Images/legos.png";
-import FeaturedSuccess from "../Images/featured-success.png";
-import ProductOne from "../Images/product-one.png";
-import ProductTwo from "../Images/product-two.png";
+import app from "../firebase";
 
 const Home = () => {
+  const [items, setItems] = useState();
+  const [success, setSuccess] = useState();
+
+  useEffect(() => {
+    getSuccess();
+  }, []);
+
+  useEffect(() => {
+    getFeaturedItems();
+  }, []);
+
+  const getSuccess = async () => {
+    await app
+      .firestore()
+      .collection("success")
+      .get()
+      .then((querySnapshot) => {
+        let data = [];
+        querySnapshot.forEach((doc) => {
+          let child = doc.data();
+          data.push(child);
+        });
+        setSuccess(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const getFeaturedItems = async () => {
+    await app
+      .firestore()
+      .collection("featured")
+      .get()
+      .then((querySnapshot) => {
+        let data = [];
+        querySnapshot.forEach((doc) => {
+          let child = doc.data();
+          data.push(child);
+        });
+        setItems(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <>
       <div className="home-page-container">
@@ -82,24 +126,14 @@ const Home = () => {
           </Button>
         </section>
         <section className="home-featured">
-          <h2 className="section-header">
-            Featured Success Story (COMING SOON!!!!)
-          </h2>
+          <h2 className="section-header">Featured Success Story</h2>
           <div className="featured-success-info">
-            <img src={FeaturedSuccess} alt="recipient child with their gift" />
-            <div className="featured-success-text">
-              <h2>
-                <b>Marci, 16 &mdash;</b> Boston, MA
-              </h2>
-              <p id="featured-quote">"</p>
-              <p id="quote-two">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna ali.
-                <em>"</em>
-              </p>
-            </div>
+            {success && success !== undefined
+              ? success.map((child, i) => {
+                  return <SuccessStory key={i} {...child} />;
+                })
+              : null}
           </div>
-          {/* to do: discuss how to display and handle featured finds section */}
         </section>
         <div className="home-quicklinks">
           <section className="home-donate">
@@ -130,7 +164,7 @@ const Home = () => {
           </section>
         </div>
         <section className="featured-finds">
-          <h2 className="section-header">Featured Finds (COMING SOON!!!!)</h2>
+          <h2 className="section-header">Featured Finds</h2>
           <div className="featured-finds-text-container">
             <p className="featured-finds-text">
               We've done the research to recommend great products for families
@@ -138,22 +172,12 @@ const Home = () => {
               for a child in need.
             </p>
           </div>
-          <div className="featured-finds-cards">
-            <Link className="featured-card-link">
-              <div className="featured-card">
-                <img src={ProductOne} alt="Product Image"></img>
-                <p>
-                  Welly <br /> Braverly Bandages for Kids
-                </p>
-              </div>
-            </Link>
-            <Link className="featured-card-link">
-              <div className="featured-card">
-                <img src={ProductTwo} alt="Product Image"></img>
-                <p id="featured-card-two">Fidget Toy</p>
-              </div>
-            </Link>
-          </div>
+
+          {items && items !== undefined
+            ? items.map((child, i) => {
+                return <FeaturedItems key={i} {...child} />;
+              })
+            : null}
         </section>
       </div>
     </>

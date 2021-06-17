@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Auth";
-import { useHistory } from "react-router-dom";
 import "../App.css";
 import app from "../firebase";
 import PlusSign from "../Images/plus-sign.png";
@@ -8,7 +7,7 @@ import LeftArrow from "../Images/LeftArrow.png";
 import Form from "react-bootstrap/Form";
 import "firebase/storage";
 
-import LimitedTextarea from "./LimitedTextarea";
+// import LimitedTextarea from "./LimitedTextarea";
 import { propTypes } from "react-bootstrap/esm/Image";
 
 function validate(values) {
@@ -57,12 +56,18 @@ function validate(values) {
   return errors;
 }
 
-const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture, formSuccess }) => {
-  let limit = "";
+const ReferChildForm = ({
+  profileDisplay,
+  setDisplayChildForm,
+  picture,
+  formSuccess,
+}) => {
+  // let limit = "";
   const [checked, setChecked] = useState(false);
   const [errors, setErrors] = useState(null);
   const { currentUser } = useContext(AuthContext);
   const [sponsorId, setSponsorId] = useState("");
+  const [sponsorName, setSponsorName] = useState("");
   const [submit, setSubmit] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [values, setValues] = useState({
@@ -87,6 +92,7 @@ const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture, formSucc
   useEffect(() => {
     if (currentUser) {
       setSponsorId(currentUser.uid);
+      setSponsorName(currentUser.displayName);
     }
   }, [currentUser]);
 
@@ -126,7 +132,7 @@ const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture, formSucc
         .firestore()
         .collection("recipient")
         .doc(`${values.nickname}`)
-        .set({ values, sponsorId });
+        .set({ values, sponsorId, sponsorName });
     } catch (error) {
       alert(error);
     }
@@ -310,7 +316,8 @@ const ReferChildForm = ({ profileDisplay ,setDisplayChildForm, picture, formSucc
               <span className="error-message">
                 Please enter a gift explanation
               </span>
-            ) : null}cd 
+            ) : null}
+            cd
           </div>
           <div className="recipient-info-one">
             <label className="recipient-field">
