@@ -434,11 +434,9 @@ Button {
   width: 900px;
 }
 
-
 .featured-finds-cards {
   display: inline-block;
-  justify-content: space-evenly;
-  margin: 140px;
+  margin: 0 40px;
 }
 
 .featured-card-link {
@@ -458,6 +456,7 @@ Button {
 .featured-card {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   width: 636.61px;
   height: 311.81px;
   box-shadow: 0px 0px 5.56799px rgba(0, 0, 0, 0.3);
@@ -476,11 +475,6 @@ Button {
   width: 254.27px;
   height: 306.24px;
   margin-left: 35px;
-}
-
-#featured-card-two {
-  margin-left: 35px;
-  padding-left: 70px;
 }
 
 @media screen and (min-width: 600px) {
