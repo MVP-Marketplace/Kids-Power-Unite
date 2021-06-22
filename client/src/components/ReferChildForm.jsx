@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState, useCallback } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Auth";
-import { useHistory } from "react-router-dom";
 import "../App.css";
 import app from "../firebase";
 import PlusSign from "../Images/plus-sign.png";
@@ -8,7 +7,8 @@ import LeftArrow from "../Images/LeftArrow.png";
 import Form from "react-bootstrap/Form";
 import "firebase/storage";
 
-import LimitedTextarea from "./LimitedTextarea";
+// import LimitedTextarea from "./LimitedTextarea";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function validate(values) {
   let errors = {};
@@ -56,13 +56,18 @@ function validate(values) {
   return errors;
 }
 
-const ReferChildForm = ({ setDisplayChildForm }) => {
-  let limit = "";
-
+const ReferChildForm = ({
+  profileDisplay,
+  setDisplayChildForm,
+  picture,
+  formSuccess,
+}) => {
+  // let limit = "";
   const [checked, setChecked] = useState(false);
   const [errors, setErrors] = useState(null);
   const { currentUser } = useContext(AuthContext);
   const [sponsorId, setSponsorId] = useState("");
+  const [sponsorName, setSponsorName] = useState("");
   const [submit, setSubmit] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [values, setValues] = useState({
@@ -78,34 +83,16 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
     day: "",
     year: "",
     status: "in progress",
+    profilePicture: picture,
     parentalConsent: checked,
   });
-  const [profilePics, setProfilePics] = useState();
-  const [profilepicModal, setprofilepicModal] = useState(false);
-
-  let storageRef = app.firebase_.storage().ref();
-  const getImage = () => {
-    let imageArray = [];
-    for (let i = 1; i <= 9; i++) {
-      let imageRef = storageRef.child(`Profile Images/profile${i}.png`);
-      imageRef
-        .getDownloadURL()
-        .then((url) => {
-          imageArray.push(url);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-    setProfilePics(imageArray);
-  };
 
   // getImage();
 
   useEffect(() => {
     if (currentUser) {
       setSponsorId(currentUser.uid);
-      getImage();
+      setSponsorName(currentUser.displayName);
     }
   }, [currentUser]);
 
@@ -135,6 +122,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
       error.day ||
       error.year ||
       error.status ||
+      error.profilePicture ||
       error.parentalConsent
     ) {
       return;
@@ -144,7 +132,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
         .firestore()
         .collection("recipient")
         .doc(`${values.nickname}`)
-        .set({ values, sponsorId });
+        .set({ values, sponsorId, sponsorName });
     } catch (error) {
       alert(error);
     }
@@ -163,9 +151,10 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
       day: "",
       year: "",
       status: "in progress",
+      profilePicture: picture,
       parentalConsent: checked,
     });
-    setDisplayChildForm(false);
+    formSuccess();
   };
 
   const handleChange = (event) => {
@@ -189,11 +178,12 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
         <p className="recipient-info">Recipient Information</p>
         <div className="avatar-container">
           <button className="avatar-container-items">
-            <img></img>
+            <img src={picture}></img>
             <img
               className="add-avatar-sign"
               src={PlusSign}
               alt="add avatar"
+              onClick={profileDisplay}
             ></img>
           </button>
           <p className="select-avatar">Select Avatar</p>
@@ -327,6 +317,7 @@ const ReferChildForm = ({ setDisplayChildForm }) => {
                 Please enter a gift explanation
               </span>
             ) : null}
+            cd
           </div>
           <div className="recipient-info-one">
             <label className="recipient-field">

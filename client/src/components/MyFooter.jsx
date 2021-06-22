@@ -11,7 +11,7 @@ function MyFooter() {
   return (
     <>
       <Container fluid className="nav-blue">
-        <Row className="align-items-end bg-warning pt-5 pb-5">
+        {/* <Row className="align-items-end bg-warning pt-5 pb-5">
           <Col sm={4} className="newsletter-signup text-right">
             <div>Sign up for our newsletter</div>
           </Col>
@@ -32,7 +32,7 @@ function MyFooter() {
               Sign Up
             </Button>
           </Col>
-        </Row>
+        </Row> */}
         <Row className="p-3 bg-primary">
           <Col>
             <a
@@ -76,15 +76,24 @@ function MyFooter() {
             </Row>
             <Row className="mt-3">
               <a href="/donatepage">
-                <Twitter className="m-2" style={{ color: "white" }}></Twitter>
+                <Twitter
+                  target="_blank"
+                  className="m-2"
+                  style={{ color: "white" }}
+                ></Twitter>
               </a>
 
               <a href="https://www.facebook.com/kidpowerunites/">
-                <Facebook className="m-2" style={{ color: "white" }}></Facebook>
+                <Facebook
+                  target="_blank"
+                  className="m-2"
+                  style={{ color: "white" }}
+                ></Facebook>
               </a>
 
               <a href="#">
                 <Instagram
+                  target="_blank"
                   className="m-2"
                   style={{ color: "white" }}
                 ></Instagram>
