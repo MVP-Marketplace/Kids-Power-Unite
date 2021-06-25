@@ -87,7 +87,7 @@ Button {
   color: white;
   font-family: "Paytone One", sans-serif;
   height: 16rem;
-  background-image: url("./Images/home-hero.jpeg");
+  background-image: url("../Images/home-hero.jpeg");
   max-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;

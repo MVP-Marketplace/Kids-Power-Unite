@@ -10,12 +10,14 @@ const HonorCode = ({ handleClose, show }) => {
         />
         <Modal.Body style={{ backgroundColor: "#F4F7FD" }}>
           <p>
-            <strong>Honor code:</strong> We are unable to verify each child’s
-            eligibility, so we operate on an honor system. Please do not falsify
-            information since there are so many children in need of gifts.
+            <strong>Honor code:</strong> We operate on an honor system. Please
+            do not falsify information since there are so many children in need
+            of gifts.
           </p>
         </Modal.Body>
-        <Modal.Footer style={{ borderTop: "0 none", backgroundColor: "#F4F7FD" }}></Modal.Footer>
+        <Modal.Footer
+          style={{ borderTop: "0 none", backgroundColor: "#F4F7FD" }}
+        ></Modal.Footer>
       </Modal>
     </div>
   );

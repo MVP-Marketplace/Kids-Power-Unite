@@ -32,7 +32,7 @@ const About = () => {
           </Col>
           <Col>
             <div>
-              Started by one mom, Kid Power Unites is a grassroots effort to
+              Started by a mom, Kid Power Unites is a grassroots effort to
               teach kids the importance of giving and receiving.
             </div>
           </Col>
@@ -44,7 +44,7 @@ const About = () => {
           <Col>
             <div>
               Inspired by a local holiday gift-giving program, the dream behind
-              Kid Power Unites is that the generosity of the holidays will
+              Kid Power Unites is that the generosity of the holiday season will
               empower kids to give year-round.
             </div>
           </Col>

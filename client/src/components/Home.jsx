@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { Button } from "react-bootstrap";
 import FeaturedItems from "./FeaturedItems";
 import SuccessStory from "./SuccessStory";
-import "../Home.css";
+import "../style/Home.css";
 import logo from "../Images/kpu-logo.png";
 import Donate from "../Images/donatehero.png";
 import Legos from "../Images/legos.png";

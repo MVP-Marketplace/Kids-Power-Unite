@@ -126,7 +126,7 @@ const Signup = ({ history }) => {
               <h1>Create Account</h1>
             </Card.Title>
             <p>
-              Already Have An Account? <Link to="/login">Sign In</Link>
+              Already Have An Account? <Link to="/login">Log in</Link>
             </p>
 
             <Form onSubmit={handleSignUp}>

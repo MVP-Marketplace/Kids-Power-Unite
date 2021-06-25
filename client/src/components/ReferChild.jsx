@@ -100,9 +100,8 @@ const ReferChild = () => {
       </Link>
       <div className="honor-code-container">
         <p className="honor-code-text">
-          <b>Honor code: </b>We are unable to verify each child’s eligibility,
-          so we operate on an honor system. Please do not falsify information
-          since there are so many children in need of gifts.
+          <b>Honor code: </b> We operate on an honor system. Please do not
+          falsify information since there are so many children in need of gifts.
         </p>
       </div>
     </div>
