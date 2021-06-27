@@ -85,6 +85,8 @@ const ReferChildForm = ({
     status: "in progress",
     profilePicture: picture,
     parentalConsent: checked,
+    giftPrice:"",
+    giftImage:""
   });
 
   // getImage();
@@ -153,6 +155,8 @@ const ReferChildForm = ({
       status: "in progress",
       profilePicture: picture,
       parentalConsent: checked,
+      giftPrice:"",
+      giftImage:""
     });
     formSuccess();
   };

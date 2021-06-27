@@ -32,10 +32,10 @@ const DonateCard = (props) =>{
         <img src={props.profilePicture}className="ellipse-1" alt=" Child avatar"/>
 
         <h1 className="text-1 dosis-semi-bold-royal-blue-32px">{props.nickname}</h1>        
-  <p className="text-2 opensans-normal-black-16px">{props.childBio}</p>
+  <p style={{padding: "5%",textAlign:"center"}} className="text-2 opensans-normal-black-16px">{props.childBio}</p>
 
         <p className="text-3 opensans-normal-black-16px">{props.giftReason}</p>
-        <div className="price valign-text-middle1 opensans-normal-black-18px">$12.99</div>
+  <div className="price valign-text-middle1 opensans-normal-black-18px">{props.giftPrice ?`$${props.giftPrice}`:"TBD"}</div>
   <div className="text-4 valign-text-middle opensans-semi-bold-black-14px">{props.giftName}</div>
 
         <div className="date valign-text-middle opensans-normal-black-18px">{`${props.month}/${props.day}/${props.year}`}</div> 
@@ -44,7 +44,9 @@ const DonateCard = (props) =>{
     
         <div className="text-7 valign-text-middle opensans-normal-fuscous-gray-14px">Item</div>
 
-        <div className="text-8 valign-text-middle opensans-normal-fuscous-gray-14px">Item Picture</div>
+        <div className="text-8 valign-text-middle opensans-normal-fuscous-gray-14px">
+        <img style={{padding: "5px"}} src={props.giftImage}></img>  
+        </div>
 
         <div className="occassion text-9 valign-text-middle opensans-normal-fuscous-gray-14px">Occassion
             {occassionImage}

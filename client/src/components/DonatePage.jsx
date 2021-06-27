@@ -5,6 +5,7 @@ import PurchaseModal from "./PurchaseModal";
 import ConfirmPurchaseModal from "./ConfirmPurchaseModal";
 
 import app from "../firebase";
+import { Justify } from "react-bootstrap-icons";
 
 const DonatePage = () => {
   let modalData;
@@ -93,6 +94,8 @@ const DonatePage = () => {
           flexDirection: "row",
           flexWrap: "wrap",
           margin: "-2.5%",
+          padding:"5%",
+          justifyContent:"space-evenly"
         }}
       >
         {children
@@ -107,7 +110,7 @@ const DonatePage = () => {
                 />
               );
             })
-          : null}
+          : <h1>No Donations today! Come and check again soon! </h1>}
       </div>
       {modalInfo.isOpen ? (
         <PurchaseModal
