@@ -62,9 +62,15 @@ body {
 }
 
 .refer-child-header {
+  background-image: url("./Images/refer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:430px;
+  width: 100%;
   border-bottom: 15px solid #fca40e;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 }
+
 
 .refer-child-header h2 {
   display: flex;
@@ -675,7 +681,16 @@ input .child-form-fields {
 }
 
 .about-page-heading {
-  background-color: #fff5e1;
+  background-image: url("./Images/about_page/about.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner {
+  background: url("./Images/about_page/about.jpg") contain no-repeat;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 1.5em;
 }
 
 .about-page-logo {

@@ -87,7 +87,7 @@ Button {
   color: white;
   font-family: "Paytone One", sans-serif;
   height: 16rem;
-  background-image: url("./Images/home-hero.jpeg");
+  background-image: url("../Images/home-hero.jpeg");
   max-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -412,7 +412,7 @@ Button {
   transition: all 900ms ease;
 }
 
-/* FEATURED FINDS - coming soon */
+/* FEATURED FINDS  */
 .featured-finds {
   padding-top: 90px;
   padding-bottom: 40px;
@@ -435,10 +435,8 @@ Button {
 }
 
 .featured-finds-cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin: 100px 30px;
+  display: inline-block;
+  margin: 0 40px;
 }
 
 .featured-card-link {
@@ -458,6 +456,7 @@ Button {
 .featured-card {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   width: 636.61px;
   height: 311.81px;
   box-shadow: 0px 0px 5.56799px rgba(0, 0, 0, 0.3);
@@ -469,18 +468,13 @@ Button {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 25.9839px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   text-align: center;
   width: 254.27px;
   height: 306.24px;
   margin-left: 35px;
-}
-
-#featured-card-two {
-  margin-left: 35px;
-  padding-left: 70px;
 }
 
 @media screen and (min-width: 600px) {

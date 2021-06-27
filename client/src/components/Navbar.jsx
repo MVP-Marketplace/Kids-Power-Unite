@@ -43,7 +43,7 @@ function MyNavbar() {
                     href="/login"
                     style={{ fontFamily: "Paytone One", color: "#FFFFFF" }}
                   >
-                    Login
+                    Log In
                   </Nav.Link>
                 </>
               ) : (
