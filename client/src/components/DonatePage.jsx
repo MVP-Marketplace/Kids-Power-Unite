@@ -110,7 +110,7 @@ const DonatePage = () => {
                 />
               );
             })
-          : null}
+          : <h1>No Donations today! Come and check again soon! </h1>}
       </div>
       {modalInfo.isOpen ? (
         <PurchaseModal
@@ -125,7 +125,7 @@ const DonatePage = () => {
           closeConfirm={closeConfirmModal}
           {...confirmModalInfo}
         />
-      ) : <h1>No Donations today! Check back soon!</h1>}
+      ) : null}
     </div>
   );
 };
