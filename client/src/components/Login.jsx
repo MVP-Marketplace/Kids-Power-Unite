@@ -57,7 +57,7 @@ const Login = ({ history }) => {
           </Row>
           <Card.Body>
             <Card.Title>
-              <h1>Sign In</h1>
+              <h1>Log in</h1>
             </Card.Title>
             <p>
               Don't Have An Account? <Link to="/signup">Create Account</Link>
@@ -99,7 +99,7 @@ const Login = ({ history }) => {
                       type="submit"
                       className="w-100"
                     >
-                      Login
+                      Log In
                     </Button>
                   </Form.Row>
                   <br></br>
