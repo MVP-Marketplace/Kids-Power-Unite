@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useContext, withRouter } from "react";
+import React from "react";
 import Asset1 from "../Images/about_page/Asset 1 1.png";
 import Asset2 from "../Images/about_page/Asset 2 1.png";
 import Asset3 from "../Images/about_page/Asset 3 1.png";
 import Asset5 from "../Images/about_page/Asset 5 1.png";
-import KPU_Logo from "../Images/kpu-logo.png";
 import "../App.css";
-import { Container, Col, Row, Image, Button } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 
 const About = () => {
   return (
@@ -14,10 +13,8 @@ const About = () => {
         <Container>
           <Row className="align-items-center p-5">
             <Col>
-              <img src={KPU_Logo} width="380.49px"></img>
-            </Col>
-            <Col>
-              <div className="about-title">About</div>
+              <div className='banner'></div>
+             
             </Col>
           </Row>
         </Container>

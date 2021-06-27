@@ -2,22 +2,23 @@
   align-items: flex-end;
   display: flex;
   min-width: 1478px;
-  padding: 0.0px 0;
+  padding: 0px 0;
 }
 .overlap-group {
   align-items: flex-end;
   background-image: url(../Images/wishlist.png);
-  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   height: 368px;
   justify-content: flex-end;
   min-width: 1476px;
   width: 100%;
-  padding: 73.3px 630.0px;
+  padding: 73.3px 630px;
 }
 .title {
   height: 59px;
-  letter-spacing: 0.00px;
+  letter-spacing: 0px;
   line-height: 50.4px;
   min-height: 59px;
   text-align: center;

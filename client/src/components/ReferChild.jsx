@@ -1,18 +1,13 @@
 import React from "react";
-import "../App.css";
 import { Link } from "react-router-dom";
-import ColorPencils from "../Images/color-pencils.png";
+import "../App.css";
 import EligibleImageOne from "../Images/eligible-image-one.png";
 import EligibleImageTwo from "../Images/eligible-image-two.png";
-import SuperHeroKids from "../Images/superhero-kids.png";
 
 const ReferChild = () => {
   return (
     <div className="refer-child-container">
-      <div className="refer-child-header">
-        <img src={ColorPencils} alt="Header Image"></img>
-        <h2>Refer a Child</h2>
-      </div>
+      <div className="refer-child-header"></div>
       <div className="to-know-container">
         <p className="to-know">
           <b>What you need to know</b>
