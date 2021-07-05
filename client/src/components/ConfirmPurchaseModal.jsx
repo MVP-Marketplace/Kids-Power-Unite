@@ -6,7 +6,7 @@ import "../style/confirmModal.css";
 import group83 from "../Images/group83.png"
 
 const ConfirmPurchaseModal = (props) => {
-  console.log(props);
+
   return (
     <div className="confirm-container-center-horizontal">
       <div className="confirm-purchase-modal-flow-3 screen">

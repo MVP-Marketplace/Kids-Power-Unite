@@ -426,7 +426,7 @@ const Dashboard = () => {
       year: recip.data().values.year,
       parentalConsent: recip.data().values.parentalConsent,
     });
-    console.log(values);
+    
     handleShow();
   };
   const updateGuardian = async () => {
@@ -590,7 +590,6 @@ const Dashboard = () => {
   useEffect(() => {
     setDisplayProfileSelect(false)
   },[selectedPic])
-  console.log(selectedPic)
   const overview = (
     <>
       <Row className="p-2 align-items-center">
